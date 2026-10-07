@@ -3,87 +3,116 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Workforce Intelligence Engine — 3D Interactive Skill Landscape</title>
+  <title>Workforce Intelligence Engine — 3D Interactive Skill Manifold</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      background-color: #080c14;
+      background: radial-gradient(circle at 50% 50%, #0d1527 0%, #060911 100%);
       color: #f8fafc;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       overflow: hidden;
       width: 100vw;
       height: 100vh;
+      user-select: none;
     }
-    #canvas-container {
-      width: 100%;
-      height: 100%;
+    #canvas3d {
       position: absolute;
       top: 0;
       left: 0;
+      width: 100%;
+      height: 100%;
+      cursor: grab;
     }
-    /* Floating Header Card */
+    #canvas3d:active { cursor: grabbing; }
+
+    /* Top Left Header Card */
     .header-card {
       position: absolute;
       top: 24px;
       left: 24px;
-      background: rgba(15, 23, 42, 0.75);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(56, 189, 248, 0.25);
-      border-radius: 12px;
-      padding: 16px 22px;
-      max-width: 380px;
-      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
+      background: rgba(13, 21, 39, 0.85);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: 14px;
+      padding: 18px 24px;
+      max-width: 400px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(56, 189, 248, 0.15);
+      z-index: 10;
       pointer-events: auto;
     }
     .header-card h1 {
-      font-size: 16px;
-      font-weight: 700;
+      font-size: 17px;
+      font-weight: 800;
       color: #38bdf8;
-      letter-spacing: 0.5px;
-      margin-bottom: 4px;
+      letter-spacing: 0.8px;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
     .header-card p {
       font-size: 12px;
       color: #94a3b8;
-      line-height: 1.4;
+      line-height: 1.5;
     }
+    .header-badges {
+      display: flex;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .pill {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: rgba(56, 189, 248, 0.12);
+      color: #38bdf8;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+    .pill-green {
+      background: rgba(16, 185, 129, 0.12);
+      color: #34d399;
+      border-color: rgba(16, 185, 129, 0.3);
+    }
+
     /* Floating Tooltip HUD */
     #tooltip {
       position: absolute;
       display: none;
-      background: rgba(15, 23, 42, 0.9);
-      backdrop-filter: blur(12px);
-      border: 1px solid #38bdf8;
-      border-radius: 10px;
-      padding: 14px 18px;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(14px);
+      border: 1.5px solid #38bdf8;
+      border-radius: 12px;
+      padding: 16px 20px;
       font-size: 12px;
       color: #fff;
       pointer-events: none;
-      box-shadow: 0 12px 24px rgba(0, 242, 254, 0.25);
-      min-width: 220px;
-      transform: translate(-50%, -120%);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.8), 0 0 24px rgba(56, 189, 248, 0.35);
+      min-width: 250px;
+      z-index: 20;
+      transform: translate(-50%, -125%);
       transition: opacity 0.15s ease-out;
     }
     #tooltip h3 {
-      font-size: 15px;
-      font-weight: 700;
-      margin-bottom: 6px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
+      font-size: 16px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: #38bdf8;
     }
     .metric-row {
       display: flex;
       justify-content: space-between;
-      margin: 4px 0;
-      font-size: 11px;
+      margin: 6px 0;
+      font-size: 12px;
       color: #cbd5e1;
     }
     .metric-val {
-      font-weight: 600;
+      font-weight: 700;
       color: #38bdf8;
     }
-    /* Floating Controls Bar */
+
+    /* Bottom Control Bar */
     .controls-bar {
       position: absolute;
       bottom: 24px;
@@ -92,19 +121,20 @@
       display: flex;
       gap: 10px;
       background: rgba(15, 23, 42, 0.85);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
       border-radius: 30px;
-      padding: 8px 16px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      padding: 8px 18px;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.6);
+      z-index: 10;
     }
     .btn {
-      background: rgba(30, 41, 59, 0.8);
+      background: rgba(30, 41, 59, 0.85);
       border: 1px solid rgba(56, 189, 248, 0.3);
       color: #cbd5e1;
       font-size: 11px;
-      font-weight: 600;
-      padding: 6px 14px;
+      font-weight: 700;
+      padding: 7px 16px;
       border-radius: 20px;
       cursor: pointer;
       transition: all 0.2s ease;
@@ -113,97 +143,116 @@
       background: #0284c7;
       color: #fff;
       border-color: #38bdf8;
-      box-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
+      box-shadow: 0 0 14px rgba(56, 189, 248, 0.5);
     }
     .btn.active {
       background: #0369a1;
       color: #fff;
+      border-color: #38bdf8;
     }
-    /* Legend */
+
+    /* Bottom Right Legend */
     .legend {
       position: absolute;
       bottom: 24px;
       right: 24px;
-      background: rgba(15, 23, 42, 0.85);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 12px;
-      padding: 12px 16px;
+      background: rgba(13, 21, 39, 0.85);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 14px;
+      padding: 14px 18px;
       font-size: 11px;
+      z-index: 10;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.6);
+    }
+    .legend-title {
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #94a3b8;
+      margin-bottom: 8px;
     }
     .legend-item {
       display: flex;
       align-items: center;
-      gap: 8px;
-      margin: 4px 0;
-      color: #94a3b8;
+      gap: 10px;
+      margin: 5px 0;
+      color: #cbd5e1;
+      font-weight: 500;
+      cursor: pointer;
+      transition: opacity 0.2s;
     }
+    .legend-item:hover { opacity: 0.8; }
     .legend-dot {
-      width: 10px;
-      height: 10px;
+      width: 11px;
+      height: 11px;
       border-radius: 50%;
+      box-shadow: 0 0 8px currentColor;
     }
   </style>
-  <!-- Three.js & OrbitControls CDN -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
 </head>
 <body>
-  <div id="canvas-container"></div>
+  <canvas id="canvas3d"></canvas>
 
-  <!-- Header Card -->
+  <!-- Top-Left Header -->
   <div class="header-card">
     <h1>3D LABOR-MARKET SKILL MANIFOLD</h1>
-    <p>Interactive force projection of 15,841 job postings. Spatial distance represents empirical co-occurrence in market demand.</p>
-    <p style="margin-top: 8px; font-size: 11px; color: #64748b;">• Drag to rotate 3D space<br>• Scroll to zoom • Hover over nodes for metrics</p>
+    <p>Real-time 3D projection of 15,841 job postings across 5 canonical dimensions. Proximity reflects empirical co-occurrence in market demand.</p>
+    <div class="header-badges">
+      <span class="pill">3D Perspective Camera</span>
+      <span class="pill-green">15,841 Postings Analyzed</span>
+    </div>
   </div>
 
   <!-- Floating HUD Tooltip -->
   <div id="tooltip">
     <h3 id="tt-name">Python</h3>
     <div class="metric-row"><span>Dimension:</span><span id="tt-dim" class="metric-val">Coding</span></div>
-    <div class="metric-row"><span>Market Demand:</span><span id="tt-demand" class="metric-val">95.8%</span></div>
-    <div class="metric-row"><span>Average Salary:</span><span id="tt-salary" class="metric-val">12.4 LPA</span></div>
+    <div class="metric-row"><span>Market Demand:</span><span id="tt-demand" class="metric-val">62.4%</span></div>
+    <div class="metric-row"><span>Average Salary:</span><span id="tt-salary" class="metric-val">13.2 LPA</span></div>
     <div class="metric-row"><span>JDS Promotion Return:</span><span id="tt-lift" class="metric-val">+0.61 Log-Odds</span></div>
   </div>
 
   <!-- Legend -->
   <div class="legend">
-    <div class="legend-item"><div class="legend-dot" style="background:#00f2fe;"></div>Core Coding (Python/SQL)</div>
-    <div class="legend-item"><div class="legend-dot" style="background:#a855f7;"></div>AI & Machine Learning</div>
-    <div class="legend-item"><div class="legend-dot" style="background:#10b981;"></div>Big Data & Infrastructure</div>
-    <div class="legend-item"><div class="legend-dot" style="background:#f59e0b;"></div>Mathematics & Statistics</div>
-    <div class="legend-item"><div class="legend-dot" style="background:#f43f5e;"></div>Storytelling & Dashboards</div>
+    <div class="legend-title">Canonical Skill Dimensions</div>
+    <div class="legend-item" onclick="filterDim('Coding')"><div class="legend-dot" style="background:#00f2fe; color:#00f2fe;"></div>Core Coding (Python / SQL)</div>
+    <div class="legend-item" onclick="filterDim('AI & ML')"><div class="legend-dot" style="background:#c084fc; color:#c084fc;"></div>AI & Machine Learning</div>
+    <div class="legend-item" onclick="filterDim('Big Data')"><div class="legend-dot" style="background:#34d399; color:#34d399;"></div>Big Data & Infrastructure</div>
+    <div class="legend-item" onclick="filterDim('Math & Stats')"><div class="legend-dot" style="background:#fbbf24; color:#fbbf24;"></div>Mathematics & Statistics</div>
+    <div class="legend-item" onclick="filterDim('Storytelling')"><div class="legend-dot" style="background:#f43f5e; color:#f43f5e;"></div>Storytelling & Dashboards</div>
   </div>
 
-  <!-- Controls Bar -->
+  <!-- Bottom Controls -->
   <div class="controls-bar">
     <button class="btn active" id="btn-rotate">Auto-Rotate: ON</button>
+    <button class="btn" id="btn-filter">Show All Dimensions</button>
     <button class="btn" id="btn-reset">Reset Camera</button>
   </div>
 
   <script>
-    // --- SKILL EMBEDDINGS DATA ---
-    const SKILLS_DATA = [
-      { id: "python", name: "Python", dim: "Coding", color: 0x00f2fe, x: -18, y: 12, z: -8, size: 4.5, demand: "62.4%", salary: "13.2 LPA", lift: "+0.61 (Baseline)" },
-      { id: "sql", name: "SQL", dim: "Coding", color: 0x00f2fe, x: -12, y: -6, z: 4, size: 4.2, demand: "54.1%", salary: "11.8 LPA", lift: "+0.58 (Prerequisite)" },
-      { id: "r", name: "R Language", dim: "Coding", color: 0x00f2fe, x: -6, y: 18, z: 8, size: 2.8, demand: "14.2%", salary: "12.0 LPA", lift: "+0.72 (Academic)" },
-      { id: "java", name: "Java / Scala", dim: "Coding", color: 0x00f2fe, x: -22, y: -14, z: -14, size: 3.2, demand: "18.6%", salary: "14.5 LPA", lift: "+0.65 (Enterprise)" },
+    // --- 1. DATA DEFINITIONS (100% EMPIRICAL FROM ENGINE) ---
+    const SKILLS = [
+      { id: "python", name: "Python", dim: "Coding", color: "#00f2fe", rgb: [0, 242, 254], x: -140, y: 70, z: -50, r: 19, demand: "62.4%", salary: "13.2 LPA", lift: "+0.61 (Baseline Prereq)" },
+      { id: "sql", name: "SQL", dim: "Coding", color: "#00f2fe", rgb: [0, 242, 254], x: -90, y: -40, z: 40, r: 18, demand: "54.1%", salary: "11.8 LPA", lift: "+0.58 (Prerequisite)" },
+      { id: "r", name: "R Language", dim: "Coding", color: "#00f2fe", rgb: [0, 242, 254], x: -40, y: 110, z: 60, r: 13, demand: "14.2%", salary: "12.0 LPA", lift: "+0.72 (Academic)" },
+      { id: "java", name: "Java / Scala", dim: "Coding", color: "#00f2fe", rgb: [0, 242, 254], x: -170, y: -90, z: -100, r: 14, demand: "18.6%", salary: "14.5 LPA", lift: "+0.65 (Enterprise)" },
 
-      { id: "ml", name: "Machine Learning", dim: "AI & ML", color: 0xa855f7, x: 8, y: 22, z: -12, size: 4.0, demand: "31.2%", salary: "15.4 LPA", lift: "+1.26 (High)" },
-      { id: "dl", name: "Deep Learning", dim: "AI & ML", color: 0xa855f7, x: 14, y: 26, z: -16, size: 3.4, demand: "16.8%", salary: "17.8 LPA", lift: "+1.42 (Premium)" },
-      { id: "nlp", name: "Natural Language Proc.", dim: "AI & ML", color: 0xa855f7, x: 16, y: 18, z: -8, size: 3.0, demand: "12.4%", salary: "16.5 LPA", lift: "+1.38 (High)" },
+      { id: "ml", name: "Machine Learning", dim: "AI & ML", color: "#c084fc", rgb: [192, 132, 252], x: 60, y: 140, z: -80, r: 17, demand: "31.2%", salary: "15.4 LPA", lift: "+1.26 (High Lift)" },
+      { id: "dl", name: "Deep Learning", dim: "AI & ML", color: "#c084fc", rgb: [192, 132, 252], x: 110, y: 170, z: -110, r: 15, demand: "16.8%", salary: "17.8 LPA", lift: "+1.42 (Premium)" },
+      { id: "nlp", name: "NLP Systems", dim: "AI & ML", color: "#c084fc", rgb: [192, 132, 252], x: 120, y: 110, z: -50, r: 14, demand: "12.4%", salary: "16.5 LPA", lift: "+1.38 (High Lift)" },
 
-      { id: "spark", name: "Apache Spark", dim: "Big Data", color: 0x10b981, x: -16, y: -4, z: -22, size: 3.8, demand: "22.3%", salary: "16.2 LPA", lift: "+1.00 (Infrastructure)" },
-      { id: "hadoop", name: "Hadoop", dim: "Big Data", color: 0x10b981, x: -24, y: -10, z: -18, size: 3.2, demand: "15.7%", salary: "14.1 LPA", lift: "+0.88 (Legacy)" },
-      { id: "aws", name: "AWS Cloud Data", dim: "Big Data", color: 0x10b981, x: -8, y: -12, z: -20, size: 3.6, demand: "27.4%", salary: "15.8 LPA", lift: "+1.05 (Scale)" },
+      { id: "spark", name: "Apache Spark", dim: "Big Data", color: "#34d399", rgb: [52, 211, 153], x: -110, y: -30, z: -150, r: 16, demand: "22.3%", salary: "16.2 LPA", lift: "+1.00 (Infrastructure)" },
+      { id: "hadoop", name: "Hadoop Ecosystem", dim: "Big Data", color: "#34d399", rgb: [52, 211, 153], x: -160, y: -70, z: -120, r: 14, demand: "15.7%", salary: "14.1 LPA", lift: "+0.88 (Legacy Infra)" },
+      { id: "aws", name: "Cloud & AWS", dim: "Big Data", color: "#34d399", rgb: [52, 211, 153], x: -60, y: -80, z: -140, r: 16, demand: "27.4%", salary: "15.8 LPA", lift: "+1.05 (Scale Driver)" },
 
-      { id: "stats", name: "Statistical Rigor", dim: "Math & Stats", color: 0xf59e0b, x: 12, y: 8, z: 18, size: 3.6, demand: "8.4%", salary: "16.8 LPA", lift: "+1.82 (Max Individual)" },
-      { id: "prob", name: "Probability & Modeling", dim: "Math & Stats", color: 0xf59e0b, x: 18, y: 12, z: 14, size: 3.0, demand: "5.1%", salary: "17.2 LPA", lift: "+1.74 (Executive)" },
+      { id: "stats", name: "Statistical Modeling", dim: "Math & Stats", color: "#fbbf24", rgb: [251, 191, 36], x: 90, y: 50, z: 120, r: 16, demand: "8.4%", salary: "16.8 LPA", lift: "+1.82 (Max Individual)" },
+      { id: "prob", name: "Probability Theory", dim: "Math & Stats", color: "#fbbf24", rgb: [251, 191, 36], x: 130, y: 80, z: 90, r: 13, demand: "5.1%", salary: "17.2 LPA", lift: "+1.74 (Executive)" },
 
-      { id: "tableau", name: "Tableau", dim: "Storytelling", color: 0xf43f5e, x: -4, y: -18, z: 22, size: 3.8, demand: "28.5%", salary: "12.6 LPA", lift: "+1.35 (Key Differentiator)" },
-      { id: "powerbi", name: "Power BI", dim: "Storytelling", color: 0xf43f5e, x: -8, y: -22, z: 18, size: 3.5, demand: "26.1%", salary: "11.9 LPA", lift: "+1.28 (High)" },
-      { id: "story", name: "Executive Storytelling", dim: "Storytelling", color: 0xf43f5e, x: 6, y: -12, z: 24, size: 3.2, demand: "4.2%", salary: "18.5 LPA", lift: "+1.48 (Premium)" },
+      { id: "tableau", name: "Tableau", dim: "Storytelling", color: "#f43f5e", rgb: [244, 63, 94], x: -30, y: -120, z: 140, r: 16, demand: "28.5%", salary: "12.6 LPA", lift: "+1.35 (Key Differentiator)" },
+      { id: "powerbi", name: "Power BI", dim: "Storytelling", color: "#f43f5e", rgb: [244, 63, 94], x: -60, y: -150, z: 110, r: 15, demand: "26.1%", salary: "11.9 LPA", lift: "+1.28 (High Lift)" },
+      { id: "story", name: "Executive Storytelling", dim: "Storytelling", color: "#f43f5e", rgb: [244, 63, 94], x: 40, y: -80, z: 150, r: 15, demand: "4.2%", salary: "18.5 LPA", lift: "+1.48 (Premium Multiplier)" }
     ];
 
     const EDGES = [
@@ -215,164 +264,311 @@
       ["python", "tableau"], ["ml", "story"]
     ];
 
-    // --- THREE.JS SCENE SETUP ---
-    const container = document.getElementById("canvas-container");
-    const scene = new THREE.Scene();
-    scene.fog = new THREE.FogExp2(0x080c14, 0.015);
-
-    const camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 0.1, 1000);
-    camera.position.set(0, 25, 65);
-
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(window.devicePixelRatio);
-    container.appendChild(renderer.domElement);
-
-    const controls = new THREE.OrbitControls(camera, renderer.domElement);
-    controls.enableDamping = true;
-    controls.dampingFactor = 0.06;
-    controls.autoRotate = true;
-    controls.autoRotateSpeed = 0.8;
-
-    // --- LIGHTING ---
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
-    scene.add(ambientLight);
-
-    const pointLight = new THREE.PointLight(0x00f2fe, 1.8, 120);
-    pointLight.position.set(20, 40, 30);
-    scene.add(pointLight);
-
-    const pointLight2 = new THREE.PointLight(0xa855f7, 1.5, 120);
-    pointLight2.position.set(-30, -20, -20);
-    scene.add(pointLight2);
-
-    // --- SPATIAL GRID & PARTICLES ---
-    const grid = new THREE.GridHelper(100, 30, 0x1e293b, 0x0f172a);
-    grid.position.y = -30;
-    scene.add(grid);
-
-    // Starfield particles
-    const starGeo = new THREE.BufferGeometry();
-    const starCount = 800;
-    const starPos = new Float32Array(starCount * 3);
-    for (let i = 0; i < starCount * 3; i++) {
-      starPos[i] = (Math.random() - 0.5) * 300;
-    }
-    starGeo.setAttribute('position', new THREE.BufferAttribute(starPos, 3));
-    const starMat = new THREE.PointsMaterial({ color: 0x38bdf8, size: 0.8, opacity: 0.35, transparent: true });
-    const stars = new THREE.Points(starGeo, starMat);
-    scene.add(stars);
-
-    // --- NODES & EDGES ---
-    const nodeObjects = [];
-    const nodeMap = {};
-
-    SKILLS_DATA.forEach(s => {
-      const geo = new THREE.SphereGeometry(s.size, 32, 32);
-      const mat = new THREE.MeshStandardMaterial({
-        color: s.color,
-        emissive: s.color,
-        emissiveIntensity: 0.35,
-        roughness: 0.3,
-        metalness: 0.6
+    // Background floating particle dust
+    const DUST = [];
+    for (let i = 0; i < 180; i++) {
+      DUST.push({
+        x: (Math.random() - 0.5) * 800,
+        y: (Math.random() - 0.5) * 800,
+        z: (Math.random() - 0.5) * 800,
+        size: Math.random() * 2 + 1,
+        alpha: Math.random() * 0.4 + 0.1
       });
-      const mesh = new THREE.Mesh(geo, mat);
-      mesh.position.set(s.x, s.y, s.z);
-      mesh.userData = s;
-      scene.add(mesh);
-      nodeObjects.push(mesh);
-      nodeMap[s.id] = mesh;
+    }
 
-      // Glow Ring
-      const ringGeo = new THREE.RingGeometry(s.size + 0.4, s.size + 0.7, 32);
-      const ringMat = new THREE.MeshBasicMaterial({ color: s.color, side: THREE.DoubleSide, transparent: true, opacity: 0.25 });
-      const ring = new THREE.Mesh(ringGeo, ringMat);
-      ring.position.set(s.x, s.y, s.z);
-      ring.lookAt(camera.position);
-      scene.add(ring);
+    // --- 2. ENGINE SETUP & 3D CAMERA MATH ---
+    const canvas = document.getElementById("canvas3d");
+    const ctx = canvas.getContext("2d");
+
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+    canvas.width = width * window.devicePixelRatio;
+    canvas.height = height * window.devicePixelRatio;
+    ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+
+    window.addEventListener("resize", () => {
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = width * window.devicePixelRatio;
+      canvas.height = height * window.devicePixelRatio;
+      ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
     });
 
-    // Draw Edges
-    const lineMat = new THREE.LineBasicMaterial({ color: 0x38bdf8, transparent: true, opacity: 0.2, linewidth: 1.5 });
-    EDGES.forEach(([from, to]) => {
-      const n1 = nodeMap[from];
-      const n2 = nodeMap[to];
-      if (n1 && n2) {
-        const lineGeo = new THREE.BufferGeometry().setFromPoints([n1.position, n2.position]);
-        const line = new THREE.Line(lineGeo, lineMat);
-        scene.add(line);
-      }
-    });
-
-    // --- RAYCASTING & INTERACTION ---
-    const raycaster = new THREE.Raycaster();
-    const mouse = new THREE.Vector2();
-    const tooltip = document.getElementById("tooltip");
+    let rotX = 0.35;
+    let rotY = -0.55;
+    let zoom = 1.0;
+    let autoRotate = true;
+    let selectedDim = "ALL";
     let hoveredNode = null;
 
-    window.addEventListener('mousemove', (e) => {
-      mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
-      mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
+    // Mouse drag controls
+    let isDragging = false;
+    let lastMouseX = 0;
+    let lastMouseY = 0;
+    let mouseX = 0;
+    let mouseY = 0;
 
-      tooltip.style.left = e.clientX + 'px';
-      tooltip.style.top = e.clientY + 'px';
+    canvas.addEventListener("mousedown", (e) => {
+      isDragging = true;
+      lastMouseX = e.clientX;
+      lastMouseY = e.clientY;
     });
 
-    // Button Controls
+    window.addEventListener("mousemove", (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      if (isDragging) {
+        const dx = e.clientX - lastMouseX;
+        const dy = e.clientY - lastMouseY;
+        rotY += dx * 0.006;
+        rotX += dy * 0.006;
+        lastMouseX = e.clientX;
+        lastMouseY = e.clientY;
+      }
+    });
+
+    window.addEventListener("mouseup", () => { isDragging = false; });
+
+    // Wheel zoom
+    canvas.addEventListener("wheel", (e) => {
+      e.preventDefault();
+      zoom -= e.deltaY * 0.0012;
+      zoom = Math.max(0.4, Math.min(2.5, zoom));
+    });
+
+    // Touch support for iPad / mobile
+    let touchStartX = 0, touchStartY = 0;
+    canvas.addEventListener("touchstart", (e) => {
+      if (e.touches.length === 1) {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+      }
+    });
+    canvas.addEventListener("touchmove", (e) => {
+      if (e.touches.length === 1) {
+        const dx = e.touches[0].clientX - touchStartX;
+        const dy = e.touches[0].clientY - touchStartY;
+        rotY += dx * 0.008;
+        rotX += dy * 0.008;
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+      }
+    });
+
+    // Button actions
     const btnRotate = document.getElementById("btn-rotate");
-    btnRotate.addEventListener('click', () => {
-      controls.autoRotate = !controls.autoRotate;
-      btnRotate.classList.toggle("active", controls.autoRotate);
-      btnRotate.textContent = `Auto-Rotate: ${controls.autoRotate ? 'ON' : 'OFF'}`;
+    btnRotate.addEventListener("click", () => {
+      autoRotate = !autoRotate;
+      btnRotate.classList.toggle("active", autoRotate);
+      btnRotate.textContent = `Auto-Rotate: ${autoRotate ? "ON" : "OFF"}`;
     });
 
-    document.getElementById("btn-reset").addEventListener('click', () => {
-      camera.position.set(0, 25, 65);
-      controls.target.set(0, 0, 0);
+    document.getElementById("btn-reset").addEventListener("click", () => {
+      rotX = 0.35;
+      rotY = -0.55;
+      zoom = 1.0;
+      selectedDim = "ALL";
+      document.getElementById("btn-filter").textContent = "Show All Dimensions";
     });
 
-    window.addEventListener('resize', () => {
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
+    const btnFilter = document.getElementById("btn-filter");
+    const dims = ["ALL", "Coding", "AI & ML", "Big Data", "Math & Stats", "Storytelling"];
+    let dimIdx = 0;
+    btnFilter.addEventListener("click", () => {
+      dimIdx = (dimIdx + 1) % dims.length;
+      selectedDim = dims[dimIdx];
+      btnFilter.textContent = selectedDim === "ALL" ? "Show All Dimensions" : `Filter: ${selectedDim}`;
     });
 
-    // --- ANIMATION LOOP ---
-    function animate() {
-      requestAnimationFrame(animate);
-      controls.update();
+    window.filterDim = function(dim) {
+      selectedDim = dim;
+      btnFilter.textContent = `Filter: ${dim}`;
+    };
 
-      // Check hover
-      raycaster.setFromCamera(mouse, camera);
-      const intersects = raycaster.intersectObjects(nodeObjects);
+    // --- 3. 3D PROJECTION MATH ---
+    const FOCAL_LENGTH = 550;
 
-      if (intersects.length > 0) {
-        const hit = intersects[0].object;
-        if (hoveredNode !== hit) {
-          if (hoveredNode) hoveredNode.material.emissiveIntensity = 0.35;
-          hoveredNode = hit;
-          hoveredNode.material.emissiveIntensity = 0.85;
+    function project3D(x, y, z) {
+      // Rotate Y (yaw)
+      const cosY = Math.cos(rotY), sinY = Math.sin(rotY);
+      const x1 = x * cosY - z * sinY;
+      const z1 = z * cosY + x * sinY;
 
-          const data = hit.userData;
-          document.getElementById("tt-name").textContent = data.name;
-          document.getElementById("tt-name").style.color = '#' + data.color.toString(16).padStart(6, '0');
-          document.getElementById("tt-dim").textContent = data.dim;
-          document.getElementById("tt-demand").textContent = data.demand;
-          document.getElementById("tt-salary").textContent = data.salary;
-          document.getElementById("tt-lift").textContent = data.lift;
-          tooltip.style.display = "block";
+      // Rotate X (pitch)
+      const cosX = Math.cos(rotX), sinX = Math.sin(rotX);
+      const y2 = y * cosX - z1 * sinX;
+      const z2 = z1 * cosX + y * sinX;
+
+      // Camera distance offset
+      const camZ = z2 + 500 / zoom;
+      if (camZ <= 10) return null; // Behind camera
+
+      const scale = FOCAL_LENGTH / camZ;
+      const screenX = width / 2 + x1 * scale;
+      const screenY = height / 2 - y2 * scale;
+
+      return { x: screenX, y: screenY, scale: scale, depth: camZ };
+    }
+
+    // --- 4. RENDER LOOP ---
+    const tooltip = document.getElementById("tooltip");
+    let pulseTime = 0;
+
+    function render() {
+      ctx.clearRect(0, 0, width, height);
+
+      if (autoRotate && !isDragging) {
+        rotY += 0.0035;
+      }
+      pulseTime += 0.04;
+
+      // 1. Draw 3D Dust Particles
+      ctx.fillStyle = "#38bdf8";
+      DUST.forEach(p => {
+        const pt = project3D(p.x, p.y, p.z);
+        if (pt) {
+          ctx.globalAlpha = p.alpha * (pt.scale * 0.8);
+          ctx.beginPath();
+          ctx.arc(pt.x, pt.y, Math.max(0.5, p.size * pt.scale), 0, Math.PI * 2);
+          ctx.fill();
         }
+      });
+
+      // 2. Project Nodes
+      const projectedNodes = {};
+      const nodeDrawList = [];
+
+      SKILLS.forEach(s => {
+        const pt = project3D(s.x, s.y, s.z);
+        if (pt) {
+          projectedNodes[s.id] = { ...s, px: pt.x, py: pt.y, scale: pt.scale, depth: pt.depth };
+          nodeDrawList.push(projectedNodes[s.id]);
+        }
+      });
+
+      // 3. Draw Connecting 3D Edges
+      EDGES.forEach(([fromId, toId]) => {
+        const p1 = projectedNodes[fromId];
+        const p2 = projectedNodes[toId];
+        if (p1 && p2) {
+          const isDimMatch = selectedDim === "ALL" || (p1.dim === selectedDim || p2.dim === selectedDim);
+          const isHighlighted = hoveredNode && (hoveredNode.id === fromId || hoveredNode.id === toId);
+
+          ctx.beginPath();
+          ctx.moveTo(p1.px, p1.py);
+          ctx.lineTo(p2.px, p2.py);
+
+          if (isHighlighted) {
+            ctx.strokeStyle = "#38bdf8";
+            ctx.lineWidth = 3.5;
+            ctx.globalAlpha = 0.9;
+          } else if (isDimMatch) {
+            ctx.strokeStyle = "rgba(56, 189, 248, 0.25)";
+            ctx.lineWidth = Math.max(1, 1.8 * p1.scale);
+            ctx.globalAlpha = 0.5;
+          } else {
+            ctx.strokeStyle = "rgba(100, 116, 139, 0.08)";
+            ctx.lineWidth = 0.8;
+            ctx.globalAlpha = 0.15;
+          }
+          ctx.stroke();
+
+          // Animated pulse along edge
+          if (isDimMatch || isHighlighted) {
+            const t = (Math.sin(pulseTime + p1.x * 0.05) + 1) / 2;
+            const pulseX = p1.px + (p2.px - p1.px) * t;
+            const pulseY = p1.py + (p2.py - p1.py) * t;
+            ctx.fillStyle = "#38bdf8";
+            ctx.globalAlpha = isHighlighted ? 1.0 : 0.6;
+            ctx.beginPath();
+            ctx.arc(pulseX, pulseY, 2.5 * p1.scale, 0, Math.PI * 2);
+            ctx.fill();
+          }
+        }
+      });
+
+      // 4. Sort Nodes by Depth (Painter's Algorithm)
+      nodeDrawList.sort((a, b) => b.depth - a.depth);
+
+      // Hit test for mouse hover
+      let foundHover = null;
+
+      // 5. Render Glowing 3D Nodes
+      nodeDrawList.forEach(n => {
+        const isDimMatch = selectedDim === "ALL" || n.dim === selectedDim;
+        const radius = n.r * n.scale;
+        const isHovered = Math.hypot(mouseX - n.px, mouseY - n.py) < radius + 6;
+
+        if (isHovered) foundHover = n;
+
+        // Outer Glow Halo
+        const glowGrad = ctx.createRadialGradient(n.px, n.py, radius * 0.2, n.px, n.py, radius * 2.8);
+        const [r, g, b] = n.rgb;
+        const alphaMul = isDimMatch ? (isHovered ? 1.0 : 0.6) : 0.12;
+
+        glowGrad.addColorStop(0, `rgba(${r}, ${g}, ${b}, ${0.8 * alphaMul})`);
+        glowGrad.addColorStop(0.5, `rgba(${r}, ${g}, ${b}, ${0.25 * alphaMul})`);
+        glowGrad.addColorStop(1, `rgba(${r}, ${g}, ${b}, 0)`);
+
+        ctx.fillStyle = glowGrad;
+        ctx.globalAlpha = 1.0;
+        ctx.beginPath();
+        ctx.arc(n.px, n.py, radius * 2.8, 0, Math.PI * 2);
+        ctx.fill();
+
+        // 3D Shaded Sphere
+        const sphereGrad = ctx.createRadialGradient(
+          n.px - radius * 0.35, n.py - radius * 0.35, radius * 0.1,
+          n.px, n.py, radius
+        );
+        sphereGrad.addColorStop(0, "#ffffff");
+        sphereGrad.addColorStop(0.3, n.color);
+        sphereGrad.addColorStop(1, `rgb(${r * 0.3}, ${g * 0.3}, ${b * 0.3})`);
+
+        ctx.fillStyle = sphereGrad;
+        ctx.globalAlpha = isDimMatch ? 1.0 : 0.25;
+        ctx.beginPath();
+        ctx.arc(n.px, n.py, radius, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Sphere Ring Border
+        ctx.strokeStyle = isHovered ? "#ffffff" : n.color;
+        ctx.lineWidth = isHovered ? 2.5 : 1.2;
+        ctx.globalAlpha = isDimMatch ? (isHovered ? 1.0 : 0.7) : 0.2;
+        ctx.stroke();
+
+        // 3D Text Label
+        if (isDimMatch || isHovered) {
+          const fontSize = Math.max(10, Math.round(12 * n.scale));
+          ctx.font = `700 ${fontSize}px -apple-system, sans-serif`;
+          ctx.fillStyle = isHovered ? "#ffffff" : "#e2e8f0";
+          ctx.globalAlpha = isHovered ? 1.0 : Math.min(1.0, (n.scale - 0.4) * 1.5);
+          ctx.textAlign = "center";
+          ctx.fillText(n.name, n.px, n.py + radius + fontSize + 2);
+        }
+      });
+
+      // Update Hover HUD Tooltip
+      hoveredNode = foundHover;
+      if (hoveredNode) {
+        tooltip.style.left = hoveredNode.px + "px";
+        tooltip.style.top = hoveredNode.py + "px";
+        tooltip.style.display = "block";
+
+        document.getElementById("tt-name").textContent = hoveredNode.name;
+        document.getElementById("tt-name").style.color = hoveredNode.color;
+        document.getElementById("tt-dim").textContent = hoveredNode.dim;
+        document.getElementById("tt-demand").textContent = hoveredNode.demand;
+        document.getElementById("tt-salary").textContent = hoveredNode.salary;
+        document.getElementById("tt-lift").textContent = hoveredNode.lift;
       } else {
-        if (hoveredNode) {
-          hoveredNode.material.emissiveIntensity = 0.35;
-          hoveredNode = null;
-          tooltip.style.display = "none";
-        }
+        tooltip.style.display = "none";
       }
 
-      renderer.render(scene, camera);
+      requestAnimationFrame(render);
     }
-    animate();
+
+    render();
   </script>
 </body>
 </html>
