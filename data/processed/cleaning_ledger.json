@@ -298,5 +298,55 @@
     "affected_rows": 161,
     "unmatched_rows": 0,
     "success_rate": 100.0
+  },
+  {
+    "timestamp": "2026-10-08T00:34:12.726523",
+    "dataset": "DataScience Jobs",
+    "column": "avg_salary",
+    "transformation": "parse_lakhs_to_float",
+    "reason": "Salary stored as text like '7.8L'; converted to INR float",
+    "total_rows": 1602,
+    "affected_rows": 1602,
+    "unmatched_rows": 0,
+    "success_rate": 100.0,
+    "format_profile": {
+      "lakhs": 1602
+    }
+  },
+  {
+    "timestamp": "2026-10-08T00:34:12.785017",
+    "dataset": "Analytics Jobs",
+    "column": "salary",
+    "transformation": "parse_range_to_min_max",
+    "reason": "Salary stored as text like '6to10'; converted to INR min/max",
+    "total_rows": 15841,
+    "affected_rows": 15841,
+    "unmatched_rows": 0,
+    "success_rate": 100.0,
+    "format_profile": {
+      "range_lpa": 15841
+    }
+  },
+  {
+    "timestamp": "2026-10-08T00:34:12.909129",
+    "dataset": "JDS Skill Traits",
+    "column": "all_columns",
+    "transformation": "column_name_strip",
+    "reason": "Column names had leading/trailing whitespace",
+    "total_rows": 139,
+    "affected_rows": 139,
+    "unmatched_rows": 0,
+    "success_rate": 100.0
+  },
+  {
+    "timestamp": "2026-10-08T00:34:12.916014",
+    "dataset": "SDS Personality Traits",
+    "column": "all_columns",
+    "transformation": "column_name_strip",
+    "reason": "Column names had leading/trailing whitespace and spaces",
+    "total_rows": 161,
+    "affected_rows": 161,
+    "unmatched_rows": 0,
+    "success_rate": 100.0
   }
 ]
