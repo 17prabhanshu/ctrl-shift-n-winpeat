@@ -45,3 +45,27 @@ The extreme separability in this dataset (e.g., `openness_to_experience`) visual
 
 ---
 *Generated directly from `EDA_DA_ADVANCED_PRESENTATION_READY.ipynb` equivalent pipeline components.*
+
+---
+
+## 4. Class Balance & Target Distributions
+A crucial prerequisite for our ML pipeline is confirming whether our targets are balanced, to avoid the need for synthetic oversampling (e.g., SMOTE) which can introduce data leakage. As shown below, both the JDS and SDS datasets are well-balanced.
+
+![Target Class Balance](../reports/figures/eda/target_class_balance.png)
+
+---
+
+## 5. Mutual Information (Information Theory)
+Before relying on tree-based SHAP values, we compute **Mutual Information (MI)**—a non-parametric information theory metric that captures any relationship (linear or non-linear) between a feature and the outcome label.
+The MI scores corroborate our H4 hypothesis: **Maths-Stats** and **Dashboard/Storytelling** yield the highest intrinsic information gain regarding salary hikes, significantly outpacing basic coding skills.
+
+![Mutual Information](../reports/figures/eda/jds_mutual_information.png)
+
+---
+
+## 6. Skill Concentration (Lorenz Curve)
+To understand macro-market dynamics, we plotted the cumulative demand of skills across the Analytics Jobs dataset as a Lorenz Curve.
+The massive deviation from the line of "Perfect Equality" demonstrates extreme market concentration: **a tiny fraction of unique skills (e.g., Python, SQL, AWS) accounts for the vast majority of total market demand.**
+
+![Skill Lorenz Curve](../reports/figures/eda/skill_lorenz_curve.png)
+
