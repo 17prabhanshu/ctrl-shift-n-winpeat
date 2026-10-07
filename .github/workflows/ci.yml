@@ -1,0 +1,66 @@
+name: WIE Automated Audit & Verification Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  audit-and-benchmark:
+    name: Build, Audit & Test Engine
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt pytest
+
+      - name: Step 1 - Format Profiling & Cleaning Ledger Audit
+        run: |
+          python scripts/profile_cleaning.py
+
+      - name: Step 2 - Executable Data Leakage Audit
+        run: |
+          python scripts/leakage_audit.py
+
+      - name: Step 3 - Run Automated Test Suite
+        run: |
+          pytest tests/ -v
+
+      - name: Step 4 - Verify Skill Signal Index
+        run: |
+          python src/skill_intelligence/skill_signal_index.py
+
+      - name: Step 5 - Verify SDS Forensic Decision Tree
+        run: |
+          python src/benchmarking/sds_forensic.py
+
+      - name: Step 6 - Verify Demand-Reward Alignment & Interaction Models
+        run: |
+          python src/benchmarking/demand_reward_alignment.py
+          python src/models/interaction_test.py
+
+      - name: Step 7 - Validate Evidence Registry Integrity
+        run: |
+          python scripts/generate_final_evidence.py
+
+      - name: Upload Verifiable Audit Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: verifiable-evidence-artifacts
+          path: |
+            data/processed/cleaning_ledger.json
+            docs/LEAKAGE_AUDIT.md
+            reports/evidence/evidence_registry.json
+            reports/evidence/evidence_audit_report.md

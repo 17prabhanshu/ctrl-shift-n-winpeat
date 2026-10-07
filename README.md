@@ -2,9 +2,20 @@
 
 **SAS CU Hackathon 2026 — Team ctrl shift n**
 
+[![CI Pipeline](https://github.com/17prabhanshu/ctrl-shift-n-winpeat/actions/workflows/ci.yml/badge.svg)](https://github.com/17prabhanshu/ctrl-shift-n-winpeat/actions/workflows/ci.yml)
 [![Python 3.13](https://img.shields.io/badge/Python-3.13-blue.svg)](https://www.python.org/)
 [![SAS Viya](https://img.shields.io/badge/SAS-Viya_for_Learners-0075D8.svg)](https://www.sas.com/en_us/software/viya.html)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+<div align="center" style="margin: 14px 0;">
+  <a href="https://htmlpreview.github.io/?https://github.com/17prabhanshu/ctrl-shift-n-winpeat/blob/main/docs/interactive_3d_landscape.html">
+    <img src="https://img.shields.io/badge/Explore%203D%20Skill%20Manifold-Interactive%20WebGL-00f2fe?style=for-the-badge&logo=three.js&logoColor=black" alt="3D Skill Manifold" />
+  </a>
+  &nbsp;
+  <a href="https://htmlpreview.github.io/?https://github.com/17prabhanshu/ctrl-shift-n-winpeat/blob/main/docs/interactive_graph.html">
+    <img src="https://img.shields.io/badge/Force--Directed%20Graph-Vis.js%20Network-8b5cf6?style=for-the-badge&logo=graphql&logoColor=white" alt="Force-Directed Graph" />
+  </a>
+</div>
 
 > Where the market pays a premium for technical skill, does it pay more when that skill is paired with communication skill — and do junior and senior files show the same pattern?
 
@@ -23,40 +34,13 @@
 
 ---
 
-## Architecture
+## Pipeline Architecture & Live Execution Topology
 
 Four datasets, no shared primary key. Merging rows on weak keys (e.g. job title) induces the Ecological Fallacy. We process each dataset in an isolated evidence lane and compare statistical conclusions, never raw rows.
 
-```mermaid
-graph TD
-    subgraph sources [Data Sources]
-        D1[(Analytics Jobs<br/>n=15,841)]
-        D2[(DS Jobs<br/>n=1,602)]
-        D3[(JDS Skills<br/>n=139)]
-        D4[(SDS Personality<br/>n=161)]
-    end
-
-    subgraph lanes [Analysis Modules]
-        A1[Market Analysis]
-        A2[Skill NLP]
-        A3[JDS Benchmarker]
-        A4[SDS Benchmarker]
-    end
-
-    subgraph governance [Governance]
-        ER{Evidence Registry}
-    end
-
-    D1 --> A2
-    D2 --> A1
-    D3 --> A3
-    D4 --> A4
-
-    A1 -->|Salary and demand vectors| ER
-    A2 -->|Skill taxonomy and graph| ER
-    A3 -->|Interaction models| ER
-    A4 -->|Personality models| ER
-```
+<p align="center">
+  <img src="docs/assets/pipeline_architecture_animated.svg" alt="Animated Context-Isolated Pipeline Architecture" width="100%"/>
+</p>
 
 ---
 
