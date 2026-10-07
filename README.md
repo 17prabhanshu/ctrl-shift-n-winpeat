@@ -24,7 +24,7 @@
 
 The core problem requires synthesizing four disparate datasets—Market Analytics jobs, Data Science job postings, Junior Data Scientist (JDS) technical traits, and Senior Data Scientist (SDS) personality traits—without a unified key.
 
-**Scope & Depth:** Rather than attempting to predict a single arbitrary metric, our scope covers the entire lifecycle of workforce intelligence. We investigate how raw cognitive skills (e.g., Mathematics, Coding) interact with social skills (e.g., Storytelling, Extraversion) to drive salary compensation in the open market, early-career promotion (JDS), and late-career executive success (SDS).
+**Scope & Depth:** Rather than attempting to predict a single arbitrary metric, our scope covers the entire lifecycle of workforce intelligence. We investigate how raw cognitive skills (e.g., Mathematics, Coding) interact with social skills (e.g., Storytelling, Extraversion) associated with salary compensation differences in the open market, early-career promotion (JDS), and late-career executive success (SDS).
 
 ---
 
@@ -166,15 +166,15 @@ cv = RepeatedStratifiedKFold(n_splits=5, n_repeats=20, random_state=42)
 **Consolidation & Linkage:**
 > **Market Evidence:** We established a clear Career Opportunity Frontier. Technical cognitive skills (Coding, AI/ML) require communication (Dashboard/Storytelling) to achieve premium compensation tiers.
 > **JDS Findings:** The `dashboard_and_storytelling_skills` interact positively with `maths-stats_skills`, providing a measurable lift in junior salary hikes. The Full ML Model achieved a stable accuracy of **0.865**.
-> **SDS Findings:** Conscientiousness exhibits plateauing, non-additive effects with Extraversion in Senior Data Scientist success classifications. Our model achieved a robust **0.992** ROC-AUC (which safely drops to 0.589 under a shuffled-target test, definitively proving no data leakage).
+> **SDS Findings:** Conscientiousness exhibits plateauing, non-additive effects with Extraversion in Senior Data Scientist success classifications. Our model achieved a robust **0.992** ROC-AUC (which safely drops to 0.589 under a shuffled-target test, consistent with absence of target leakage (shuffled-target AUC drops to chance level)).
 
 ---
 
 ## Real-World Implications
 **Stakeholder Impact:**
 **For HR Professionals:** The engine demonstrates that hiring for isolated technical skills yields diminishing returns. Assessment frameworks must measure the *interaction* between technical execution and communication.
-**For Analytics Professionals:** The "Career Opportunity Frontier" proves that upskilling purely in deeper algorithmic modeling without complementary stakeholder-communication skills severely limits progression potential.
-**For Algorithmic Governance:** By implementing Conformal Prediction sets, organizations can automate 80% of HR screening while responsibly routing the remaining 20% of high-ambiguity profiles to human auditors, mitigating algorithmic bias.
+**For Analytics Professionals:** The "Career Opportunity Frontier" suggests that upskilling purely in deeper algorithmic modeling without complementary stakeholder-communication skills is associated with lower progression potential.
+**For Algorithmic Governance:** Conformal prediction sets allow the system to flag ambiguous candidates for human review rather than forcing binary classification.
 
 ---
 

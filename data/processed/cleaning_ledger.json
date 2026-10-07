@@ -1,26 +1,52 @@
 [
-    {
-        "dataset": "ds_jobs",
-        "column": "avg_salary",
-        "original_sample": "7.8L",
-        "new_sample": 780000,
-        "reason": "Parsed LPA format",
-        "affected_rows": 1602
-    },
-    {
-        "dataset": "analytics_jobs",
-        "column": "salary",
-        "original_sample": "6to10",
-        "new_sample": "(600000, 1000000)",
-        "reason": "Parsed range to min/max",
-        "affected_rows": 15841
-    },
-    {
-        "dataset": "analytics_jobs",
-        "column": "experience",
-        "original_sample": "6-10 yrs",
-        "new_sample": "(6, 10, 8)",
-        "reason": "Parsed exp range",
-        "affected_rows": 15841
+  {
+    "timestamp": "2026-10-07T23:49:19.892326",
+    "dataset": "DataScience Jobs",
+    "column": "avg_salary",
+    "transformation": "parse_lakhs_to_float",
+    "reason": "Salary stored as text like '7.8L'; converted to INR float",
+    "total_rows": 1602,
+    "affected_rows": 1602,
+    "unmatched_rows": 0,
+    "success_rate": 100.0,
+    "format_profile": {
+      "lakhs": 1602
     }
+  },
+  {
+    "timestamp": "2026-10-07T23:49:19.950934",
+    "dataset": "Analytics Jobs",
+    "column": "salary",
+    "transformation": "parse_range_to_min_max",
+    "reason": "Salary stored as text like '6to10'; converted to INR min/max",
+    "total_rows": 15841,
+    "affected_rows": 15841,
+    "unmatched_rows": 0,
+    "success_rate": 100.0,
+    "format_profile": {
+      "range_lpa": 15841
+    }
+  },
+  {
+    "timestamp": "2026-10-07T23:49:20.079984",
+    "dataset": "JDS Skill Traits",
+    "column": "all_columns",
+    "transformation": "column_name_strip",
+    "reason": "Column names had leading/trailing whitespace",
+    "total_rows": 139,
+    "affected_rows": 139,
+    "unmatched_rows": 0,
+    "success_rate": 100.0
+  },
+  {
+    "timestamp": "2026-10-07T23:49:20.086600",
+    "dataset": "SDS Personality Traits",
+    "column": "all_columns",
+    "transformation": "column_name_strip",
+    "reason": "Column names had leading/trailing whitespace and spaces",
+    "total_rows": 161,
+    "affected_rows": 161,
+    "unmatched_rows": 0,
+    "success_rate": 100.0
+  }
 ]
