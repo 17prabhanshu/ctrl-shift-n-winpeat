@@ -7,8 +7,8 @@ import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from src.agents.evidence_registry import EvidenceRecord, EvidenceRegistry
-from src.agents.agent_architecture import (
+from src.evidence.evidence_registry import EvidenceRecord, EvidenceRegistry
+from src.evidence.agent_architecture import (
     AgentInput, AgentOutput, DataAuditor, EvidenceAuditorAgent,
     AGENT_REGISTRY, run_agent,
 )

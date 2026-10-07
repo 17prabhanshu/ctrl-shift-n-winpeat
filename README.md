@@ -164,7 +164,7 @@ The pipeline runs with `set -euo pipefail`: any step that fails stops the entire
 │   ├── models/             # Benchmark engine, interaction test
 │   ├── skill_intelligence/ # Taxonomy, graph, signal index
 │   ├── benchmarking/       # Ablation, robustness, forensics
-│   └── agents/             # Evidence registry
+│   └── evidence/             # Evidence registry
 ├── scripts/                # Utility and generation scripts
 ├── reports/
 │   ├── benchmarks/         # JSON benchmark results
