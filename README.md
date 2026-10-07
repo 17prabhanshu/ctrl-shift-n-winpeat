@@ -7,15 +7,15 @@
 [![SAS Viya](https://img.shields.io/badge/SAS-Viya_for_Learners-0075D8.svg)](https://www.sas.com/en_us/software/viya.html)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-<div align="center" style="margin: 14px 0;">
+<div align="center" style="margin: 16px 0;">
   <a href="https://17prabhanshu.github.io/ctrl-shift-n-winpeat/">
-    <img src="https://img.shields.io/badge/Launch%20Interactive%20Hub-3D%20Manifold%20%26%20Network-00f2fe?style=for-the-badge&logo=three.js&logoColor=black" alt="Interactive Research Hub" />
+    <img src="https://img.shields.io/badge/Launch%20Interactive%20Presentation-Awwwards%20Style%20Deck-06b6d4?style=for-the-badge&logo=safari&logoColor=white" alt="Launch Interactive Presentation" />
   </a>
   &nbsp;
   <a href="https://17prabhanshu.github.io/ctrl-shift-n-winpeat/interactive_graph.html">
-    <img src="https://img.shields.io/badge/Force--Directed%20Graph-Vis.js%20Network-8b5cf6?style=for-the-badge&logo=graphql&logoColor=white" alt="Force-Directed Graph" />
+    <img src="https://img.shields.io/badge/Force--Directed%20Network-Vis.js%20Graph-8b5cf6?style=for-the-badge&logo=graphql&logoColor=white" alt="Force-Directed Graph" />
   </a>
-  <p style="margin-top: 6px; font-size: 11px; color: #64748b;"><em>Interactive Hub also available offline: <code>open docs/index.html</code></em></p>
+  <p style="margin-top: 8px; font-size: 11px; color: #64748b;"><em>Interactive presentation also available locally: <code>open docs/index.html</code></em></p>
 </div>
 
 > Where the market pays a premium for technical skill, does it pay more when that skill is paired with communication skill — and do junior and senior files show the same pattern?
@@ -35,13 +35,50 @@
 
 ---
 
-## Pipeline Architecture & Live Execution Topology
+## Pipeline Architecture & Context Isolation
 
 Four datasets, no shared primary key. Merging rows on weak keys (e.g. job title) induces the Ecological Fallacy. We process each dataset in an isolated evidence lane and compare statistical conclusions, never raw rows.
 
-<p align="center">
-  <img src="docs/assets/pipeline_architecture_animated.svg" alt="Animated Context-Isolated Pipeline Architecture" width="100%"/>
-</p>
+```mermaid
+graph TD
+    subgraph sources [Data Sources]
+        D1[(Analytics Jobs<br/>n=15,841)]
+        D2[(DS Jobs<br/>n=1,602)]
+        D3[(JDS Skills<br/>n=139)]
+        D4[(SDS Personality<br/>n=161)]
+    end
+
+    subgraph lanes [Isolated Analysis Lanes]
+        A1[Market Analysis]
+        A2[Skill NLP Engine]
+        A3[JDS Interaction Models]
+        A4[SDS Forensic Audit]
+    end
+
+    subgraph governance [Governance Hub]
+        ER{Evidence Registry}
+    end
+
+    subgraph outputs [Audited Deliverables]
+        O1[app_final_note.docx]
+        O2[cleaning_ledger.json]
+        O3[SAS VFL CAS Data]
+    end
+
+    D1 --> A2
+    D2 --> A1
+    D3 --> A3
+    D4 --> A4
+
+    A1 -->|Salary & demand vectors| ER
+    A2 -->|Skill taxonomy graph| ER
+    A3 -->|Interaction models| ER
+    A4 -->|Forensic rule artifact| ER
+
+    ER --> O1
+    ER --> O2
+    ER --> O3
+```
 
 ---
 
