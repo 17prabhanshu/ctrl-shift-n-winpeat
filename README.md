@@ -8,13 +8,14 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 <div align="center" style="margin: 14px 0;">
-  <a href="https://htmlpreview.github.io/?https://github.com/17prabhanshu/ctrl-shift-n-winpeat/blob/main/docs/interactive_3d_landscape.html">
-    <img src="https://img.shields.io/badge/Explore%203D%20Skill%20Manifold-Interactive%20WebGL-00f2fe?style=for-the-badge&logo=three.js&logoColor=black" alt="3D Skill Manifold" />
+  <a href="https://17prabhanshu.github.io/ctrl-shift-n-winpeat/">
+    <img src="https://img.shields.io/badge/Launch%20Interactive%20Hub-3D%20Manifold%20%26%20Network-00f2fe?style=for-the-badge&logo=three.js&logoColor=black" alt="Interactive Research Hub" />
   </a>
   &nbsp;
-  <a href="https://htmlpreview.github.io/?https://github.com/17prabhanshu/ctrl-shift-n-winpeat/blob/main/docs/interactive_graph.html">
+  <a href="https://17prabhanshu.github.io/ctrl-shift-n-winpeat/interactive_graph.html">
     <img src="https://img.shields.io/badge/Force--Directed%20Graph-Vis.js%20Network-8b5cf6?style=for-the-badge&logo=graphql&logoColor=white" alt="Force-Directed Graph" />
   </a>
+  <p style="margin-top: 6px; font-size: 11px; color: #64748b;"><em>Interactive Hub also available offline: <code>open docs/index.html</code></em></p>
 </div>
 
 > Where the market pays a premium for technical skill, does it pay more when that skill is paired with communication skill — and do junior and senior files show the same pattern?
