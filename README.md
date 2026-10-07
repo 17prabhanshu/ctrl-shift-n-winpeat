@@ -85,6 +85,19 @@ flowchart LR
 
 ---
 
+## 📊 Advanced Exploratory Data Analysis
+To ensure full transparency and interpretability of our features, we have exported all findings from our Advanced EDA research notebooks directly into GitHub. 
+
+👉 **[View the Advanced EDA Documentation & Visuals](docs/ADVANCED_EDA.md)**
+
+Includes:
+- Multivariate PCA Projections
+- JDS & SDS Correlation Matrices
+- Feature Separability Distributions (KDE)
+- Missingness Audits
+
+---
+
 ## 🔬 Data Analysis & Explainable AI
 This section forms the computational core of the engine. We apply rigorous descriptive, prescriptive, and statistical skills to evaluate our hypotheses.
 
