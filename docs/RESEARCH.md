@@ -198,7 +198,7 @@ By grounding our project in Deming and Kahn, agreement across our unjoined datas
 ### What It Is
 **Firth Logistic Regression** is a penalized maximum likelihood estimation procedure developed by David Firth in *Biometrika* (1993). In standard maximum likelihood estimation (MLE) of generalized linear models, parameter estimates are consistent asymptotically but suffer from first-order small-sample bias of order $O(n^{-1})$.
 
-More critically, standard logistic regression breaks down completely when data exhibit **complete separation** or **quasi-complete separation**—a common occurrence in small samples where a predictor or combination of predictors perfectly predicts the binary outcome. In separated data, standard MLE fails to converge: parameter estimates diverge toward $\pm \infty$, the log-likelihood plateaus, and Wald tests produce invalid, artificially inflated standard errors.
+More critically, standard logistic regression breaks down completely when data exhibit **complete separation** or **quasi-complete separation**—a common occurrence in small samples where a predictor or combination of predictors highly predicts the binary outcome. In separated data, standard MLE fails to converge: parameter estimates diverge toward $\pm \infty$, the log-likelihood plateaus, and Wald tests produce invalid, artificially inflated standard errors.
 
 Firth solved this fundamental defect by penalizing the log-likelihood function using the Jeffreys invariant prior:
 $$L^*(\beta) = L(\beta) \cdot |I(\beta)|^{1/2}$$

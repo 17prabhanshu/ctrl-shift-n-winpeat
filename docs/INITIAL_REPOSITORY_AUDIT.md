@@ -20,7 +20,7 @@ The workspace is located at `/Users/prabhanshushekhar/Desktop/ctrlshiftn`.
 - `notebooks/`: Empty
 - `reports/`:
   - `benchmarks/`, `evidence/`, `figures/`, `models/`: All empty.
-- `src/`: Contains subdirectories for various modules (`agents`, `benchmarking`, `calibration`, `cleaning`, `ensembles`, `explainability`, `feature_engineering`, `ingestion`, `market_intelligence`, `models`, `nlp`, `skill_intelligence`, `utils`, `validation`). All contain only an `__init__.py` file. No code or models currently exist.
+- `src/`: Contains subdirectories for various modules (`Modules`, `benchmarking`, `calibration`, `cleaning`, `ensembles`, `explainability`, `feature_engineering`, `ingestion`, `market_intelligence`, `models`, `nlp`, `skill_intelligence`, `utils`, `validation`). All contain only an `__init__.py` file. No code or models currently exist.
 - `tests/`: Empty
 
 ## Conclusion

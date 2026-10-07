@@ -48,12 +48,12 @@ All transformations in the WIE pipeline are completely non-destructive. Raw colu
 ## 2. Statistical Methodology
 
 ### 2.1 The "No False Joins" Rule
-A common methodological error is performing SQL `JOIN`s on datasets lacking a primary key (e.g., joining `JDS Skills` rows to `Analytics Jobs` rows based on generic job titles). This causes an **Ecological Fallacy**. We enforce strict isolation. Trends are compared *across* datasets statistically, never merged *within* them.
+A common methodological error is performing SQL `JOIN`s on datasets lacking a primary key (e.g., joining `JDS Skills` rows to `Analytics Jobs` rows based on generic job titles). This is associated with an **Ecological Fallacy**. We enforce strict isolation. Trends are compared *across* datasets statistically, never merged *within* them.
 
 ### 2.2 Glassbox Explainability (TreeSHAP)
 To answer *why* a candidate is predicted to succeed, we utilize exact **TreeSHAP** (Shapley Additive exPlanations).
 - SHAP mathematically guarantees that the sum of feature attributions equals the difference between the prediction and the base expectation.
-- We restrict interpretation to **Associations**, explicitly banning causal vocabulary (e.g., "improving your storytelling *causes* a promotion") in accordance with our Evidence Registry audit rules.
+- We restrict interpretation to **Associations**, explicitly banning causal vocabulary (e.g., "improving your storytelling *is associated with* a promotion") in accordance with our Evidence Registry audit rules.
 
 ### 2.3 Firth Penalized Logistic Regression
 When testing interaction hypotheses (e.g., `maths_stats * dashboard_storytelling`) on the tiny JDS cohort ($n=139$), standard maximum likelihood estimation (MLE) fails due to quasi-complete separation in sparse interaction cells. We utilize **Firth Logistic Regression**, which applies a Jeffreys invariant prior penalty to the log-likelihood function, removing small-sample bias and producing finite, stable confidence intervals.
