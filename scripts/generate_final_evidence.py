@@ -1,6 +1,8 @@
 import json
 import os
-from src.agents.evidence_registry import EvidenceRegistry, EvidenceRecord
+import sys
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from src.evidence.evidence_registry import EvidenceRegistry, EvidenceRecord
 
 def generate():
     registry = EvidenceRegistry("reports/evidence/evidence_registry.json")

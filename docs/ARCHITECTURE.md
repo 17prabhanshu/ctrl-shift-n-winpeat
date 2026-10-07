@@ -1,6 +1,6 @@
 # System Architecture: Workforce Intelligence Engine
 
-The architecture of the Workforce Intelligence Engine (WIE) abandons traditional ad-hoc Jupyter Notebook data wrangling in favor of a **Deterministic Agent Framework**.
+The architecture of the Workforce Intelligence Engine (WIE) abandons traditional ad-hoc Jupyter Notebook data wrangling in favor of a **Deterministic Modular Framework**.
 
 Because our project explicitly **rejects false row-level joins** across unlinked datasets (which would cause severe ecological fallacies and data leakage), the architecture is fundamentally partitioned into isolated **Evidence Lanes**.
 
@@ -66,7 +66,7 @@ sequenceDiagram
 
 ### Defense Against Overfitting
 1. **Repeated Stratified K-Fold:** $n=139$ and $n=161$ are critically small samples. Single train/test splits are prone to seed-lottery. We use 5 folds repeated 20 times (100 discrete model evaluations per algorithm).
-2. **Shuffled-Target Sanity Testing:** To prove our $0.992$ SDS AUC is not an artifact of target leakage, we scramble the target variable and re-train. The score drops immediately to $0.589$ (near random), mathematically proving the model relies on genuine feature distributions.
+2. **Shuffled-Target Sanity Testing:** To prove our $0.992$ SDS AUC is not an artifact of target leakage, we scramble the target variable and re-train. The score drops immediately to $0.589$ (near random), which is consistent with the absence of target leakage.
 
 ## 3. Skill & Natural Language Pipeline
 

@@ -1,6 +1,6 @@
 # Evidence Registry Report
 
-Generated: 2026-10-07T23:49:37.648341
+Generated: 2026-10-08T00:10:30.737398
 Total claims: 8
 Accepted: 8
 Rejected: 0

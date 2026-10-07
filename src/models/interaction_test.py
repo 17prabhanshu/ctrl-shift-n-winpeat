@@ -52,7 +52,7 @@ print(f"\nInteraction Coefficient (T*C): {interaction_coef:.4f} (p={interaction_
 record = {
     "claim_id": "H3-Complementarity-001",
     "domain": "Market Analysis",
-    "evidence_type": "M",
+    "evidence_tag": "M",
     "statement": f"Technical and Communication skills exhibit positive complementarity in market compensation.",
     "dataset": "Analytics Jobs",
     "method": "OLS regression with HC3 robust standard errors on log salary",

@@ -255,7 +255,7 @@ class EvidenceAuditorAgent(AnalyticalAgent):
         return True
     
     def execute(self, agent_input: AgentInput) -> AgentOutput:
-        from src.agents.evidence_registry import EvidenceRegistry
+        from src.evidence.evidence_registry import EvidenceRegistry
         
         registry = EvidenceRegistry()
         audit_results = registry.auto_audit()
@@ -285,7 +285,7 @@ class SynthesisAgent(AnalyticalAgent):
         return True
     
     def execute(self, agent_input: AgentInput) -> AgentOutput:
-        from src.agents.evidence_registry import EvidenceRegistry
+        from src.evidence.evidence_registry import EvidenceRegistry
         
         registry = EvidenceRegistry()
         accepted = registry.get_accepted()

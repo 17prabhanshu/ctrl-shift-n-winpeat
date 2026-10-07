@@ -40,7 +40,7 @@ for depth in [1, 2, 3]:
 record = {
     "claim_id": "SDS-Forensic-001",
     "domain": "Senior Evidence",
-    "evidence_type": "M",
+    "evidence_tag": "M",
     "statement": "SDS target is almost perfectly separable by a depth-2 decision tree on Conscientiousness and Openness, suggesting labels are strongly deterministic derived from these traits.",
     "dataset": "SDS Personality",
     "method": "Decision Tree (max_depth=2) with 5-fold CV",

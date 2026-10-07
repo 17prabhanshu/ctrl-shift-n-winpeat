@@ -59,7 +59,7 @@ for dim in dim_counts.keys():
 record = {
     "claim_id": "Alignment-001",
     "domain": "Cross-Dataset Synthesis",
-    "evidence_type": "M",
+    "evidence_tag": "M",
     "statement": "Demand-Reward Alignment calculated across 5 dimensions without joining rows.",
     "dataset": "Analytics Jobs + JDS Skills",
     "method": "Dimension-level alignment of Market Share vs JDS Log-Odds",
