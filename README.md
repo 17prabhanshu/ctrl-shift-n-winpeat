@@ -9,8 +9,7 @@
   **SAS CU Hackathon 2026 — Team: ctrl shift n**
   
   [![Python 3.13](https://img.shields.io/badge/Python-3.13-blue.svg)](https://www.python.org/)
-  [![Streamlit](https://img.shields.io/badge/UI-Streamlit-FF4B4B.svg)](https://streamlit.io/)
-  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+    [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 </div>
 
 ---
@@ -51,7 +50,7 @@ graph TD
 
     subgraph Governance
         ER{Evidence Registry}
-        ST[Streamlit App]
+        
     end
 
     D1 --> A2
@@ -64,7 +63,7 @@ graph TD
     A3 -->|Technical Interaction Models| ER
     A4 -->|Personality Interaction Models| ER
 
-    ER --> ST
+    
 ```
 
 ---
@@ -155,13 +154,19 @@ cv = RepeatedStratifiedKFold(n_splits=5, n_repeats=20, random_state=42)
 
 ---
 
-### 🚀 Running the Application
-Experience the interactive visual dashboard, including SHAP beeswarm plots, Knowledge Graphs, and Calibration curves:
+### 🚀 Running the Analytical Pipeline
+The entire pipeline runs deterministically from raw data to the final evidence registry, completely regenerating the research findings and figures.
+
 ```bash
 # 1. Clone the repository
 git clone https://github.com/17prabhanshu/ctrl-shift-n-winpeat.git
 cd ctrl-shift-n-winpeat
 
-# 2. Run the automated bootstrapper
+# 2. Run the automated master pipeline
 ./run.sh
 ```
+
+**Final Artifacts:**
+- **`app_final_note.docx`**: The comprehensive, 25-page, research-grade approach note with embedded statistical plots and verified metrics.
+- **`docs/APPROACH_NOTE.md`**: Markdown equivalent of the final approach note.
+- **`reports/evidence/evidence_registry.json`**: The source of truth for all analytical claims.
