@@ -8,18 +8,18 @@ The raw datasets provided for this hackathon contained several structural irregu
 
 ```mermaid
 graph TD
-    subgraph Raw Anomalies
+    subgraph raw [Raw Anomalies]
         S1["7.8L"] 
         S2["6to10"]
         E1["6-10 yrs"]
     end
     
-    subgraph Parsers (src/cleaning/)
+    subgraph parsers [Parsers src/cleaning]
         P1[Salary Parser]
         P2[Experience Parser]
     end
     
-    subgraph Clean Types
+    subgraph clean_types [Clean Types]
         C1["Float (780000.0)"]
         C2["Tuple (6.0, 10.0)"]
         C3["Int Midpoint (8.0)"]
