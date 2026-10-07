@@ -81,5 +81,31 @@
         "limitation": "Observational data; possible omitted variable bias (e.g. unobserved company quality)",
         "status": "accepted",
         "timestamp": "2026-10-07T19:12:54.552553"
+    },
+    {
+        "claim_id": "SDS-Forensic-001",
+        "domain": "Senior Evidence",
+        "evidence_type": "M",
+        "statement": "SDS target is almost perfectly separable by a depth-2 decision tree on Conscientiousness and Openness, suggesting labels are strongly deterministic derived from these traits.",
+        "dataset": "SDS Personality",
+        "method": "Decision Tree (max_depth=2) with 5-fold CV",
+        "metric": "ROC-AUC",
+        "value": 0.9172794117647058,
+        "limitation": "The target classification was likely generated synthetically or rules-based from personality scores rather than observed real-world performance.",
+        "status": "accepted",
+        "timestamp": "2026-10-07T19:13:41.064975"
+    },
+    {
+        "claim_id": "Alignment-001",
+        "domain": "Cross-Dataset Synthesis",
+        "evidence_type": "M",
+        "statement": "Demand-Reward Alignment calculated across 5 dimensions without joining rows.",
+        "dataset": "Analytics Jobs + JDS Skills",
+        "method": "Dimension-level alignment of Market Share vs JDS Log-Odds",
+        "metric": "Correlation",
+        "value": -0.7673035681574523,
+        "limitation": "Cross-dataset alignment relies on taxonomy consistency; not a causal link.",
+        "status": "accepted",
+        "timestamp": "2026-10-07T19:13:55.536168"
     }
 ]
