@@ -132,11 +132,10 @@ cd ctrl-shift-n-winpeat
 
 The pipeline runs with `set -euo pipefail`: any step that fails stops the entire build.
 
-**Outputs:**
 - `data/processed/cleaning_ledger.json` — Verified transformation counts
 - `docs/LEAKAGE_AUDIT.md` — Executable audit with PASS/FAIL checks
 - `reports/evidence/evidence_registry.json` — All analytical claims with provenance
-- `docs/APPROACH_NOTE.md` — Full approach note
+- `app_final_note.docx` — Comprehensive research approach note with verified empirical metrics
 
 ---
 
