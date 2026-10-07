@@ -1,0 +1,60 @@
+{
+    "ds_jobs": {
+        "file_hash": "24658523ee3e2959188cd0ef90cf50251fc32711112ba3f27ada6d8aa5237033",
+        "row_count": 1602,
+        "col_count": 8,
+        "schema": {
+            "reference_no": "int64",
+            "company_name": "str",
+            "job_title": "str",
+            "min_experience": "int64",
+            "avg_salary": "str",
+            "min_salary": "str",
+            "max_salary": "str",
+            "num_of_jobs": "int64"
+        }
+    },
+    "analytics_jobs": {
+        "file_hash": "c0bfd52e0685e6c8508099c9efb22fc2fe702d4bbce2ce8aaf828e5be94a098b",
+        "row_count": 15841,
+        "col_count": 8,
+        "schema": {
+            "s_no": "int64",
+            "experience": "str",
+            "job_description": "str",
+            "job_desig": "str",
+            "job_type": "str",
+            "key_skills": "str",
+            "location": "str",
+            "salary": "str"
+        }
+    },
+    "jds_skills": {
+        "file_hash": "2dc0a3f0702bf175bd559a3e2f2fa73ccc7f65ba12fb88d74c1804ca22608106",
+        "row_count": 139,
+        "col_count": 7,
+        "schema": {
+            "id": "int64",
+            "big_data_skills": "float64",
+            "maths-stats_skills": "float64",
+            "coding_skills": "float64",
+            "ai_and_ml_skills": "float64",
+            "dashboard_and_storytelling_skills": "float64",
+            "salary_hike_high_or_low": "int64"
+        }
+    },
+    "sds_personality": {
+        "file_hash": "112a08e50c655e57d3a43e8fed9359bd37a8f6f2de58963bc2f14af9b8fb1aaa",
+        "row_count": 161,
+        "col_count": 7,
+        "schema": {
+            "id": "int64",
+            "neuroticism": "int64",
+            " extraversion": "int64",
+            "openness_to_experience": "int64",
+            "agreeableness": "int64",
+            "conscientiousness": "int64",
+            "success_ classification_ high_low": "int64"
+        }
+    }
+}

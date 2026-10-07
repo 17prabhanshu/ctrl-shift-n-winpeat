@@ -1,0 +1,702 @@
+{
+    "analytics": {
+        "frequency": 1048,
+        "weighted_degree": 2251,
+        "betweenness": 0.004374865975881104,
+        "pagerank": 0.030666391672327965,
+        "community": 0
+    },
+    "php": {
+        "frequency": 131,
+        "weighted_degree": 451,
+        "betweenness": 0.013435295678600297,
+        "pagerank": 0.006901826943517531,
+        "community": 1
+    },
+    "risk management": {
+        "frequency": 157,
+        "weighted_degree": 213,
+        "betweenness": 0.01824405897819155,
+        "pagerank": 0.00452918442161421,
+        "community": 0
+    },
+    "nosql": {
+        "frequency": 196,
+        "weighted_degree": 789,
+        "betweenness": 0.0017652851209000939,
+        "pagerank": 0.010526345658385368,
+        "community": 1
+    },
+    "jquery": {
+        "frequency": 211,
+        "weighted_degree": 717,
+        "betweenness": 0.018844408068496705,
+        "pagerank": 0.010277103164330125,
+        "community": 1
+    },
+    "statistics": {
+        "frequency": 126,
+        "weighted_degree": 316,
+        "betweenness": 0.0002809746925575075,
+        "pagerank": 0.005211430511886536,
+        "community": 1
+    },
+    "data analytics": {
+        "frequency": 526,
+        "weighted_degree": 1082,
+        "betweenness": 0.014630604411709611,
+        "pagerank": 0.015430713543257034,
+        "community": 0
+    },
+    "business process": {
+        "frequency": 329,
+        "weighted_degree": 771,
+        "betweenness": 0.0064732315326161555,
+        "pagerank": 0.01169129529675014,
+        "community": 2
+    },
+    "analytical skills": {
+        "frequency": 125,
+        "weighted_degree": 116,
+        "betweenness": 0.02928670706120369,
+        "pagerank": 0.0033172855131459694,
+        "community": 0
+    },
+    "r": {
+        "frequency": 719,
+        "weighted_degree": 2392,
+        "betweenness": 0.00433389656769335,
+        "pagerank": 0.029560694472900148,
+        "community": 1
+    },
+    "hive": {
+        "frequency": 210,
+        "weighted_degree": 835,
+        "betweenness": 0.009644672178011232,
+        "pagerank": 0.010948640522200332,
+        "community": 1
+    },
+    "mis": {
+        "frequency": 155,
+        "weighted_degree": 214,
+        "betweenness": 0.008556914588923608,
+        "pagerank": 0.00465660185244674,
+        "community": 0
+    },
+    "etl": {
+        "frequency": 153,
+        "weighted_degree": 346,
+        "betweenness": 0.006933279453019093,
+        "pagerank": 0.0059704921877911515,
+        "community": 1
+    },
+    "technical support": {
+        "frequency": 128,
+        "weighted_degree": 78,
+        "betweenness": 0.043844993535571135,
+        "pagerank": 0.0028149166045784856,
+        "community": 0
+    },
+    "c": {
+        "frequency": 468,
+        "weighted_degree": 1161,
+        "betweenness": 0.004218780561361769,
+        "pagerank": 0.016212411813411116,
+        "community": 1
+    },
+    "communication skills": {
+        "frequency": 159,
+        "weighted_degree": 147,
+        "betweenness": 0.07221973469693516,
+        "pagerank": 0.0040166290000384275,
+        "community": 0
+    },
+    "financial modelling": {
+        "frequency": 157,
+        "weighted_degree": 177,
+        "betweenness": 0.001034075199464833,
+        "pagerank": 0.004390408859743368,
+        "community": 0
+    },
+    "hr": {
+        "frequency": 180,
+        "weighted_degree": 115,
+        "betweenness": 0.0254960430872426,
+        "pagerank": 0.0041479719056493666,
+        "community": 0
+    },
+    "credit risk": {
+        "frequency": 131,
+        "weighted_degree": 168,
+        "betweenness": 0.0004649565844553817,
+        "pagerank": 0.003995858789842486,
+        "community": 0
+    },
+    "oracle": {
+        "frequency": 165,
+        "weighted_degree": 385,
+        "betweenness": 0.010032093494372249,
+        "pagerank": 0.006583844238321178,
+        "community": 1
+    },
+    "data structures": {
+        "frequency": 135,
+        "weighted_degree": 408,
+        "betweenness": 0.006105539708280113,
+        "pagerank": 0.006312035885739975,
+        "community": 1
+    },
+    "xml": {
+        "frequency": 170,
+        "weighted_degree": 540,
+        "betweenness": 0.01105471307013126,
+        "pagerank": 0.008272071854070846,
+        "community": 1
+    },
+    "sap": {
+        "frequency": 123,
+        "weighted_degree": 270,
+        "betweenness": 0.008253366148953126,
+        "pagerank": 0.005216839951278224,
+        "community": 0
+    },
+    "data science": {
+        "frequency": 298,
+        "weighted_degree": 916,
+        "betweenness": 0.013365396090819007,
+        "pagerank": 0.012088929032541587,
+        "community": 1
+    },
+    "consulting": {
+        "frequency": 228,
+        "weighted_degree": 453,
+        "betweenness": 0.013783383072175465,
+        "pagerank": 0.008446253906539542,
+        "community": 0
+    },
+    "agile": {
+        "frequency": 140,
+        "weighted_degree": 283,
+        "betweenness": 0.014383705161440215,
+        "pagerank": 0.00529690083340394,
+        "community": 1
+    },
+    "predictive modeling": {
+        "frequency": 175,
+        "weighted_degree": 437,
+        "betweenness": 0.0005632122979061752,
+        "pagerank": 0.006659763723436623,
+        "community": 0
+    },
+    "data modeling": {
+        "frequency": 164,
+        "weighted_degree": 359,
+        "betweenness": 0.0031135599599626997,
+        "pagerank": 0.006084471228774991,
+        "community": 1
+    },
+    "social media": {
+        "frequency": 207,
+        "weighted_degree": 320,
+        "betweenness": 0.00909099148258448,
+        "pagerank": 0.0061367937967454385,
+        "community": 0
+    },
+    "google adwords": {
+        "frequency": 155,
+        "weighted_degree": 373,
+        "betweenness": 0.001902626222354113,
+        "pagerank": 0.006773121811631932,
+        "community": 0
+    },
+    "research analysis": {
+        "frequency": 125,
+        "weighted_degree": 113,
+        "betweenness": 0.004848876694869246,
+        "pagerank": 0.003292545619523287,
+        "community": 0
+    },
+    "data management": {
+        "frequency": 174,
+        "weighted_degree": 357,
+        "betweenness": 0.04194866881748622,
+        "pagerank": 0.006155347640953752,
+        "community": 0
+    },
+    "statistical modeling": {
+        "frequency": 148,
+        "weighted_degree": 421,
+        "betweenness": 0.0003631355972292346,
+        "pagerank": 0.006386272303152831,
+        "community": 1
+    },
+    "recruitment": {
+        "frequency": 174,
+        "weighted_degree": 141,
+        "betweenness": 0.03551142420928892,
+        "pagerank": 0.004897510265779881,
+        "community": 0
+    },
+    "google analytics": {
+        "frequency": 284,
+        "weighted_degree": 597,
+        "betweenness": 0.008999589046896165,
+        "pagerank": 0.009919590748867758,
+        "community": 0
+    },
+    "mysql": {
+        "frequency": 222,
+        "weighted_degree": 769,
+        "betweenness": 0.005490038138576024,
+        "pagerank": 0.010721405013411124,
+        "community": 1
+    },
+    "strategy": {
+        "frequency": 196,
+        "weighted_degree": 267,
+        "betweenness": 0.010909523693538377,
+        "pagerank": 0.00566830555536602,
+        "community": 0
+    },
+    "sem": {
+        "frequency": 265,
+        "weighted_degree": 675,
+        "betweenness": 0.0040343805506392275,
+        "pagerank": 0.011182845895306699,
+        "community": 0
+    },
+    "operations": {
+        "frequency": 360,
+        "weighted_degree": 707,
+        "betweenness": 0.009608559999652362,
+        "pagerank": 0.011511764821476062,
+        "community": 0
+    },
+    "predictive analytics": {
+        "frequency": 161,
+        "weighted_degree": 413,
+        "betweenness": 0.019090236805054263,
+        "pagerank": 0.006337193796531003,
+        "community": 1
+    },
+    "web services": {
+        "frequency": 130,
+        "weighted_degree": 379,
+        "betweenness": 0.006730862242990382,
+        "pagerank": 0.006267534650113721,
+        "community": 1
+    },
+    "marketing": {
+        "frequency": 363,
+        "weighted_degree": 471,
+        "betweenness": 0.012443729804964738,
+        "pagerank": 0.009253023274338407,
+        "community": 0
+    },
+    "net": {
+        "frequency": 149,
+        "weighted_degree": 306,
+        "betweenness": 0.011483411788507349,
+        "pagerank": 0.005430694981590602,
+        "community": 1
+    },
+    "data mining": {
+        "frequency": 291,
+        "weighted_degree": 900,
+        "betweenness": 0.005595849671495671,
+        "pagerank": 0.012045706543476977,
+        "community": 1
+    },
+    "accounting": {
+        "frequency": 398,
+        "weighted_degree": 585,
+        "betweenness": 0.017240674824848104,
+        "pagerank": 0.010863827808200237,
+        "community": 0
+    },
+    "css": {
+        "frequency": 244,
+        "weighted_degree": 872,
+        "betweenness": 0.006536950644916291,
+        "pagerank": 0.012102606401774747,
+        "community": 1
+    },
+    "json": {
+        "frequency": 139,
+        "weighted_degree": 495,
+        "betweenness": 0.02269215520142628,
+        "pagerank": 0.007580530010232981,
+        "community": 1
+    },
+    "html5": {
+        "frequency": 133,
+        "weighted_degree": 431,
+        "betweenness": 0.00041594245982852555,
+        "pagerank": 0.006686033675059706,
+        "community": 1
+    },
+    "algorithms": {
+        "frequency": 198,
+        "weighted_degree": 610,
+        "betweenness": 0.008325724359447412,
+        "pagerank": 0.008697667741722625,
+        "community": 1
+    },
+    "sql server": {
+        "frequency": 154,
+        "weighted_degree": 360,
+        "betweenness": 0.0044649701433350335,
+        "pagerank": 0.006138170283636799,
+        "community": 1
+    },
+    "sql": {
+        "frequency": 1009,
+        "weighted_degree": 3020,
+        "betweenness": 0.0018229273109486059,
+        "pagerank": 0.03913620235359285,
+        "community": 1
+    },
+    "seo": {
+        "frequency": 516,
+        "weighted_degree": 1063,
+        "betweenness": 0.009599510792802662,
+        "pagerank": 0.01691785889185232,
+        "community": 0
+    },
+    "online marketing": {
+        "frequency": 164,
+        "weighted_degree": 317,
+        "betweenness": 0.003271519543253681,
+        "pagerank": 0.006033253937596871,
+        "community": 0
+    },
+    "spark": {
+        "frequency": 305,
+        "weighted_degree": 1241,
+        "betweenness": 0.00028181710195979316,
+        "pagerank": 0.015582039947766899,
+        "community": 1
+    },
+    "networking": {
+        "frequency": 130,
+        "weighted_degree": 118,
+        "betweenness": 0.01779648266074527,
+        "pagerank": 0.003271352483520105,
+        "community": 2
+    },
+    "hadoop": {
+        "frequency": 323,
+        "weighted_degree": 1221,
+        "betweenness": 4.867266772028676e-05,
+        "pagerank": 0.015442321193970682,
+        "community": 1
+    },
+    "business analytics": {
+        "frequency": 120,
+        "weighted_degree": 208,
+        "betweenness": 0.029073573334241428,
+        "pagerank": 0.00426378255933511,
+        "community": 0
+    },
+    "product management": {
+        "frequency": 218,
+        "weighted_degree": 199,
+        "betweenness": 0.003604506784448206,
+        "pagerank": 0.004598555822102016,
+        "community": 0
+    },
+    "web technologies": {
+        "frequency": 179,
+        "weighted_degree": 352,
+        "betweenness": 0.013221373778522632,
+        "pagerank": 0.006160187793520242,
+        "community": 1
+    },
+    "outsourcing": {
+        "frequency": 445,
+        "weighted_degree": 1044,
+        "betweenness": 0.0038754641124057795,
+        "pagerank": 0.015591748445648474,
+        "community": 2
+    },
+    "business development": {
+        "frequency": 293,
+        "weighted_degree": 319,
+        "betweenness": 0.0028500532936309732,
+        "pagerank": 0.006738086133814237,
+        "community": 0
+    },
+    "finance": {
+        "frequency": 811,
+        "weighted_degree": 1188,
+        "betweenness": 0.019978261024507032,
+        "pagerank": 0.021277371644579626,
+        "community": 0
+    },
+    "data analysis": {
+        "frequency": 721,
+        "weighted_degree": 1508,
+        "betweenness": 0.004186935169019295,
+        "pagerank": 0.021129560610245488,
+        "community": 0
+    },
+    "linux": {
+        "frequency": 183,
+        "weighted_degree": 337,
+        "betweenness": 0.03034937744551786,
+        "pagerank": 0.005823469186776289,
+        "community": 1
+    },
+    "data warehousing": {
+        "frequency": 150,
+        "weighted_degree": 301,
+        "betweenness": 0.0074770122224223495,
+        "pagerank": 0.005468544463668147,
+        "community": 1
+    },
+    "project management": {
+        "frequency": 575,
+        "weighted_degree": 635,
+        "betweenness": 0.022622118469078113,
+        "pagerank": 0.010679925081557325,
+        "community": 0
+    },
+    "python": {
+        "frequency": 939,
+        "weighted_degree": 3175,
+        "betweenness": 0.004029128289636174,
+        "pagerank": 0.03891394175325239,
+        "community": 1
+    },
+    "core java": {
+        "frequency": 170,
+        "weighted_degree": 384,
+        "betweenness": 0.010803849266311573,
+        "pagerank": 0.006178295951782589,
+        "community": 1
+    },
+    "j2ee": {
+        "frequency": 150,
+        "weighted_degree": 403,
+        "betweenness": 0.0020228870335642813,
+        "pagerank": 0.006481433640182915,
+        "community": 1
+    },
+    "sas": {
+        "frequency": 712,
+        "weighted_degree": 1897,
+        "betweenness": 0.013846414674715282,
+        "pagerank": 0.02494110614292021,
+        "community": 1
+    },
+    "tableau": {
+        "frequency": 191,
+        "weighted_degree": 447,
+        "betweenness": 0.005298683455791954,
+        "pagerank": 0.006923971524334302,
+        "community": 1
+    },
+    "java": {
+        "frequency": 752,
+        "weighted_degree": 2344,
+        "betweenness": 0.0026909376202389336,
+        "pagerank": 0.029809588464263567,
+        "community": 1
+    },
+    "financial analysis": {
+        "frequency": 301,
+        "weighted_degree": 464,
+        "betweenness": 0.0026652270680743305,
+        "pagerank": 0.009079252525450466,
+        "community": 0
+    },
+    "advanced excel": {
+        "frequency": 147,
+        "weighted_degree": 250,
+        "betweenness": 0.007337402672284183,
+        "pagerank": 0.0048426930737545245,
+        "community": 0
+    },
+    "scala": {
+        "frequency": 159,
+        "weighted_degree": 714,
+        "betweenness": 0.0009329140683001875,
+        "pagerank": 0.009478366385925332,
+        "community": 1
+    },
+    "financial planning": {
+        "frequency": 162,
+        "weighted_degree": 308,
+        "betweenness": 0.0028794347340360027,
+        "pagerank": 0.006451740355277883,
+        "community": 0
+    },
+    "sales": {
+        "frequency": 432,
+        "weighted_degree": 551,
+        "betweenness": 0.0284481495083149,
+        "pagerank": 0.010209829757567984,
+        "community": 0
+    },
+    "budgeting": {
+        "frequency": 275,
+        "weighted_degree": 495,
+        "betweenness": 0.004250457397745021,
+        "pagerank": 0.009596047505644138,
+        "community": 0
+    },
+    "business analysis": {
+        "frequency": 730,
+        "weighted_degree": 822,
+        "betweenness": 0.015020865580100531,
+        "pagerank": 0.013330516547047097,
+        "community": 0
+    },
+    "customer service": {
+        "frequency": 137,
+        "weighted_degree": 152,
+        "betweenness": 0.011798391395961061,
+        "pagerank": 0.004499544852024042,
+        "community": 0
+    },
+    "digital marketing": {
+        "frequency": 612,
+        "weighted_degree": 1051,
+        "betweenness": 0.01754597963068963,
+        "pagerank": 0.01697452575701633,
+        "community": 0
+    },
+    "deep learning": {
+        "frequency": 163,
+        "weighted_degree": 439,
+        "betweenness": 0.0024559360855166933,
+        "pagerank": 0.00636765563993594,
+        "community": 1
+    },
+    "excel": {
+        "frequency": 429,
+        "weighted_degree": 929,
+        "betweenness": 0.007865808345737932,
+        "pagerank": 0.013717808901084578,
+        "community": 0
+    },
+    "forecasting": {
+        "frequency": 203,
+        "weighted_degree": 423,
+        "betweenness": 0.005566073364470016,
+        "pagerank": 0.007968774293405773,
+        "community": 0
+    },
+    "business intelligence": {
+        "frequency": 203,
+        "weighted_degree": 446,
+        "betweenness": 0.008897036706098128,
+        "pagerank": 0.00723238259725884,
+        "community": 1
+    },
+    "analytical": {
+        "frequency": 257,
+        "weighted_degree": 490,
+        "betweenness": 0.009367848145991542,
+        "pagerank": 0.008538767969851856,
+        "community": 0
+    },
+    "javascript": {
+        "frequency": 561,
+        "weighted_degree": 1733,
+        "betweenness": 0.014232669590255266,
+        "pagerank": 0.022870215439492757,
+        "community": 1
+    },
+    "machine learning": {
+        "frequency": 724,
+        "weighted_degree": 2259,
+        "betweenness": 0.009848481894922694,
+        "pagerank": 0.027620987906879137,
+        "community": 1
+    },
+    "business analyst": {
+        "frequency": 174,
+        "weighted_degree": 225,
+        "betweenness": 0.0198575530960477,
+        "pagerank": 0.004583656366837174,
+        "community": 2
+    },
+    "auditing": {
+        "frequency": 287,
+        "weighted_degree": 375,
+        "betweenness": 0.0023516363352534884,
+        "pagerank": 0.007360630520486979,
+        "community": 0
+    },
+    "market research": {
+        "frequency": 285,
+        "weighted_degree": 287,
+        "betweenness": 0.01845207039826478,
+        "pagerank": 0.006175334609853082,
+        "community": 0
+    },
+    "banking": {
+        "frequency": 189,
+        "weighted_degree": 337,
+        "betweenness": 0.015983951341498246,
+        "pagerank": 0.006226157564012185,
+        "community": 0
+    },
+    "software development": {
+        "frequency": 196,
+        "weighted_degree": 351,
+        "betweenness": 0.006495794876841075,
+        "pagerank": 0.005955165477234234,
+        "community": 1
+    },
+    "big data": {
+        "frequency": 304,
+        "weighted_degree": 914,
+        "betweenness": 0.01609689072203786,
+        "pagerank": 0.012211502014542401,
+        "community": 1
+    },
+    "nlp": {
+        "frequency": 163,
+        "weighted_degree": 490,
+        "betweenness": 0.008452734943411772,
+        "pagerank": 0.007027480644115191,
+        "community": 1
+    },
+    "rest": {
+        "frequency": 150,
+        "weighted_degree": 506,
+        "betweenness": 0.006168217979543372,
+        "pagerank": 0.007724856302587035,
+        "community": 1
+    },
+    "ppc": {
+        "frequency": 134,
+        "weighted_degree": 352,
+        "betweenness": 0.005767137631577187,
+        "pagerank": 0.006595309970436238,
+        "community": 0
+    },
+    "team management": {
+        "frequency": 118,
+        "weighted_degree": 141,
+        "betweenness": 0.023134995061780673,
+        "pagerank": 0.003707876779099461,
+        "community": 0
+    },
+    "html": {
+        "frequency": 314,
+        "weighted_degree": 1003,
+        "betweenness": 0.011799747315578228,
+        "pagerank": 0.013894768910702798,
+        "community": 1
+    },
+    "bpo": {
+        "frequency": 122,
+        "weighted_degree": 130,
+        "betweenness": 0.0818306747633655,
+        "pagerank": 0.004119747279377958,
+        "community": 0
+    }
+}

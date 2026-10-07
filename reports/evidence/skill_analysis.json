@@ -1,0 +1,962 @@
+{
+    "skill_frequencies": {
+        "analytics": 1048,
+        "sql": 1009,
+        "python": 939,
+        "finance": 811,
+        "java": 752,
+        "business analysis": 730,
+        "machine learning": 724,
+        "data analysis": 721,
+        "r": 719,
+        "sas": 715,
+        "digital marketing": 612,
+        "project management": 575,
+        "c": 566,
+        "javascript": 561,
+        "data analytics": 526,
+        "seo": 517,
+        "outsourcing": 445,
+        "sales": 432,
+        "excel": 429,
+        "accounting": 398,
+        "marketing": 363,
+        "operations": 360,
+        "business process": 329,
+        "hadoop": 323,
+        "html": 314,
+        "spark": 305,
+        "big data": 305,
+        "financial analysis": 301,
+        "data science": 298,
+        "business development": 293,
+        "data mining": 291,
+        "auditing": 287,
+        "market research": 285,
+        "google analytics": 284,
+        "budgeting": 275,
+        "sem": 265,
+        "analytical": 257,
+        "css": 244,
+        "consulting": 228,
+        "mysql": 222,
+        "product management": 218,
+        "jquery": 211,
+        "hive": 210,
+        "social media": 208,
+        "business intelligence": 203,
+        "forecasting": 203,
+        "algorithms": 198,
+        "strategy": 198,
+        "software development": 196,
+        "nosql": 196,
+        "tableau": 191,
+        "banking": 189,
+        "linux": 183,
+        "hr": 180,
+        "web technologies": 179,
+        "predictive modeling": 175,
+        "data management": 174,
+        "recruitment": 174,
+        "business analyst": 174,
+        "core java": 170,
+        "xml": 170,
+        "oracle": 165,
+        "data modeling": 164,
+        "online marketing": 164,
+        "deep learning": 163,
+        "nlp": 163,
+        "financial planning": 162,
+        "predictive analytics": 161,
+        "scala": 159,
+        "communication skills": 159,
+        "financial modelling": 157,
+        "risk management": 157,
+        "google adwords": 155,
+        "mis": 155,
+        "sql server": 154,
+        "etl": 153,
+        "rest": 150,
+        "j2ee": 150,
+        "data warehousing": 150,
+        "net": 149,
+        "statistical modeling": 148,
+        "advanced excel": 147,
+        "agile": 140,
+        "json": 139,
+        "customer service": 137,
+        "data structures": 135,
+        "ppc": 134,
+        "html5": 133,
+        "php": 131,
+        "credit risk": 131,
+        "web services": 130,
+        "networking": 130,
+        "technical support": 129,
+        "statistics": 126,
+        "research analysis": 125,
+        "sap": 125,
+        "analytical skills": 125,
+        "bpo": 122,
+        "business analytics": 120,
+        "team management": 118
+    },
+    "role_skill_associations": {
+        "Other": {
+            "finance": 638,
+            "analytics": 633,
+            "digital marketing": 527,
+            "sql": 475,
+            "seo": 454,
+            "project management": 424,
+            "outsourcing": 393,
+            "sas": 376,
+            "sales": 347,
+            "python": 336,
+            "data analysis": 324,
+            "accounting": 321,
+            "marketing": 302,
+            "operations": 300,
+            "r": 272,
+            "data analytics": 268,
+            "java": 263,
+            "financial analysis": 251,
+            "business process": 249,
+            "auditing": 243
+        },
+        "Software Engineer": {
+            "javascript": 250,
+            "java": 208,
+            "c": 172,
+            "css": 109,
+            "sql": 108,
+            "jquery": 98,
+            "html": 97,
+            "python": 94,
+            "software development": 83,
+            "angularjs": 78,
+            "software engineering": 73,
+            "mysql": 70,
+            "core java": 69,
+            "html5": 65,
+            "sql server": 64,
+            "json": 63,
+            "rest": 61,
+            "j2ee": 58,
+            "ajax": 56,
+            "php": 55
+        },
+        "Data Scientist": {
+            "machine learning": 227,
+            "python": 207,
+            "r": 178,
+            "data science": 165,
+            "deep learning": 88,
+            "sql": 76,
+            "data scientist": 70,
+            "data mining": 69,
+            "nlp": 66,
+            "sas": 57,
+            "analytics": 55,
+            "java": 52,
+            "data analysis": 47,
+            "hadoop": 46,
+            "spark": 42,
+            "predictive analytics": 41,
+            "scala": 37,
+            "predictive modeling": 37,
+            "c": 34,
+            "neural networks": 34
+        },
+        "Data Engineer": {
+            "hadoop": 157,
+            "spark": 144,
+            "big data": 138,
+            "hive": 108,
+            "java": 95,
+            "sql": 91,
+            "python": 79,
+            "etl": 47,
+            "nosql": 47,
+            "scala": 44,
+            "hbase": 40,
+            "machine learning": 39,
+            "data modeling": 38,
+            "hdfs": 37,
+            "pig": 36,
+            "r": 34,
+            "data analysis": 33,
+            "mapreduce": 32,
+            "analytics": 31,
+            "big data analytics": 30
+        },
+        "Business Analyst": {
+            "business analysis": 417,
+            "business analyst": 115,
+            "sql": 104,
+            "analytics": 103,
+            "finance": 97,
+            "sas": 88,
+            "r": 78,
+            "data analysis": 74,
+            "python": 74,
+            "data entry": 69,
+            "part time": 68,
+            "freelancing": 67,
+            "work from home": 67,
+            "present job": 66,
+            "java": 66,
+            "project management": 59,
+            "data analytics": 55,
+            "javascript": 53,
+            "excel": 53,
+            "machine learning": 48
+        },
+        "ML Engineer": {
+            "machine learning": 169,
+            "analytics": 164,
+            "sas": 153,
+            "r": 127,
+            "python": 126,
+            "business analysis": 101,
+            "sql": 99,
+            "data analytics": 87,
+            "data analysis": 77,
+            "c": 72,
+            "excel": 72,
+            "finance": 62,
+            "project management": 61,
+            "java": 60,
+            "digital marketing": 52,
+            "data mining": 52,
+            "javascript": 48,
+            "tableau": 47,
+            "nlp": 46,
+            "banking": 41
+        },
+        "Data Analyst": {
+            "data analysis": 130,
+            "sql": 56,
+            "excel": 48,
+            "data analytics": 45,
+            "data analyst": 28,
+            "r": 26,
+            "data mining": 23,
+            "python": 23,
+            "analytics": 22,
+            "advanced excel": 20,
+            "data visualization": 18,
+            "business intelligence": 17,
+            "mis": 17,
+            "tableau": 16,
+            "macros": 15,
+            "business analysis": 15,
+            "reporting": 15,
+            "sas": 14,
+            "mysql": 13,
+            "data management": 11
+        }
+    },
+    "mapped_skills": [
+        {
+            "original_skill": "Oracle SQL...",
+            "normalized_skill": "oracle sql",
+            "canonical_skill": "oracle sql",
+            "dimension": "coding",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "PLSQL",
+            "normalized_skill": "plsql",
+            "canonical_skill": "plsql",
+            "dimension": "coding",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "PL",
+            "normalized_skill": "pl",
+            "canonical_skill": "pl",
+            "dimension": "unmapped",
+            "confidence": 0.5
+        },
+        {
+            "original_skill": "Oracle Forms",
+            "normalized_skill": "oracle forms",
+            "canonical_skill": "oracle forms",
+            "dimension": "coding",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "Oracle Reports",
+            "normalized_skill": "oracle reports",
+            "canonical_skill": "oracle reports",
+            "dimension": "coding",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "oracle workflow",
+            "normalized_skill": "oracle workflow",
+            "canonical_skill": "oracle workflow",
+            "dimension": "coding",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "Javascript",
+            "normalized_skill": "javascript",
+            "canonical_skill": "javascript",
+            "dimension": "coding",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "HTML",
+            "normalized_skill": "html",
+            "canonical_skill": "html",
+            "dimension": "unmapped",
+            "confidence": 0.5
+        },
+        {
+            "original_skill": "JQuery",
+            "normalized_skill": "jquery",
+            "canonical_skill": "jquery",
+            "dimension": "coding",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "web development",
+            "normalized_skill": "web development",
+            "canonical_skill": "web development",
+            "dimension": "unmapped",
+            "confidence": 0.5
+        },
+        {
+            "original_skill": "play framework",
+            "normalized_skill": "play framework",
+            "canonical_skill": "play framework",
+            "dimension": "coding",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "MVC...",
+            "normalized_skill": "mvc",
+            "canonical_skill": "mvc",
+            "dimension": "unmapped",
+            "confidence": 0.5
+        },
+        {
+            "original_skill": "Rest",
+            "normalized_skill": "rest",
+            "canonical_skill": "rest",
+            "dimension": "coding",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "snow",
+            "normalized_skill": "snow",
+            "canonical_skill": "snow",
+            "dimension": "unmapped",
+            "confidence": 0.5
+        },
+        {
+            "original_skill": "ServiceNow",
+            "normalized_skill": "servicenow",
+            "canonical_skill": "servicenow",
+            "dimension": "coding",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "Servicenow Developer",
+            "normalized_skill": "servicenow developer",
+            "canonical_skill": "servicenow developer",
+            "dimension": "coding",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "QTP",
+            "normalized_skill": "qtp",
+            "canonical_skill": "qtp",
+            "dimension": "unmapped",
+            "confidence": 0.5
+        },
+        {
+            "original_skill": "Flex",
+            "normalized_skill": "flex",
+            "canonical_skill": "flex",
+            "dimension": "unmapped",
+            "confidence": 0.5
+        },
+        {
+            "original_skill": "LAN",
+            "normalized_skill": "lan",
+            "canonical_skill": "lan",
+            "dimension": "unmapped",
+            "confidence": 0.5
+        },
+        {
+            "original_skill": "Application support",
+            "normalized_skill": "application support",
+            "canonical_skill": "application support",
+            "dimension": "coding",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "Performance Testing",
+            "normalized_skill": "performance testing",
+            "canonical_skill": "performance testing",
+            "dimension": "coding",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "Eclipse...",
+            "normalized_skill": "eclipse",
+            "canonical_skill": "eclipse",
+            "dimension": "unmapped",
+            "confidence": 0.5
+        },
+        {
+            "original_skill": "hypermesh",
+            "normalized_skill": "hypermesh",
+            "canonical_skill": "hypermesh",
+            "dimension": "coding",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "ls - dyna",
+            "normalized_skill": "ls  dyna",
+            "canonical_skill": "ls  dyna",
+            "dimension": "unmapped",
+            "confidence": 0.5
+        },
+        {
+            "original_skill": "nastran",
+            "normalized_skill": "nastran",
+            "canonical_skill": "nastran",
+            "dimension": "coding",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "abaqus",
+            "normalized_skill": "abaqus",
+            "canonical_skill": "abaqus",
+            "dimension": "unmapped",
+            "confidence": 0.5
+        },
+        {
+            "original_skill": "Fatigue",
+            "normalized_skill": "fatigue",
+            "canonical_skill": "fatigue",
+            "dimension": "unmapped",
+            "confidence": 0.5
+        },
+        {
+            "original_skill": "Durability...",
+            "normalized_skill": "durability",
+            "canonical_skill": "durability",
+            "dimension": "coding",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "NVH",
+            "normalized_skill": "nvh",
+            "canonical_skill": "nvh",
+            "dimension": "unmapped",
+            "confidence": 0.5
+        },
+        {
+            "original_skill": "FEA",
+            "normalized_skill": "fea",
+            "canonical_skill": "fea",
+            "dimension": "unmapped",
+            "confidence": 0.5
+        },
+        {
+            "original_skill": "Manager - Portfolio Analytics",
+            "normalized_skill": "manager  portfolio analytics",
+            "canonical_skill": "manager  portfolio analytics",
+            "dimension": "coding",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "Portfolio Analytics",
+            "normalized_skill": "portfolio analytics",
+            "canonical_skill": "portfolio analytics",
+            "dimension": "coding",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "Analytics",
+            "normalized_skill": "analytics",
+            "canonical_skill": "analytics",
+            "dimension": "unmapped",
+            "confidence": 0.5
+        },
+        {
+            "original_skill": "project management",
+            "normalized_skill": "project management",
+            "canonical_skill": "project management",
+            "dimension": "coding",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "Client Interfacing",
+            "normalized_skill": "client interfacing",
+            "canonical_skill": "client interfacing",
+            "dimension": "coding",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "Client management",
+            "normalized_skill": "client management",
+            "canonical_skill": "client management",
+            "dimension": "unmapped",
+            "confidence": 0.5
+        },
+        {
+            "original_skill": "Data Analytics...",
+            "normalized_skill": "data analytics",
+            "canonical_skill": "data analytics",
+            "dimension": "unmapped",
+            "confidence": 0.5
+        },
+        {
+            "original_skill": "analysis",
+            "normalized_skill": "analysis",
+            "canonical_skill": "analysis",
+            "dimension": "unmapped",
+            "confidence": 0.5
+        },
+        {
+            "original_skill": "Research",
+            "normalized_skill": "research",
+            "canonical_skill": "research",
+            "dimension": "coding",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "Analyst...",
+            "normalized_skill": "analyst",
+            "canonical_skill": "analyst",
+            "dimension": "unmapped",
+            "confidence": 0.5
+        },
+        {
+            "original_skill": "research analyst",
+            "normalized_skill": "research analyst",
+            "canonical_skill": "research analyst",
+            "dimension": "coding",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "Research Associate",
+            "normalized_skill": "research associate",
+            "canonical_skill": "research associate",
+            "dimension": "coding",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "seo",
+            "normalized_skill": "seo",
+            "canonical_skill": "seo",
+            "dimension": "unmapped",
+            "confidence": 0.5
+        },
+        {
+            "original_skill": "digital marketing...",
+            "normalized_skill": "digital marketing",
+            "canonical_skill": "digital marketing",
+            "dimension": "coding",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "search engine marketing",
+            "normalized_skill": "search engine marketing",
+            "canonical_skill": "search engine marketing",
+            "dimension": "coding",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "google adwords",
+            "normalized_skill": "google adwords",
+            "canonical_skill": "google adwords",
+            "dimension": "coding",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "sem",
+            "normalized_skill": "sem",
+            "canonical_skill": "sem",
+            "dimension": "unmapped",
+            "confidence": 0.5
+        },
+        {
+            "original_skill": "recovery",
+            "normalized_skill": "recovery",
+            "canonical_skill": "recovery",
+            "dimension": "coding",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "team handling",
+            "normalized_skill": "team handling",
+            "canonical_skill": "team handling",
+            "dimension": "unmapped",
+            "confidence": 0.5
+        },
+        {
+            "original_skill": "Data Analysis",
+            "normalized_skill": "data analysis",
+            "canonical_skill": "data analysis",
+            "dimension": "unmapped",
+            "confidence": 0.5
+        },
+        {
+            "original_skill": "team leader...",
+            "normalized_skill": "team leader",
+            "canonical_skill": "team leader",
+            "dimension": "coding",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "collection",
+            "normalized_skill": "collection",
+            "canonical_skill": "collection",
+            "dimension": "unmapped",
+            "confidence": 0.5
+        },
+        {
+            "original_skill": "data mining",
+            "normalized_skill": "data mining",
+            "canonical_skill": "data mining",
+            "dimension": "unmapped",
+            "confidence": 0.5
+        },
+        {
+            "original_skill": "SQL",
+            "normalized_skill": "sql",
+            "canonical_skill": "sql",
+            "dimension": "coding",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "trend analysis",
+            "normalized_skill": "trend analysis",
+            "canonical_skill": "trend analysis",
+            "dimension": "coding",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "data science",
+            "normalized_skill": "data science",
+            "canonical_skill": "data science",
+            "dimension": "unmapped",
+            "confidence": 0.5
+        },
+        {
+            "original_skill": "SCALA",
+            "normalized_skill": "scala",
+            "canonical_skill": "scala",
+            "dimension": "coding",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "machine learning",
+            "normalized_skill": "machine learning",
+            "canonical_skill": "machine learning",
+            "dimension": "coding",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "Java",
+            "normalized_skill": "java",
+            "canonical_skill": "java",
+            "dimension": "coding",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "Python",
+            "normalized_skill": "python",
+            "canonical_skill": "python",
+            "dimension": "coding",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "R",
+            "normalized_skill": "r",
+            "canonical_skill": "r",
+            "dimension": "coding",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "Pig",
+            "normalized_skill": "pig",
+            "canonical_skill": "pig",
+            "dimension": "unmapped",
+            "confidence": 0.5
+        },
+        {
+            "original_skill": "J2Ee",
+            "normalized_skill": "j2ee",
+            "canonical_skill": "j2ee",
+            "dimension": "unmapped",
+            "confidence": 0.5
+        },
+        {
+            "original_skill": "Spring Framework",
+            "normalized_skill": "spring framework",
+            "canonical_skill": "spring framework",
+            "dimension": "coding",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "hadoop",
+            "normalized_skill": "hadoop",
+            "canonical_skill": "hadoop",
+            "dimension": "big_data",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "Mapreduce",
+            "normalized_skill": "mapreduce",
+            "canonical_skill": "mapreduce",
+            "dimension": "coding",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "Spark",
+            "normalized_skill": "spark",
+            "canonical_skill": "spark",
+            "dimension": "big_data",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "HBase",
+            "normalized_skill": "hbase",
+            "canonical_skill": "hbase",
+            "dimension": "unmapped",
+            "confidence": 0.5
+        },
+        {
+            "original_skill": "big data",
+            "normalized_skill": "big data",
+            "canonical_skill": "big data",
+            "dimension": "big_data",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "POC",
+            "normalized_skill": "poc",
+            "canonical_skill": "poc",
+            "dimension": "unmapped",
+            "confidence": 0.5
+        },
+        {
+            "original_skill": "Data Modeling",
+            "normalized_skill": "data modeling",
+            "canonical_skill": "data modeling",
+            "dimension": "unmapped",
+            "confidence": 0.5
+        },
+        {
+            "original_skill": "data management",
+            "normalized_skill": "data management",
+            "canonical_skill": "data management",
+            "dimension": "unmapped",
+            "confidence": 0.5
+        },
+        {
+            "original_skill": "process monitoring",
+            "normalized_skill": "process monitoring",
+            "canonical_skill": "process monitoring",
+            "dimension": "coding",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "cost reduction initiatives",
+            "normalized_skill": "cost reduction initiatives",
+            "canonical_skill": "cost reduction initiatives",
+            "dimension": "coding",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "vendor contracts...",
+            "normalized_skill": "vendor contracts",
+            "canonical_skill": "vendor contracts",
+            "dimension": "coding",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "Background Verification...",
+            "normalized_skill": "background verification",
+            "canonical_skill": "background verification",
+            "dimension": "coding",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "backend",
+            "normalized_skill": "backend",
+            "canonical_skill": "backend",
+            "dimension": "unmapped",
+            "confidence": 0.5
+        },
+        {
+            "original_skill": "back office",
+            "normalized_skill": "back office",
+            "canonical_skill": "back office",
+            "dimension": "unmapped",
+            "confidence": 0.5
+        },
+        {
+            "original_skill": "back office operations",
+            "normalized_skill": "back office operations",
+            "canonical_skill": "back office operations",
+            "dimension": "coding",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "big data analytics",
+            "normalized_skill": "big data analytics",
+            "canonical_skill": "big data analytics",
+            "dimension": "big_data",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "Software Development",
+            "normalized_skill": "software development",
+            "canonical_skill": "software development",
+            "dimension": "coding",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "Content Strategy...",
+            "normalized_skill": "content strategy",
+            "canonical_skill": "content strategy",
+            "dimension": "coding",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "Digital Media",
+            "normalized_skill": "digital media",
+            "canonical_skill": "digital media",
+            "dimension": "unmapped",
+            "confidence": 0.5
+        },
+        {
+            "original_skill": "Sales",
+            "normalized_skill": "sales",
+            "canonical_skill": "sales",
+            "dimension": "unmapped",
+            "confidence": 0.5
+        },
+        {
+            "original_skill": "twitter",
+            "normalized_skill": "twitter",
+            "canonical_skill": "twitter",
+            "dimension": "coding",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "Finance",
+            "normalized_skill": "finance",
+            "canonical_skill": "finance",
+            "dimension": "unmapped",
+            "confidence": 0.5
+        },
+        {
+            "original_skill": "auditing",
+            "normalized_skill": "auditing",
+            "canonical_skill": "auditing",
+            "dimension": "unmapped",
+            "confidence": 0.5
+        },
+        {
+            "original_skill": "Accounting",
+            "normalized_skill": "accounting",
+            "canonical_skill": "accounting",
+            "dimension": "unmapped",
+            "confidence": 0.5
+        },
+        {
+            "original_skill": "Financial Reporting",
+            "normalized_skill": "financial reporting",
+            "canonical_skill": "financial reporting",
+            "dimension": "coding",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "Financial Analysis",
+            "normalized_skill": "financial analysis",
+            "canonical_skill": "financial analysis",
+            "dimension": "unmapped",
+            "confidence": 0.5
+        },
+        {
+            "original_skill": "Product Sales",
+            "normalized_skill": "product sales",
+            "canonical_skill": "product sales",
+            "dimension": "coding",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "Product Marketing",
+            "normalized_skill": "product marketing",
+            "canonical_skill": "product marketing",
+            "dimension": "coding",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "Product Management",
+            "normalized_skill": "product management",
+            "canonical_skill": "product management",
+            "dimension": "coding",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "sales training",
+            "normalized_skill": "sales training",
+            "canonical_skill": "sales training",
+            "dimension": "coding",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "Credit Management",
+            "normalized_skill": "credit management",
+            "canonical_skill": "credit management",
+            "dimension": "coding",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "Home Loans",
+            "normalized_skill": "home loans",
+            "canonical_skill": "home loans",
+            "dimension": "unmapped",
+            "confidence": 0.5
+        },
+        {
+            "original_skill": "credit manager",
+            "normalized_skill": "credit manager",
+            "canonical_skill": "credit manager",
+            "dimension": "coding",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "Credit Analyst",
+            "normalized_skill": "credit analyst",
+            "canonical_skill": "credit analyst",
+            "dimension": "coding",
+            "confidence": 1.0
+        },
+        {
+            "original_skill": "head hunting...",
+            "normalized_skill": "head hunting",
+            "canonical_skill": "head hunting",
+            "dimension": "unmapped",
+            "confidence": 0.5
+        },
+        {
+            "original_skill": "recruitment",
+            "normalized_skill": "recruitment",
+            "canonical_skill": "recruitment",
+            "dimension": "coding",
+            "confidence": 1.0
+        }
+    ]
+}

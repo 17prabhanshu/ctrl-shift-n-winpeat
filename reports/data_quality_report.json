@@ -1,0 +1,52 @@
+{
+    "ds_jobs": {
+        "missing_values": {
+            "reference_no": 0,
+            "company_name": 0,
+            "job_title": 0,
+            "min_experience": 0,
+            "avg_salary": 0,
+            "min_salary": 0,
+            "max_salary": 0,
+            "num_of_jobs": 0
+        },
+        "duplicate_rows": 0
+    },
+    "analytics_jobs": {
+        "missing_values": {
+            "s_no": 0,
+            "experience": 0,
+            "job_description": 3508,
+            "job_desig": 0,
+            "job_type": 12011,
+            "key_skills": 1,
+            "location": 0,
+            "salary": 0
+        },
+        "duplicate_rows": 0
+    },
+    "jds_skills": {
+        "missing_values": {
+            "id": 0,
+            "big_data_skills": 0,
+            "maths-stats_skills": 0,
+            "coding_skills": 0,
+            "ai_and_ml_skills": 0,
+            "dashboard_and_storytelling_skills": 0,
+            "salary_hike_high_or_low": 0
+        },
+        "duplicate_rows": 0
+    },
+    "sds_personality": {
+        "missing_values": {
+            "id": 0,
+            "neuroticism": 0,
+            " extraversion": 0,
+            "openness_to_experience": 0,
+            "agreeableness": 0,
+            "conscientiousness": 0,
+            "success_ classification_ high_low": 0
+        },
+        "duplicate_rows": 0
+    }
+}

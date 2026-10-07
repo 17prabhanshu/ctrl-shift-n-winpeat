@@ -1,0 +1,14 @@
+{
+    "jds": {
+        "best_single_model": "LogisticRegression",
+        "best_single_auc": 0.8936280614362807,
+        "ensemble_auc": 0.8695516811955168,
+        "kept_ensemble": false
+    },
+    "sds": {
+        "best_single_model": "RandomForest",
+        "best_single_auc": 0.9945820433436532,
+        "ensemble_auc": 0.9891640866873064,
+        "kept_ensemble": false
+    }
+}

@@ -1,0 +1,6 @@
+{
+    "level1_accuracy": 0.68,
+    "level2_accuracy": 0.66,
+    "level3_accuracy": 0.48,
+    "gold_standard_size": 50
+}

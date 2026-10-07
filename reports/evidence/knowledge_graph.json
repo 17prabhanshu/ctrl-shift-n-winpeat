@@ -1,0 +1,1329 @@
+{
+    "nodes": [
+        {
+            "id": "Other",
+            "type": "ROLE",
+            "demand": 10075
+        },
+        {
+            "id": "Salary_Other",
+            "type": "SALARY",
+            "value": 1211806.4516129033
+        },
+        {
+            "id": "Exp_Other",
+            "type": "EXPERIENCE",
+            "value": 6.278014888337469
+        },
+        {
+            "id": "finance",
+            "type": "SKILL"
+        },
+        {
+            "id": "analytics",
+            "type": "SKILL"
+        },
+        {
+            "id": "digital marketing",
+            "type": "SKILL"
+        },
+        {
+            "id": "sql",
+            "type": "SKILL"
+        },
+        {
+            "id": "seo",
+            "type": "SKILL"
+        },
+        {
+            "id": "project management",
+            "type": "SKILL"
+        },
+        {
+            "id": "outsourcing",
+            "type": "SKILL"
+        },
+        {
+            "id": "sas",
+            "type": "SKILL"
+        },
+        {
+            "id": "sales",
+            "type": "SKILL"
+        },
+        {
+            "id": "python",
+            "type": "SKILL"
+        },
+        {
+            "id": "data analysis",
+            "type": "SKILL"
+        },
+        {
+            "id": "accounting",
+            "type": "SKILL"
+        },
+        {
+            "id": "marketing",
+            "type": "SKILL"
+        },
+        {
+            "id": "operations",
+            "type": "SKILL"
+        },
+        {
+            "id": "r",
+            "type": "SKILL"
+        },
+        {
+            "id": "data analytics",
+            "type": "SKILL"
+        },
+        {
+            "id": "java",
+            "type": "SKILL"
+        },
+        {
+            "id": "financial analysis",
+            "type": "SKILL"
+        },
+        {
+            "id": "business process",
+            "type": "SKILL"
+        },
+        {
+            "id": "auditing",
+            "type": "SKILL"
+        },
+        {
+            "id": "Business Analyst",
+            "type": "ROLE",
+            "demand": 1831
+        },
+        {
+            "id": "Salary_Business Analyst",
+            "type": "SALARY",
+            "value": 1185882.0316766794
+        },
+        {
+            "id": "Exp_Business Analyst",
+            "type": "EXPERIENCE",
+            "value": 5.845712725286728
+        },
+        {
+            "id": "business analysis",
+            "type": "SKILL"
+        },
+        {
+            "id": "business analyst",
+            "type": "SKILL"
+        },
+        {
+            "id": "data entry",
+            "type": "SKILL"
+        },
+        {
+            "id": "part time",
+            "type": "SKILL"
+        },
+        {
+            "id": "freelancing",
+            "type": "SKILL"
+        },
+        {
+            "id": "work from home",
+            "type": "SKILL"
+        },
+        {
+            "id": "present job",
+            "type": "SKILL"
+        },
+        {
+            "id": "javascript",
+            "type": "SKILL"
+        },
+        {
+            "id": "excel",
+            "type": "SKILL"
+        },
+        {
+            "id": "machine learning",
+            "type": "SKILL"
+        },
+        {
+            "id": "ML Engineer",
+            "type": "ROLE",
+            "demand": 1616
+        },
+        {
+            "id": "Salary_ML Engineer",
+            "type": "SALARY",
+            "value": 1315501.2376237623
+        },
+        {
+            "id": "Exp_ML Engineer",
+            "type": "EXPERIENCE",
+            "value": 6.308787128712871
+        },
+        {
+            "id": "c",
+            "type": "SKILL"
+        },
+        {
+            "id": "data mining",
+            "type": "SKILL"
+        },
+        {
+            "id": "tableau",
+            "type": "SKILL"
+        },
+        {
+            "id": "nlp",
+            "type": "SKILL"
+        },
+        {
+            "id": "banking",
+            "type": "SKILL"
+        },
+        {
+            "id": "Software Engineer",
+            "type": "ROLE",
+            "demand": 1141
+        },
+        {
+            "id": "Salary_Software Engineer",
+            "type": "SALARY",
+            "value": 1089658.19456617
+        },
+        {
+            "id": "Exp_Software Engineer",
+            "type": "EXPERIENCE",
+            "value": 5.506573181419808
+        },
+        {
+            "id": "css",
+            "type": "SKILL"
+        },
+        {
+            "id": "jquery",
+            "type": "SKILL"
+        },
+        {
+            "id": "html",
+            "type": "SKILL"
+        },
+        {
+            "id": "software development",
+            "type": "SKILL"
+        },
+        {
+            "id": "angularjs",
+            "type": "SKILL"
+        },
+        {
+            "id": "software engineering",
+            "type": "SKILL"
+        },
+        {
+            "id": "mysql",
+            "type": "SKILL"
+        },
+        {
+            "id": "core java",
+            "type": "SKILL"
+        },
+        {
+            "id": "html5",
+            "type": "SKILL"
+        },
+        {
+            "id": "sql server",
+            "type": "SKILL"
+        },
+        {
+            "id": "json",
+            "type": "SKILL"
+        },
+        {
+            "id": "rest",
+            "type": "SKILL"
+        },
+        {
+            "id": "j2ee",
+            "type": "SKILL"
+        },
+        {
+            "id": "ajax",
+            "type": "SKILL"
+        },
+        {
+            "id": "php",
+            "type": "SKILL"
+        },
+        {
+            "id": "Data Scientist",
+            "type": "ROLE",
+            "demand": 470
+        },
+        {
+            "id": "Salary_Data Scientist",
+            "type": "SALARY",
+            "value": 1619042.5531914893
+        },
+        {
+            "id": "Exp_Data Scientist",
+            "type": "EXPERIENCE",
+            "value": 6.413829787234042
+        },
+        {
+            "id": "data science",
+            "type": "SKILL"
+        },
+        {
+            "id": "deep learning",
+            "type": "SKILL"
+        },
+        {
+            "id": "data scientist",
+            "type": "SKILL"
+        },
+        {
+            "id": "hadoop",
+            "type": "SKILL"
+        },
+        {
+            "id": "spark",
+            "type": "SKILL"
+        },
+        {
+            "id": "predictive analytics",
+            "type": "SKILL"
+        },
+        {
+            "id": "scala",
+            "type": "SKILL"
+        },
+        {
+            "id": "predictive modeling",
+            "type": "SKILL"
+        },
+        {
+            "id": "neural networks",
+            "type": "SKILL"
+        },
+        {
+            "id": "Data Engineer",
+            "type": "ROLE",
+            "demand": 413
+        },
+        {
+            "id": "Salary_Data Engineer",
+            "type": "SALARY",
+            "value": 1520338.9830508474
+        },
+        {
+            "id": "Exp_Data Engineer",
+            "type": "EXPERIENCE",
+            "value": 7.410411622276029
+        },
+        {
+            "id": "big data",
+            "type": "SKILL"
+        },
+        {
+            "id": "hive",
+            "type": "SKILL"
+        },
+        {
+            "id": "etl",
+            "type": "SKILL"
+        },
+        {
+            "id": "nosql",
+            "type": "SKILL"
+        },
+        {
+            "id": "hbase",
+            "type": "SKILL"
+        },
+        {
+            "id": "data modeling",
+            "type": "SKILL"
+        },
+        {
+            "id": "hdfs",
+            "type": "SKILL"
+        },
+        {
+            "id": "pig",
+            "type": "SKILL"
+        },
+        {
+            "id": "mapreduce",
+            "type": "SKILL"
+        },
+        {
+            "id": "big data analytics",
+            "type": "SKILL"
+        },
+        {
+            "id": "Data Analyst",
+            "type": "ROLE",
+            "demand": 295
+        },
+        {
+            "id": "Salary_Data Analyst",
+            "type": "SALARY",
+            "value": 1015593.220338983
+        },
+        {
+            "id": "Exp_Data Analyst",
+            "type": "EXPERIENCE",
+            "value": 5.315254237288135
+        },
+        {
+            "id": "data analyst",
+            "type": "SKILL"
+        },
+        {
+            "id": "advanced excel",
+            "type": "SKILL"
+        },
+        {
+            "id": "data visualization",
+            "type": "SKILL"
+        },
+        {
+            "id": "business intelligence",
+            "type": "SKILL"
+        },
+        {
+            "id": "mis",
+            "type": "SKILL"
+        },
+        {
+            "id": "macros",
+            "type": "SKILL"
+        },
+        {
+            "id": "reporting",
+            "type": "SKILL"
+        },
+        {
+            "id": "data management",
+            "type": "SKILL"
+        }
+    ],
+    "edges": [
+        {
+            "source": "observed",
+            "target": "Salary_Other",
+            "rel": "HAS_SALARY"
+        },
+        {
+            "source": "observed",
+            "target": "Exp_Other",
+            "rel": "REQUIRES_EXPERIENCE"
+        },
+        {
+            "source": "observed",
+            "target": "finance",
+            "rel": "REQUIRES_SKILL",
+            "weight": 638
+        },
+        {
+            "source": "observed",
+            "target": "analytics",
+            "rel": "REQUIRES_SKILL",
+            "weight": 633
+        },
+        {
+            "source": "observed",
+            "target": "digital marketing",
+            "rel": "REQUIRES_SKILL",
+            "weight": 527
+        },
+        {
+            "source": "observed",
+            "target": "sql",
+            "rel": "REQUIRES_SKILL",
+            "weight": 475
+        },
+        {
+            "source": "observed",
+            "target": "seo",
+            "rel": "REQUIRES_SKILL",
+            "weight": 454
+        },
+        {
+            "source": "observed",
+            "target": "project management",
+            "rel": "REQUIRES_SKILL",
+            "weight": 424
+        },
+        {
+            "source": "observed",
+            "target": "outsourcing",
+            "rel": "REQUIRES_SKILL",
+            "weight": 393
+        },
+        {
+            "source": "observed",
+            "target": "sas",
+            "rel": "REQUIRES_SKILL",
+            "weight": 376
+        },
+        {
+            "source": "observed",
+            "target": "sales",
+            "rel": "REQUIRES_SKILL",
+            "weight": 347
+        },
+        {
+            "source": "observed",
+            "target": "python",
+            "rel": "REQUIRES_SKILL",
+            "weight": 336
+        },
+        {
+            "source": "observed",
+            "target": "data analysis",
+            "rel": "REQUIRES_SKILL",
+            "weight": 324
+        },
+        {
+            "source": "observed",
+            "target": "accounting",
+            "rel": "REQUIRES_SKILL",
+            "weight": 321
+        },
+        {
+            "source": "observed",
+            "target": "marketing",
+            "rel": "REQUIRES_SKILL",
+            "weight": 302
+        },
+        {
+            "source": "observed",
+            "target": "operations",
+            "rel": "REQUIRES_SKILL",
+            "weight": 300
+        },
+        {
+            "source": "observed",
+            "target": "r",
+            "rel": "REQUIRES_SKILL",
+            "weight": 272
+        },
+        {
+            "source": "observed",
+            "target": "data analytics",
+            "rel": "REQUIRES_SKILL",
+            "weight": 268
+        },
+        {
+            "source": "observed",
+            "target": "java",
+            "rel": "REQUIRES_SKILL",
+            "weight": 263
+        },
+        {
+            "source": "observed",
+            "target": "financial analysis",
+            "rel": "REQUIRES_SKILL",
+            "weight": 251
+        },
+        {
+            "source": "observed",
+            "target": "business process",
+            "rel": "REQUIRES_SKILL",
+            "weight": 249
+        },
+        {
+            "source": "observed",
+            "target": "auditing",
+            "rel": "REQUIRES_SKILL",
+            "weight": 243
+        },
+        {
+            "source": "observed",
+            "target": "Salary_Business Analyst",
+            "rel": "HAS_SALARY"
+        },
+        {
+            "source": "observed",
+            "target": "Exp_Business Analyst",
+            "rel": "REQUIRES_EXPERIENCE"
+        },
+        {
+            "source": "observed",
+            "target": "business analysis",
+            "rel": "REQUIRES_SKILL",
+            "weight": 417
+        },
+        {
+            "source": "observed",
+            "target": "business analyst",
+            "rel": "REQUIRES_SKILL",
+            "weight": 115
+        },
+        {
+            "source": "observed",
+            "target": "sql",
+            "rel": "REQUIRES_SKILL",
+            "weight": 104
+        },
+        {
+            "source": "observed",
+            "target": "analytics",
+            "rel": "REQUIRES_SKILL",
+            "weight": 103
+        },
+        {
+            "source": "observed",
+            "target": "finance",
+            "rel": "REQUIRES_SKILL",
+            "weight": 97
+        },
+        {
+            "source": "observed",
+            "target": "sas",
+            "rel": "REQUIRES_SKILL",
+            "weight": 88
+        },
+        {
+            "source": "observed",
+            "target": "r",
+            "rel": "REQUIRES_SKILL",
+            "weight": 78
+        },
+        {
+            "source": "observed",
+            "target": "data analysis",
+            "rel": "REQUIRES_SKILL",
+            "weight": 74
+        },
+        {
+            "source": "observed",
+            "target": "python",
+            "rel": "REQUIRES_SKILL",
+            "weight": 74
+        },
+        {
+            "source": "observed",
+            "target": "data entry",
+            "rel": "REQUIRES_SKILL",
+            "weight": 69
+        },
+        {
+            "source": "observed",
+            "target": "part time",
+            "rel": "REQUIRES_SKILL",
+            "weight": 68
+        },
+        {
+            "source": "observed",
+            "target": "freelancing",
+            "rel": "REQUIRES_SKILL",
+            "weight": 67
+        },
+        {
+            "source": "observed",
+            "target": "work from home",
+            "rel": "REQUIRES_SKILL",
+            "weight": 67
+        },
+        {
+            "source": "observed",
+            "target": "present job",
+            "rel": "REQUIRES_SKILL",
+            "weight": 66
+        },
+        {
+            "source": "observed",
+            "target": "java",
+            "rel": "REQUIRES_SKILL",
+            "weight": 66
+        },
+        {
+            "source": "observed",
+            "target": "project management",
+            "rel": "REQUIRES_SKILL",
+            "weight": 59
+        },
+        {
+            "source": "observed",
+            "target": "data analytics",
+            "rel": "REQUIRES_SKILL",
+            "weight": 55
+        },
+        {
+            "source": "observed",
+            "target": "javascript",
+            "rel": "REQUIRES_SKILL",
+            "weight": 53
+        },
+        {
+            "source": "observed",
+            "target": "excel",
+            "rel": "REQUIRES_SKILL",
+            "weight": 53
+        },
+        {
+            "source": "observed",
+            "target": "machine learning",
+            "rel": "REQUIRES_SKILL",
+            "weight": 48
+        },
+        {
+            "source": "observed",
+            "target": "Salary_ML Engineer",
+            "rel": "HAS_SALARY"
+        },
+        {
+            "source": "observed",
+            "target": "Exp_ML Engineer",
+            "rel": "REQUIRES_EXPERIENCE"
+        },
+        {
+            "source": "observed",
+            "target": "machine learning",
+            "rel": "REQUIRES_SKILL",
+            "weight": 169
+        },
+        {
+            "source": "observed",
+            "target": "analytics",
+            "rel": "REQUIRES_SKILL",
+            "weight": 164
+        },
+        {
+            "source": "observed",
+            "target": "sas",
+            "rel": "REQUIRES_SKILL",
+            "weight": 153
+        },
+        {
+            "source": "observed",
+            "target": "r",
+            "rel": "REQUIRES_SKILL",
+            "weight": 127
+        },
+        {
+            "source": "observed",
+            "target": "python",
+            "rel": "REQUIRES_SKILL",
+            "weight": 126
+        },
+        {
+            "source": "observed",
+            "target": "business analysis",
+            "rel": "REQUIRES_SKILL",
+            "weight": 101
+        },
+        {
+            "source": "observed",
+            "target": "sql",
+            "rel": "REQUIRES_SKILL",
+            "weight": 99
+        },
+        {
+            "source": "observed",
+            "target": "data analytics",
+            "rel": "REQUIRES_SKILL",
+            "weight": 87
+        },
+        {
+            "source": "observed",
+            "target": "data analysis",
+            "rel": "REQUIRES_SKILL",
+            "weight": 77
+        },
+        {
+            "source": "observed",
+            "target": "c",
+            "rel": "REQUIRES_SKILL",
+            "weight": 72
+        },
+        {
+            "source": "observed",
+            "target": "excel",
+            "rel": "REQUIRES_SKILL",
+            "weight": 72
+        },
+        {
+            "source": "observed",
+            "target": "finance",
+            "rel": "REQUIRES_SKILL",
+            "weight": 62
+        },
+        {
+            "source": "observed",
+            "target": "project management",
+            "rel": "REQUIRES_SKILL",
+            "weight": 61
+        },
+        {
+            "source": "observed",
+            "target": "java",
+            "rel": "REQUIRES_SKILL",
+            "weight": 60
+        },
+        {
+            "source": "observed",
+            "target": "digital marketing",
+            "rel": "REQUIRES_SKILL",
+            "weight": 52
+        },
+        {
+            "source": "observed",
+            "target": "data mining",
+            "rel": "REQUIRES_SKILL",
+            "weight": 52
+        },
+        {
+            "source": "observed",
+            "target": "javascript",
+            "rel": "REQUIRES_SKILL",
+            "weight": 48
+        },
+        {
+            "source": "observed",
+            "target": "tableau",
+            "rel": "REQUIRES_SKILL",
+            "weight": 47
+        },
+        {
+            "source": "observed",
+            "target": "nlp",
+            "rel": "REQUIRES_SKILL",
+            "weight": 46
+        },
+        {
+            "source": "observed",
+            "target": "banking",
+            "rel": "REQUIRES_SKILL",
+            "weight": 41
+        },
+        {
+            "source": "observed",
+            "target": "Salary_Software Engineer",
+            "rel": "HAS_SALARY"
+        },
+        {
+            "source": "observed",
+            "target": "Exp_Software Engineer",
+            "rel": "REQUIRES_EXPERIENCE"
+        },
+        {
+            "source": "observed",
+            "target": "javascript",
+            "rel": "REQUIRES_SKILL",
+            "weight": 250
+        },
+        {
+            "source": "observed",
+            "target": "java",
+            "rel": "REQUIRES_SKILL",
+            "weight": 208
+        },
+        {
+            "source": "observed",
+            "target": "c",
+            "rel": "REQUIRES_SKILL",
+            "weight": 172
+        },
+        {
+            "source": "observed",
+            "target": "css",
+            "rel": "REQUIRES_SKILL",
+            "weight": 109
+        },
+        {
+            "source": "observed",
+            "target": "sql",
+            "rel": "REQUIRES_SKILL",
+            "weight": 108
+        },
+        {
+            "source": "observed",
+            "target": "jquery",
+            "rel": "REQUIRES_SKILL",
+            "weight": 98
+        },
+        {
+            "source": "observed",
+            "target": "html",
+            "rel": "REQUIRES_SKILL",
+            "weight": 97
+        },
+        {
+            "source": "observed",
+            "target": "python",
+            "rel": "REQUIRES_SKILL",
+            "weight": 94
+        },
+        {
+            "source": "observed",
+            "target": "software development",
+            "rel": "REQUIRES_SKILL",
+            "weight": 83
+        },
+        {
+            "source": "observed",
+            "target": "angularjs",
+            "rel": "REQUIRES_SKILL",
+            "weight": 78
+        },
+        {
+            "source": "observed",
+            "target": "software engineering",
+            "rel": "REQUIRES_SKILL",
+            "weight": 73
+        },
+        {
+            "source": "observed",
+            "target": "mysql",
+            "rel": "REQUIRES_SKILL",
+            "weight": 70
+        },
+        {
+            "source": "observed",
+            "target": "core java",
+            "rel": "REQUIRES_SKILL",
+            "weight": 69
+        },
+        {
+            "source": "observed",
+            "target": "html5",
+            "rel": "REQUIRES_SKILL",
+            "weight": 65
+        },
+        {
+            "source": "observed",
+            "target": "sql server",
+            "rel": "REQUIRES_SKILL",
+            "weight": 64
+        },
+        {
+            "source": "observed",
+            "target": "json",
+            "rel": "REQUIRES_SKILL",
+            "weight": 63
+        },
+        {
+            "source": "observed",
+            "target": "rest",
+            "rel": "REQUIRES_SKILL",
+            "weight": 61
+        },
+        {
+            "source": "observed",
+            "target": "j2ee",
+            "rel": "REQUIRES_SKILL",
+            "weight": 58
+        },
+        {
+            "source": "observed",
+            "target": "ajax",
+            "rel": "REQUIRES_SKILL",
+            "weight": 56
+        },
+        {
+            "source": "observed",
+            "target": "php",
+            "rel": "REQUIRES_SKILL",
+            "weight": 55
+        },
+        {
+            "source": "observed",
+            "target": "Salary_Data Scientist",
+            "rel": "HAS_SALARY"
+        },
+        {
+            "source": "observed",
+            "target": "Exp_Data Scientist",
+            "rel": "REQUIRES_EXPERIENCE"
+        },
+        {
+            "source": "observed",
+            "target": "machine learning",
+            "rel": "REQUIRES_SKILL",
+            "weight": 227
+        },
+        {
+            "source": "observed",
+            "target": "python",
+            "rel": "REQUIRES_SKILL",
+            "weight": 207
+        },
+        {
+            "source": "observed",
+            "target": "r",
+            "rel": "REQUIRES_SKILL",
+            "weight": 178
+        },
+        {
+            "source": "observed",
+            "target": "data science",
+            "rel": "REQUIRES_SKILL",
+            "weight": 165
+        },
+        {
+            "source": "observed",
+            "target": "deep learning",
+            "rel": "REQUIRES_SKILL",
+            "weight": 88
+        },
+        {
+            "source": "observed",
+            "target": "sql",
+            "rel": "REQUIRES_SKILL",
+            "weight": 76
+        },
+        {
+            "source": "observed",
+            "target": "data scientist",
+            "rel": "REQUIRES_SKILL",
+            "weight": 70
+        },
+        {
+            "source": "observed",
+            "target": "data mining",
+            "rel": "REQUIRES_SKILL",
+            "weight": 69
+        },
+        {
+            "source": "observed",
+            "target": "nlp",
+            "rel": "REQUIRES_SKILL",
+            "weight": 66
+        },
+        {
+            "source": "observed",
+            "target": "sas",
+            "rel": "REQUIRES_SKILL",
+            "weight": 57
+        },
+        {
+            "source": "observed",
+            "target": "analytics",
+            "rel": "REQUIRES_SKILL",
+            "weight": 55
+        },
+        {
+            "source": "observed",
+            "target": "java",
+            "rel": "REQUIRES_SKILL",
+            "weight": 52
+        },
+        {
+            "source": "observed",
+            "target": "data analysis",
+            "rel": "REQUIRES_SKILL",
+            "weight": 47
+        },
+        {
+            "source": "observed",
+            "target": "hadoop",
+            "rel": "REQUIRES_SKILL",
+            "weight": 46
+        },
+        {
+            "source": "observed",
+            "target": "spark",
+            "rel": "REQUIRES_SKILL",
+            "weight": 42
+        },
+        {
+            "source": "observed",
+            "target": "predictive analytics",
+            "rel": "REQUIRES_SKILL",
+            "weight": 41
+        },
+        {
+            "source": "observed",
+            "target": "scala",
+            "rel": "REQUIRES_SKILL",
+            "weight": 37
+        },
+        {
+            "source": "observed",
+            "target": "predictive modeling",
+            "rel": "REQUIRES_SKILL",
+            "weight": 37
+        },
+        {
+            "source": "observed",
+            "target": "c",
+            "rel": "REQUIRES_SKILL",
+            "weight": 34
+        },
+        {
+            "source": "observed",
+            "target": "neural networks",
+            "rel": "REQUIRES_SKILL",
+            "weight": 34
+        },
+        {
+            "source": "observed",
+            "target": "Salary_Data Engineer",
+            "rel": "HAS_SALARY"
+        },
+        {
+            "source": "observed",
+            "target": "Exp_Data Engineer",
+            "rel": "REQUIRES_EXPERIENCE"
+        },
+        {
+            "source": "observed",
+            "target": "hadoop",
+            "rel": "REQUIRES_SKILL",
+            "weight": 157
+        },
+        {
+            "source": "observed",
+            "target": "spark",
+            "rel": "REQUIRES_SKILL",
+            "weight": 144
+        },
+        {
+            "source": "observed",
+            "target": "big data",
+            "rel": "REQUIRES_SKILL",
+            "weight": 138
+        },
+        {
+            "source": "observed",
+            "target": "hive",
+            "rel": "REQUIRES_SKILL",
+            "weight": 108
+        },
+        {
+            "source": "observed",
+            "target": "java",
+            "rel": "REQUIRES_SKILL",
+            "weight": 95
+        },
+        {
+            "source": "observed",
+            "target": "sql",
+            "rel": "REQUIRES_SKILL",
+            "weight": 91
+        },
+        {
+            "source": "observed",
+            "target": "python",
+            "rel": "REQUIRES_SKILL",
+            "weight": 79
+        },
+        {
+            "source": "observed",
+            "target": "etl",
+            "rel": "REQUIRES_SKILL",
+            "weight": 47
+        },
+        {
+            "source": "observed",
+            "target": "nosql",
+            "rel": "REQUIRES_SKILL",
+            "weight": 47
+        },
+        {
+            "source": "observed",
+            "target": "scala",
+            "rel": "REQUIRES_SKILL",
+            "weight": 44
+        },
+        {
+            "source": "observed",
+            "target": "hbase",
+            "rel": "REQUIRES_SKILL",
+            "weight": 40
+        },
+        {
+            "source": "observed",
+            "target": "machine learning",
+            "rel": "REQUIRES_SKILL",
+            "weight": 39
+        },
+        {
+            "source": "observed",
+            "target": "data modeling",
+            "rel": "REQUIRES_SKILL",
+            "weight": 38
+        },
+        {
+            "source": "observed",
+            "target": "hdfs",
+            "rel": "REQUIRES_SKILL",
+            "weight": 37
+        },
+        {
+            "source": "observed",
+            "target": "pig",
+            "rel": "REQUIRES_SKILL",
+            "weight": 36
+        },
+        {
+            "source": "observed",
+            "target": "r",
+            "rel": "REQUIRES_SKILL",
+            "weight": 34
+        },
+        {
+            "source": "observed",
+            "target": "data analysis",
+            "rel": "REQUIRES_SKILL",
+            "weight": 33
+        },
+        {
+            "source": "observed",
+            "target": "mapreduce",
+            "rel": "REQUIRES_SKILL",
+            "weight": 32
+        },
+        {
+            "source": "observed",
+            "target": "analytics",
+            "rel": "REQUIRES_SKILL",
+            "weight": 31
+        },
+        {
+            "source": "observed",
+            "target": "big data analytics",
+            "rel": "REQUIRES_SKILL",
+            "weight": 30
+        },
+        {
+            "source": "observed",
+            "target": "Salary_Data Analyst",
+            "rel": "HAS_SALARY"
+        },
+        {
+            "source": "observed",
+            "target": "Exp_Data Analyst",
+            "rel": "REQUIRES_EXPERIENCE"
+        },
+        {
+            "source": "observed",
+            "target": "data analysis",
+            "rel": "REQUIRES_SKILL",
+            "weight": 130
+        },
+        {
+            "source": "observed",
+            "target": "sql",
+            "rel": "REQUIRES_SKILL",
+            "weight": 56
+        },
+        {
+            "source": "observed",
+            "target": "excel",
+            "rel": "REQUIRES_SKILL",
+            "weight": 48
+        },
+        {
+            "source": "observed",
+            "target": "data analytics",
+            "rel": "REQUIRES_SKILL",
+            "weight": 45
+        },
+        {
+            "source": "observed",
+            "target": "data analyst",
+            "rel": "REQUIRES_SKILL",
+            "weight": 28
+        },
+        {
+            "source": "observed",
+            "target": "r",
+            "rel": "REQUIRES_SKILL",
+            "weight": 26
+        },
+        {
+            "source": "observed",
+            "target": "data mining",
+            "rel": "REQUIRES_SKILL",
+            "weight": 23
+        },
+        {
+            "source": "observed",
+            "target": "python",
+            "rel": "REQUIRES_SKILL",
+            "weight": 23
+        },
+        {
+            "source": "observed",
+            "target": "analytics",
+            "rel": "REQUIRES_SKILL",
+            "weight": 22
+        },
+        {
+            "source": "observed",
+            "target": "advanced excel",
+            "rel": "REQUIRES_SKILL",
+            "weight": 20
+        },
+        {
+            "source": "observed",
+            "target": "data visualization",
+            "rel": "REQUIRES_SKILL",
+            "weight": 18
+        },
+        {
+            "source": "observed",
+            "target": "business intelligence",
+            "rel": "REQUIRES_SKILL",
+            "weight": 17
+        },
+        {
+            "source": "observed",
+            "target": "mis",
+            "rel": "REQUIRES_SKILL",
+            "weight": 17
+        },
+        {
+            "source": "observed",
+            "target": "tableau",
+            "rel": "REQUIRES_SKILL",
+            "weight": 16
+        },
+        {
+            "source": "observed",
+            "target": "macros",
+            "rel": "REQUIRES_SKILL",
+            "weight": 15
+        },
+        {
+            "source": "observed",
+            "target": "business analysis",
+            "rel": "REQUIRES_SKILL",
+            "weight": 15
+        },
+        {
+            "source": "observed",
+            "target": "reporting",
+            "rel": "REQUIRES_SKILL",
+            "weight": 15
+        },
+        {
+            "source": "observed",
+            "target": "sas",
+            "rel": "REQUIRES_SKILL",
+            "weight": 14
+        },
+        {
+            "source": "observed",
+            "target": "mysql",
+            "rel": "REQUIRES_SKILL",
+            "weight": 13
+        },
+        {
+            "source": "observed",
+            "target": "data management",
+            "rel": "REQUIRES_SKILL",
+            "weight": 11
+        }
+    ]
+}

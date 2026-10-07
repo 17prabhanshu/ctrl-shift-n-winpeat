@@ -1,0 +1,8 @@
+{
+    "Multiple_Seeds_ROC_AUC": {
+        "mean": 0.830300235478807,
+        "std": 0.014395176327283061
+    },
+    "Perturbation_ROC_AUC": 0.885688121402407,
+    "Shuffled_Target_ROC_AUC": 0.41599947671376236
+}

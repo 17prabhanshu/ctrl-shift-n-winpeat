@@ -1,0 +1,26 @@
+[
+    {
+        "dataset": "ds_jobs",
+        "column": "avg_salary",
+        "original_sample": "7.8L",
+        "new_sample": 780000,
+        "reason": "Parsed LPA format",
+        "affected_rows": 1602
+    },
+    {
+        "dataset": "analytics_jobs",
+        "column": "salary",
+        "original_sample": "6to10",
+        "new_sample": "(600000, 1000000)",
+        "reason": "Parsed range to min/max",
+        "affected_rows": 15841
+    },
+    {
+        "dataset": "analytics_jobs",
+        "column": "experience",
+        "original_sample": "6-10 yrs",
+        "new_sample": "(6, 10, 8)",
+        "reason": "Parsed exp range",
+        "affected_rows": 15841
+    }
+]

@@ -1,0 +1,88 @@
+{
+    "role_demand": {
+        "Other": 10075,
+        "Business Analyst": 1831,
+        "ML Engineer": 1616,
+        "Software Engineer": 1141,
+        "Data Scientist": 470,
+        "Data Engineer": 413,
+        "Data Analyst": 295
+    },
+    "salary_by_role": {
+        "Business Analyst": 1185882.0316766794,
+        "Data Analyst": 1015593.220338983,
+        "Data Engineer": 1520338.9830508474,
+        "Data Scientist": 1619042.5531914893,
+        "ML Engineer": 1315501.2376237623,
+        "Other": 1211806.4516129033,
+        "Software Engineer": 1089658.19456617
+    },
+    "experience_by_role": {
+        "Business Analyst": 5.845712725286728,
+        "Data Analyst": 5.315254237288135,
+        "Data Engineer": 7.410411622276029,
+        "Data Scientist": 6.413829787234042,
+        "ML Engineer": 6.308787128712871,
+        "Other": 6.278014888337469,
+        "Software Engineer": 5.506573181419808
+    },
+    "top_locations": {
+        "Bengaluru": 4108,
+        "Mumbai": 2643,
+        "Gurgaon": 2129,
+        "Delhi NCR": 1363,
+        "Pune": 1253,
+        "Hyderabad": 1179,
+        "Chennai": 1083,
+        "Noida": 682,
+        "Delhi": 382,
+        "Kolkata": 274
+    },
+    "role_salary_matrix": {
+        "0-2": {
+            "Business Analyst": 388541.6666666667,
+            "Data Analyst": 439655.1724137931,
+            "Data Engineer": 690000.0,
+            "Data Scientist": 969230.7692307692,
+            "ML Engineer": 343525.1798561151,
+            "Other": 348082.19178082194,
+            "Software Engineer": 306349.20634920633
+        },
+        "3-5": {
+            "Business Analyst": 798567.335243553,
+            "Data Analyst": 707307.6923076923,
+            "Data Engineer": 884513.2743362832,
+            "Data Scientist": 1192993.6305732485,
+            "ML Engineer": 786802.9739776952,
+            "Other": 729184.5493562232,
+            "Software Engineer": 794016.2271805274
+        },
+        "6-8": {
+            "Business Analyst": 1316992.1875,
+            "Data Analyst": 1068823.5294117648,
+            "Data Engineer": 1414935.0649350649,
+            "Data Scientist": 1704761.9047619049,
+            "ML Engineer": 1485601.5779092703,
+            "Other": 1335711.4308553156,
+            "Software Engineer": 1348901.0989010988
+        },
+        "9-12": {
+            "Business Analyst": 1950000.0,
+            "Data Analyst": 2100000.0,
+            "Data Engineer": 1842187.5,
+            "Data Scientist": 1980952.380952381,
+            "ML Engineer": 2006315.7894736843,
+            "Other": 1899790.1678657075,
+            "Software Engineer": 1629611.650485437
+        },
+        "12+": {
+            "Business Analyst": 2492500.0,
+            "Data Analyst": 3050000.0,
+            "Data Engineer": 2863636.3636363638,
+            "Data Scientist": 2780769.230769231,
+            "ML Engineer": 2518548.3870967743,
+            "Other": 2552116.935483871,
+            "Software Engineer": 2369047.619047619
+        }
+    }
+}
