@@ -1,7 +1,0 @@
-.DS_Store
-catboost_info/
-__pycache__/
-*.pyc
-.env
-venv/
-*.egg-info/

@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-background: #09090b; /* Charcoal */
+  --color-brand-surface: #18181b; /* Graphite */
+  --color-brand-surfaceElevated: #27272a;
+  --color-brand-cyan: #06b6d4; /* Electric Cyan */
+  --color-brand-violet: #8b5cf6; /* Violet */
+  --color-brand-green: #10b981; /* Cool Green */
+  --color-brand-amber: #f59e0b; /* Amber */
+  --color-brand-red: #ef4444; /* Critical Red */
+  
+  --color-brand-textPrimary: #fafafa;
+  --color-brand-textSecondary: #a1a1aa;
+  
+  --font-sans: "Inter", "Geist Sans", sans-serif;
+  --font-mono: "Geist Mono", monospace;
+}
+
+:root {
+  --background: #09090b;
+  --foreground: #fafafa;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Base utility classes for nice glowing effects and hairlines */
+.glass-panel {
+  background: rgba(24, 24, 27, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.hairline-border {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}

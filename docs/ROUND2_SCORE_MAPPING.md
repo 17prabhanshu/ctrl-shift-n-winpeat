@@ -1,23 +1,5 @@
-# Round 2 Hackathon Evaluation Criteria: Project Mapping
-
-This document provides an explicit, line-by-line mapping of the **Workforce Intelligence Engine (WIE)** implementation to the official Round 2 evaluation rubric for the **SAS CU Hackathon 2026** (Total: 100 Marks).
-
----
-
-## Rubric Breakdown & Evidence Location
-
-| Rubric Dimension | Marks | Key Requirements | WIE Implementation & Primary Evidence Files |
-|:---|:---:|:---|:---|
-| **1. Problem Definition** | **10** | Clear problem articulation, business context, scope, and research questions. | • **Core Question**: *"Does the market pay for what progression rewards?"*<br>• Solves the challenge of synthesizing 4 unlinked datasets without primary keys.<br>• Refuses superficial row joins to avoid the Ecological Fallacy.<br>• **Evidence**: `README.md` (Objective), `app_final_note.docx` (Section 1). |
-| **2. Data Exploration & Quality** | **25** | Thorough data cleaning, null handling, distributions, outlier detection, and feature preparation. | • **Format Profiling Parsers**: Deterministic salary & experience parsing (`src/cleaning/salary_parser.py`).<br>• **Verifiable Cleaning Ledger**: Exact counts of parsed rows per format (`data/processed/cleaning_ledger.json`).<br>• **Executable Leakage Audit**: Dynamic test verifying zero leakage (`docs/LEAKAGE_AUDIT.md`, `scripts/leakage_audit.py`).<br>• **Advanced EDA Visualizations**: PCA projections, KDE separability, Lorenz curve of skill inequality, correlation matrices (`docs/ADVANCED_EDA.md`, `reports/figures/eda/`).<br>• **Data Dictionary**: Comprehensive schemas and units (`docs/DATA_DICTIONARY.md`). |
-| **3. Approach & Architecture** | **15** | Methodological soundness, architectural modularity, reproducibility, and platform readiness. | • **Context-Isolated Evidence Lanes**: 4 isolated processing pipelines that merge findings at the construct level, not raw rows (`docs/ARCHITECTURE.md`).<br>• **End-to-End Reproducibility**: Unified master runner with `set -euo pipefail` executing from raw data to registry (`run.sh`).<br>• **SAS Viya for Learners (VFL) Readiness**: Hybrid architecture formatting outputs for SAS Cloud Analytic Services (CAS), SAS Visual Analytics, and SAS SWAT (`docs/SAS_VFL_INTEGRATION.md`). |
-| **4. Data Analysis & Modeling** | **30** | Rigorous statistical modeling, validation schemes, explainability, and uncertainty quantification. | • **Repeated Stratified 5-Fold CV**: 20 repeats (100 evaluations) guarding against small-sample seed variance (`src/models/benchmark_engine.py`).<br>• **Diverse Model Suite**: Logistic Regression, ExtraTrees, Random Forest, HistGradientBoosting, XGBoost.<br>• **Probability Calibration**: Platt scaling (sigmoid), Brier scores, and Expected Calibration Error (`reports/figures/calibration/`).<br>• **Glassbox Explainability**: Exact TreeSHAP feature importances and permutation tests (`reports/figures/shap/`).<br>• **Firth Penalized Logistic Regression**: Small-sample interaction testing with finite bounds (`src/models/interaction_test.py`).<br>• **Forensic Decision Tree Audit**: Proved Senior dataset's 0.998 AUC is an artifact of hardcoded threshold rules (`src/benchmarking/sds_forensic.py`).<br>• **Conformal Prediction**: 90% confidence prediction sets allowing the system to abstain on ambiguous candidates. |
-| **5. Results & Conclusions** | **10** | Traceable, validated findings, hypothesis resolution, and data-backed synthesis. | • **Demand-Reward Inversion**: Coding controls 95.8% of market demand but has lowest promotion return; Math and Storytelling have near-zero market keywords but drive highest internal promotion log-odds (`src/benchmarking/demand_reward_alignment.py`).<br>• **Career Opportunity Frontier**: Complementarity between technical execution and communication (`reports/figures/career_opportunity_frontier.png`).<br>• **Evidence Registry**: Zero hardcoded fallbacks; all claims programmatically validated (`reports/evidence/evidence_registry.json`).<br>• **Results Summary**: High-visibility summary table in `README.md`. |
-| **6. Implications & Governance** | **10** | Actionable stakeholder value, ethical AI guardrails, and honest limitations. | • **HR Leaders**: Stop screening for isolated technical skills; hire for technical × communication interaction.<br>• **Practitioners**: Avoid over-indexing on coding syntax; upskill in quantitative storytelling.<br>• **Algorithmic Governance**: Prohibit autonomous screening; use conformal prediction for human-in-the-loop triage.<br>• **Scientific Honesty**: Full, upfront documentation of limitations and sample size constraints (`docs/LIMITATIONS.md`). |
-
----
-
-## Summary of Rubric Alignment
-- **Total Marks Available**: 100
-- **Project Structure**: Every single scored criterion is backed by an executable script, a verified JSON record in the Evidence Registry, and a dedicated markdown document in `docs/`.
-- **Zero Fabrication Guarantee**: All metrics are dynamically computed and traced to raw data through the master pipeline runner (`./run.sh`).
+# Round 2 Score Mapping
+This document maps our approach to the Round 2 scoring rubric.
+1. **Model Performance**: High accuracy and AUC for both JDS and SDS models.
+2. **Methodological Rigor**: Comprehensive ablation and robustness studies.
+3. **Data Handling**: Robust pipeline with rigorous validation.
