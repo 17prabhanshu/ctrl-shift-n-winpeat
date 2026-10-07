@@ -1,57 +1,50 @@
-<div align="center">
-  <h2>🌌 Interactive Skill Ontology & Knowledge Graph</h2>
-  <a href="https://htmlpreview.github.io/?https://github.com/17prabhanshu/ctrl-shift-n-winpeat/blob/main/docs/interactive_graph.html">
-    <img src="https://img.shields.io/badge/Open%20Interactive%20Graph-Obsidian%20Style-8A2BE2?style=for-the-badge&logo=graphql" />
-  </a>
-  <p><em>Physics-based, drag-and-drop force-directed graph built with PyVis. Click the badge above to explore!</em></p>
+# Workforce Intelligence Engine
 
-  # Workforce Intelligence Engine (WIE)
-  **SAS CU Hackathon 2026 — Team: ctrl shift n**
+**SAS CU Hackathon 2026 — Team ctrl shift n**
 
-  [![Python 3.13](https://img.shields.io/badge/Python-3.13-blue.svg)](https://www.python.org/)
-    [![SAS Viya](https://img.shields.io/badge/SAS-Viya_for_Learners-0075D8.svg)](https://www.sas.com/en_us/software/viya.html)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-</div>
+[![Python 3.13](https://img.shields.io/badge/Python-3.13-blue.svg)](https://www.python.org/)
+[![SAS Viya](https://img.shields.io/badge/SAS-Viya_for_Learners-0075D8.svg)](https://www.sas.com/en_us/software/viya.html)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+> Where the market pays a premium for technical skill, does it pay more when that skill is paired with communication skill — and do junior and senior files show the same pattern?
 
 ---
 
-> **Workforce Intelligence Engine** is a deterministic analytical platform designed to synthesize and interpret complex labor-market signals without inducing data leakage.
+## Results at a Glance
+
+| Dataset | Best Model | ROC-AUC | Accuracy | F1 | n |
+|---------|-----------|---------|----------|-----|---|
+| JDS (Junior Skills) | Logistic Regression | 0.904 | 0.865 | 0.875 | 139 |
+| SDS (Senior Personality) | ExtraTrees | 0.998 | 0.972 | 0.975 | 161 |
+
+**SDS caveat:** A depth-2 decision tree achieves 0.917 AUC using two thresholds (`openness > 38.5`, `conscientiousness > 36.5`), suggesting the labels are derived from personality scores rather than observed real-world outcomes. We treat the high AUC as a data-generation artifact, not a product feature. See [forensic analysis](src/benchmarking/sds_forensic.py).
+
+**Shuffled-target sanity:** When targets are randomly permuted, SDS AUC drops to ~0.589 (consistent with chance), indicating the pipeline does not leak label information into features.
 
 ---
 
-## Analytics Objective
-**Objective:** *Does the market pay for what progression rewards?*
+## Architecture
 
-The core problem requires synthesizing four disparate datasets—Market Analytics jobs, Data Science job postings, Junior Data Scientist (JDS) technical traits, and Senior Data Scientist (SDS) personality traits—without a unified key.
-
-**Scope & Depth:** Rather than attempting to predict a single arbitrary metric, our scope covers the entire lifecycle of workforce intelligence. We investigate how raw cognitive skills (e.g., Mathematics, Coding) interact with social skills (e.g., Storytelling, Extraversion) associated with salary compensation differences in the open market, early-career promotion (JDS), and late-career executive success (SDS).
-
----
-
-## Architecture & Approach
-**Motivation:** Merging unlinked datasets based on weak keys (like "job title") induces the **Ecological Fallacy** and fatal data leakage. Our motivation is to prevent this by processing data in isolated lanes and comparing the *statistical conclusions* rather than the raw rows.
-
-**Overall Flow:** We developed a **Context-Isolated Evidence Lane Architecture**. Deterministic agents process each dataset independently, feeding their findings into a central Evidence Registry.
+Four datasets, no shared primary key. Merging rows on weak keys (e.g. job title) induces the Ecological Fallacy. We process each dataset in an isolated evidence lane and compare statistical conclusions, never raw rows.
 
 ```mermaid
 graph TD
-    subgraph Data Sources
-        D1[(Analytics Jobs)]
-        D2[(DS Jobs)]
-        D3[(JDS Skills)]
-        D4[(SDS Personality)]
+    subgraph sources [Data Sources]
+        D1[(Analytics Jobs<br/>n=15,841)]
+        D2[(DS Jobs<br/>n=1,602)]
+        D3[(JDS Skills<br/>n=139)]
+        D4[(SDS Personality<br/>n=161)]
     end
 
-    subgraph Analytical Agents
-        A1[Market Intel Agent]
-        A2[Skill NLP Agent]
+    subgraph lanes [Analysis Modules]
+        A1[Market Analysis]
+        A2[Skill NLP]
         A3[JDS Benchmarker]
         A4[SDS Benchmarker]
     end
 
-    subgraph Governance
+    subgraph governance [Governance]
         ER{Evidence Registry}
-
     end
 
     D1 --> A2
@@ -59,138 +52,124 @@ graph TD
     D3 --> A3
     D4 --> A4
 
-    A1 -->|Salary/Demand Vectors| ER
-    A2 -->|Skill Ontology Graph| ER
-    A3 -->|Technical Interaction Models| ER
-    A4 -->|Personality Interaction Models| ER
-
-
+    A1 -->|Salary and demand vectors| ER
+    A2 -->|Skill taxonomy and graph| ER
+    A3 -->|Interaction models| ER
+    A4 -->|Personality models| ER
 ```
 
 ---
 
+## Hypotheses
 
-### SAS Viya for Learners (VFL) Readiness
-This project utilizes a hybrid architecture. The rigorous data engineering, deterministic parsing, and forensic analyses operate in open-source Python, acting as the perfect ETL pipeline for **SAS Viya for Learners**.
-
-Instead of forcing a localized UI, our `data/processed/` outputs are strictly formatted for direct upload into **SAS Cloud Analytic Services (CAS)**. This allows the final presentation and advanced AutoML to be executed natively within **SAS Visual Analytics** and **SAS Model Studio**.
-
-**[View the SAS VFL Integration Architecture Guide](docs/SAS_VFL_INTEGRATION.md)**
+| ID | Statement | Data | Result |
+|----|-----------|------|--------|
+| H1 | Role families differ in demand and salary | DS Jobs | Supported (Kruskal-Wallis) |
+| H2 | Skill requirements show role-specificity | Analytics Jobs | Supported |
+| H3 | Technical and communication skills show positive complementarity in salary | Analytics Jobs | Positive coefficient (+0.087), p=0.148 |
+| H4 | Dashboard and quantitative skills interact in JDS promotion | JDS | Supported (Logistic Regression) |
+| H5 | Conscientiousness has non-additive effects in SDS | SDS | Labels likely deterministic (forensic finding) |
 
 ---
 
-## Data Engineering Strategy
-**Data Manipulation & Consolidation:** Real-world HR data is extremely noisy. Salaries were provided as localized strings (e.g., `"7.8L"`, `"6to10"`), and experience as `"6-10 yrs"`. We engineered custom deterministic parsers to consolidate this into numeric bounds (`salary_min`, `salary_max`, `exp_mid`).
+## Data Engineering
 
-**Exploratory Strategies:** We utilized Natural Language Processing (NLP) to extract raw comma-delimited strings in the `key_skills` column. Instead of relying on heavyweight LLMs, we built a deterministic **N-Gram Tokenizer and Alias Dictionary** to map raw strings to a 5-dimension canonical skill taxonomy.
+Salaries arrived as text (`"7.8L"`, `"6to10"`); experience as `"6-10 yrs"`. We wrote format-profiling parsers that return `(value, format_code)`, so the cleaning ledger records exact parse rates per format — not hardcoded example counts.
+
+Skills from the `key_skills` column are tokenized and mapped to five canonical dimensions via a deterministic alias dictionary, not an LLM.
 
 ```mermaid
 flowchart LR
-    A[Raw 'key_skills' String] -->|Tokenize| B(Delimiter Split & Scrub)
-    B --> C{Alias Dictionary}
-    C -->|Match| D[Canonical Skill]
-    C -->|Miss| E[N-gram Regex]
+    A["Raw key_skills"] -->|Tokenize| B(Delimiter split)
+    B --> C{Alias dictionary}
+    C -->|Match| D[Canonical skill]
+    C -->|Miss| E[N-gram regex]
     E --> D
-    D --> F[(NetworkX Co-Occurrence Graph)]
+    D --> F[(Co-occurrence graph)]
 ```
 
 ---
 
-## Advanced Exploratory Data Analysis
-To ensure full transparency and interpretability of our features, we have exported all findings from our Advanced EDA research notebooks directly into GitHub.
+## Exploratory Data Analysis
 
-**[View the Advanced EDA Documentation & Visuals](docs/ADVANCED_EDA.md)**
+Full EDA with embedded figures: **[Advanced EDA Documentation](docs/ADVANCED_EDA.md)**
 
-Includes:
-- Multivariate PCA Projections
-- JDS & SDS Correlation Matrices
-- Feature Separability Distributions (KDE)
-- Missingness Audits
+Includes: PCA projections, correlation matrices, KDE feature separability, mutual information scores, Lorenz curve for skill concentration, target class balance, and missingness maps.
 
 ---
 
-## Data Analysis & Explainable AI
- We apply rigorous descriptive, prescriptive, and statistical skills to evaluate our hypotheses.
+## ML Pipeline
 
-### The Statistical & ML Pipeline
-We employ a robust **Repeated Stratified 5-Fold Cross-Validation** (20 repeats) to prevent seed-lottery on small datasets. All models undergo post-processing probability calibration (Platt Scaling) and Shuffled-Target sanity checks.
-
-```mermaid
-sequenceDiagram
-    participant Data as JDS/SDS
-    participant CV as 5-Fold CV (x20)
-    participant Model as XGBoost / Firth LR
-    participant XAI as TreeSHAP / EBM
-
-    Data->>CV: Stratified Split
-    loop Evaluation
-        CV->>Model: Train Base Model
-        Model->>Model: Platt Probability Calibration
-    end
-    Model->>XAI: Extract Exact Shapley Values
-    XAI-->>Data: Generate Global Feature Importance
-    Model->>CV: Shuffled Target Null Check
-```
+- **Evaluation:** Repeated Stratified 5-Fold CV (20 repeats). Folds overlap; confidence intervals reflect fold-level variance, not independent experiments.
+- **Calibration:** Platt scaling (sigmoid) post-hoc.
+- **Explainability:** TreeSHAP for feature attribution; permutation importance as cross-check.
+- **Ablation:** Full model vs. minus-one-feature vs. randomized target.
 
 <details>
-<summary><b>View Advanced Analytical Implementations (TreeSHAP, Firth, Conformal)</b></summary>
-<br>
+<summary>Advanced methods</summary>
 
-1. **Glassbox Explainability (TreeSHAP):** We use exact Shapley Additive exPlanations to interpret tree ensembles. We strictly bound our analysis to *statistical associations*, avoiding unfounded causal claims.
-2. **Firth Penalized Logistic Regression:** To detect interactions (e.g., `maths_stats * storytelling`) in small samples ($n=139$), standard MLE fails due to quasi-complete separation. We implemented Firth's penalized likelihood to guarantee finite confidence intervals.
-3. **Conformal Prediction:** For prescriptive HR deployment, forced binary classifications are irresponsible. We utilize distribution-free **Conformal Prediction**, generating 90% confidence prediction sets that allow the model to *abstain* when applicant ambiguity is too high.
-</details>
+1. **Firth Penalized Logistic Regression:** For interaction terms on small samples where standard MLE produces infinite coefficients.
+2. **Conformal Prediction:** Distribution-free prediction sets that allow the model to abstain on ambiguous candidates rather than forcing a binary decision.
+3. **Forensic Decision Trees:** Depth-restricted trees to audit whether high AUC reflects genuine signal or label-generation rules.
 
-<details>
-<summary><b>View Pipeline Code Snippet</b></summary>
-
-```python
-# Demonstrating rigorous evaluation avoiding "perfect score" leakage
-from sklearn.calibration import CalibratedClassifierCV
-from sklearn.model_selection import RepeatedStratifiedKFold
-from xgboost import XGBClassifier
-
-# Base model with calibrated probabilities
-base_xgb = XGBClassifier(eval_metric='logloss', random_state=42)
-calibrated_xgb = CalibratedClassifierCV(base_xgb, method='sigmoid', cv=5)
-
-# Rigorous evaluation
-cv = RepeatedStratifiedKFold(n_splits=5, n_repeats=20, random_state=42)
-# Null hypothesis check: verify score drops to ~0.5 when target is shuffled
-```
 </details>
 
 ---
 
-## Results & Key Findings
-**Consolidation & Linkage:**
-> **Market Evidence:** We established a clear Career Opportunity Frontier. Technical cognitive skills (Coding, AI/ML) require communication (Dashboard/Storytelling) to achieve premium compensation tiers.
-> **JDS Findings:** The `dashboard_and_storytelling_skills` interact positively with `maths-stats_skills`, providing a measurable lift in junior salary hikes. The Full ML Model achieved a stable accuracy of **0.865**.
-> **SDS Findings:** Conscientiousness exhibits plateauing, non-additive effects with Extraversion in Senior Data Scientist success classifications. Our model achieved a robust **0.992** ROC-AUC (which safely drops to 0.589 under a shuffled-target test, consistent with absence of target leakage (shuffled-target AUC drops to chance level)).
+## SAS Viya for Learners (VFL)
+
+Our `data/processed/` outputs are formatted for direct upload into SAS Cloud Analytic Services (CAS). See [SAS VFL Integration Guide](docs/SAS_VFL_INTEGRATION.md).
 
 ---
 
-## Real-World Implications
-**Stakeholder Impact:**
-**For HR Professionals:** The engine demonstrates that hiring for isolated technical skills yields diminishing returns. Assessment frameworks must measure the *interaction* between technical execution and communication.
-**For Analytics Professionals:** The "Career Opportunity Frontier" suggests that upskilling purely in deeper algorithmic modeling without complementary stakeholder-communication skills is associated with lower progression potential.
-**For Algorithmic Governance:** Conformal prediction sets allow the system to flag ambiguous candidates for human review rather than forcing binary classification.
-
----
-
-### Running the Analytical Pipeline
-The entire pipeline runs deterministically from raw data to the final evidence registry, completely regenerating the research findings and figures.
+## Running the Pipeline
 
 ```bash
-# 1. Clone the repository
 git clone https://github.com/17prabhanshu/ctrl-shift-n-winpeat.git
 cd ctrl-shift-n-winpeat
-
-# 2. Run the automated master pipeline
 ./run.sh
 ```
 
-**Final Artifacts:**
-- **`app_final_note.docx`**: The comprehensive, 25-page, research-grade approach note with embedded statistical plots and verified metrics.
-- **`docs/APPROACH_NOTE.md`**: Markdown equivalent of the final approach note.
-- **`reports/evidence/evidence_registry.json`**: The source of truth for all analytical claims.
+The pipeline runs with `set -euo pipefail`: any step that fails stops the entire build.
+
+**Outputs:**
+- `data/processed/cleaning_ledger.json` — Verified transformation counts
+- `docs/LEAKAGE_AUDIT.md` — Executable audit with PASS/FAIL checks
+- `reports/evidence/evidence_registry.json` — All analytical claims with provenance
+- `docs/APPROACH_NOTE.md` — Full approach note
+
+---
+
+## Limitations
+
+- Sample sizes are small (n=139, n=161). All conclusions are associations, not causal claims.
+- SDS labels appear deterministically derived from personality thresholds.
+- Skill taxonomy relies on substring matching; a hand-labeled gold set would strengthen coverage estimates.
+- Repeated CV folds are not independent; reported intervals may understate true uncertainty.
+- Cross-dataset alignment uses five aggregate dimensions and is exploratory, not confirmatory.
+
+---
+
+## Repository Structure
+
+```
+.
+├── run.sh                  # End-to-end pipeline
+├── README.md
+├── data/
+│   ├── raw/                # Untouched source files
+│   └── processed/          # Cleaned outputs + cleaning_ledger.json
+├── src/
+│   ├── cleaning/           # Parsers with format profiling
+│   ├── models/             # Benchmark engine, interaction test
+│   ├── skill_intelligence/ # Taxonomy, graph, signal index
+│   ├── benchmarking/       # Ablation, robustness, forensics
+│   └── agents/             # Evidence registry
+├── scripts/                # Utility and generation scripts
+├── reports/
+│   ├── benchmarks/         # JSON benchmark results
+│   ├── evidence/           # Registry, audit reports
+│   └── figures/            # All generated plots
+├── docs/                   # Architecture, methodology, EDA, approach note
+└── tests/                  # Unit tests
+```
