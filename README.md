@@ -9,7 +9,8 @@
   **SAS CU Hackathon 2026 — Team: ctrl shift n**
   
   [![Python 3.13](https://img.shields.io/badge/Python-3.13-blue.svg)](https://www.python.org/)
-    [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+    [![SAS Viya](https://img.shields.io/badge/SAS-Viya_for_Learners-0075D8.svg)](https://www.sas.com/en_us/software/viya.html)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 </div>
 
 ---
@@ -65,6 +66,16 @@ graph TD
 
     
 ```
+
+---
+
+
+### ☁️ SAS Viya for Learners (VFL) Readiness
+This project utilizes a hybrid architecture. The rigorous data engineering, deterministic parsing, and forensic analyses operate in open-source Python, acting as the perfect ETL pipeline for **SAS Viya for Learners**. 
+
+Instead of forcing a localized UI, our `data/processed/` outputs are strictly formatted for direct upload into **SAS Cloud Analytic Services (CAS)**. This allows the final presentation and advanced AutoML to be executed natively within **SAS Visual Analytics** and **SAS Model Studio**. 
+
+👉 **[View the SAS VFL Integration Architecture Guide](docs/SAS_VFL_INTEGRATION.md)**
 
 ---
 
