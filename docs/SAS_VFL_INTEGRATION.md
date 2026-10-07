@@ -20,7 +20,7 @@ Our Python pipeline establishes a rigorous baseline using `scikit-learn` and `xg
 For teams looking to scale this engine to process millions of job postings, local Python execution becomes a bottleneck.
 
 *   **Actionable Integration:** The Python scripts in our `src/` directory are functionally modular. They can be wrapped using the **SAS SWAT** library.
-*   **VFL Use Case:** By importing `swat`, the WIE pipeline can connect to a SAS Viya CAS server. The heavy lifting of the `pandas` data manipulations (like the N-gram tokenization of 15,000+ skills) can be pushed down to the CAS server for distributed, in-memory execution, drastically reducing compute time.
+*   **VFL Use Case:** By importing `swat`, the WIE pipeline can connect to a SAS Viya CAS server. The `pandas` data manipulations (like the N-gram tokenization of 15,000+ skills) can be pushed down to the CAS server for distributed, in-memory execution, optimizing computational efficiency.
 
 ---
 *This hybrid architecture ensures the Workforce Intelligence Engine leverages the rapid prototyping of open-source Python while utilizing the enterprise-grade visualization and distributed computing power of SAS Viya for Learners.*

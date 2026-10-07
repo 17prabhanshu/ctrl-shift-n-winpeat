@@ -1,6 +1,6 @@
 # System Architecture: Workforce Intelligence Engine
 
-The architecture of the Workforce Intelligence Engine (WIE) abandons traditional ad-hoc Jupyter Notebook data wrangling in favor of a **Deterministic Agent Framework**. 
+The architecture of the Workforce Intelligence Engine (WIE) abandons traditional ad-hoc Jupyter Notebook data wrangling in favor of a **Deterministic Agent Framework**.
 
 Because our project explicitly **rejects false row-level joins** across unlinked datasets (which would cause severe ecological fallacies and data leakage), the architecture is fundamentally partitioned into isolated **Evidence Lanes**.
 
@@ -15,17 +15,17 @@ flowchart TD
         D2[(DataScience Jobs)] --> MA
         MA --> E1[Salary/Demand Vectors]
     end
-    
+
     subgraph Skill Lane
         D1 --> SA[Skill Intelligence]
         SA --> E2[NetworkX Ontology Graph]
     end
-    
+
     subgraph Junior Talent Lane
         D3[(JDS Skills)] --> JA[JDS Benchmarker]
         JA --> E3[Technical Complementarity Models]
     end
-    
+
     subgraph Senior Talent Lane
         D4[(SDS Personality)] --> SRA[SDS Benchmarker]
         SRA --> E4[Personality Interaction Models]
@@ -35,7 +35,7 @@ flowchart TD
     E2 --> ER
     E3 --> ER
     E4 --> ER
-    
+
     style ER fill:#8E44AD,stroke:#fff,stroke-width:2px,color:#fff
 ```
 

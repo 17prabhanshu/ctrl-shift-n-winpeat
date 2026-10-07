@@ -12,13 +12,13 @@ Prior to any modeling, we rigorously audit the sparsity of our datasets. Below i
 ## 2. Multivariate Structural Analysis
 
 ### PCA Projection (Junior Data Scientists)
-We applied Principal Component Analysis (PCA) to compress the 5-dimensional skill space of Junior Data Scientists into two components. 
+We applied Principal Component Analysis (PCA) to compress the 5-dimensional skill space of Junior Data Scientists into two components.
 The scatter plot demonstrates that **High Hike** vs **Low Hike** outcomes are structurally clustered in the feature space, meaning the raw skills naturally stratify candidates without relying on black-box modeling.
 
 ![JDS PCA](../reports/figures/eda/jds_pca.png)
 
 ### Skill & Trait Correlations
-Understanding multicollinearity is critical for interpreting feature importance (SHAP) downstream. 
+Understanding multicollinearity is critical for interpreting feature importance (SHAP) downstream.
 *   **JDS:** We observe mild positive correlations across technical skills, but distinct orthogonality with `dashboard_and_storytelling_skills`.
 *   **SDS:** Personality traits show extreme independence (near-zero correlation), highlighting that Big Five metrics are mathematically distinct axes of evaluation.
 
@@ -31,7 +31,7 @@ Understanding multicollinearity is critical for interpreting feature importance 
 
 ## 3. Feature Separability (Univariate)
 
-Before deploying complex tree ensembles (RandomForest, XGBoost) and Explanations (SHAP), we validate the raw univariate separating power of each feature using overlaid Kernel Density Estimates (KDE). 
+Before deploying complex tree ensembles (RandomForest, XGBoost) and Explanations (SHAP), we validate the raw univariate separating power of each feature using overlaid Kernel Density Estimates (KDE).
 
 ### Junior Data Scientist (JDS) Skill Distributions
 We can visually observe the outcome stratification. For example, higher `maths-stats_skills` strongly shifts the density toward the `High Hike` (green) outcome.
@@ -65,7 +65,7 @@ The MI scores corroborate our H4 hypothesis: **Maths-Stats** and **Dashboard/Sto
 
 ## 6. Skill Concentration (Lorenz Curve)
 To understand macro-market dynamics, we plotted the cumulative demand of skills across the Analytics Jobs dataset as a Lorenz Curve.
-The massive deviation from the line of "Perfect Equality" demonstrates extreme market concentration: **a tiny fraction of unique skills (e.g., Python, SQL, AWS) accounts for the vast majority of total market demand.**
+The substantial deviation from the line of "Perfect Equality" demonstrates extreme market concentration: **a tiny fraction of unique skills (e.g., Python, SQL, AWS) accounts for the vast majority of total market demand.**
 
 ![Skill Lorenz Curve](../reports/figures/eda/skill_lorenz_curve.png)
 
