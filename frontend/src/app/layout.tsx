@@ -16,8 +16,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body className={`${inter.className} bg-brand-background text-brand-textPrimary min-h-screen flex antialiased`}>
+    <html lang="en">
+      <body className={`${inter.className} bg-[#F9FAFB] text-brand-textPrimary min-h-screen flex antialiased`}>
         <Sidebar />
         <main className="flex-1 relative overflow-x-hidden">
           {children}

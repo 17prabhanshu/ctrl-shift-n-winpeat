@@ -1,88 +1,85 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Activity, Database, Network, LineChart, ShieldCheck } from "lucide-react";
+import { ArrowRight, Search, Briefcase, TrendingUp, ShieldCheck } from "lucide-react";
 import Link from "next/link";
-
-const NODES = [
-  { id: "market", label: "MARKET", icon: Database, desc: "Demand & Compensation" },
-  { id: "skills", label: "SKILLS", icon: Network, desc: "Taxonomy & Signal" },
-  { id: "junior", label: "JUNIOR", icon: Activity, desc: "Early Career Hike" },
-  { id: "senior", label: "SENIOR", icon: LineChart, desc: "Executive Success" },
-  { id: "evidence", label: "EVIDENCE", icon: ShieldCheck, desc: "Construct Alignment" },
-];
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden p-6">
-      
-      {/* Background ambient glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-cyan/5 rounded-full blur-3xl pointer-events-none" />
+    <div className="min-h-screen bg-[#F9FAFB]">
+      {/* Top Banner */}
+      <div className="bg-brand-black text-white px-6 py-3 text-sm font-medium flex justify-between items-center">
+        <span>Workforce Intelligence Engine</span>
+        <span className="bg-white/10 px-2 py-1 rounded text-xs">SAS CU Hackathon 2026</span>
+      </div>
 
-      <div className="z-10 text-center max-w-4xl mx-auto">
+      <div className="max-w-6xl mx-auto px-8 py-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.5 }}
+          className="max-w-3xl"
         >
-          <h2 className="text-brand-cyan text-sm font-mono tracking-[0.3em] uppercase mb-4">
-            Ctrl Shift N
-          </h2>
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-6">
-            Workforce Intelligence Engine
+          <h1 className="text-5xl md:text-6xl font-extrabold text-brand-black leading-tight mb-6 tracking-tight">
+            Does the market pay for what progression rewards?
           </h1>
-          <p className="text-xl md:text-2xl text-brand-textSecondary font-light italic mb-16">
-            "Does the market pay for what progression rewards?"
+          <p className="text-xl text-brand-textSecondary mb-10 leading-relaxed font-medium">
+            Discover the fundamental disconnect between what employers ask for in job postings, and what actually drives internal career progression and executive success.
           </p>
+          
+          <div className="flex gap-4">
+            <Link 
+              href="/overview" 
+              className="bg-brand-orange hover:bg-brand-orangeHover text-white px-8 py-4 rounded-lg font-bold text-lg flex items-center shadow-md transition-colors"
+            >
+              Explore the Data
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Link>
+            <Link 
+              href="/evidence" 
+              className="bg-white border border-gray-200 hover:border-gray-300 text-brand-black px-8 py-4 rounded-lg font-bold text-lg flex items-center shadow-sm transition-colors"
+            >
+              View Evidence Registry
+            </Link>
+          </div>
         </motion.div>
 
-        {/* The Signal Field */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 mb-16">
-          {NODES.map((node, i) => (
-            <div key={node.id} className="flex flex-col md:flex-row items-center">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.6 + i * 0.15 }}
-                className="group relative"
-              >
-                <div className="w-20 h-20 rounded-full hairline-border bg-brand-surfaceElevated flex items-center justify-center text-brand-textSecondary hover:text-brand-cyan hover:border-brand-cyan/50 transition-all duration-300 cursor-pointer">
-                  <node.icon className="w-8 h-8" />
-                </div>
-                
-                {/* Tooltip */}
-                <div className="absolute top-full mt-4 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap text-center">
-                  <div className="text-sm font-bold tracking-widest text-brand-textPrimary">{node.label}</div>
-                  <div className="text-xs text-brand-textSecondary mt-1">{node.desc}</div>
-                </div>
-              </motion.div>
-
-              {i < NODES.length - 1 && (
-                <motion.div
-                  initial={{ opacity: 0, width: 0 }}
-                  animate={{ opacity: 1, width: "auto" }}
-                  transition={{ duration: 0.4, delay: 0.8 + i * 0.15 }}
-                  className="hidden md:block mx-4"
-                >
-                  <ArrowRight className="text-white/20 w-5 h-5" />
-                </motion.div>
-              )}
+        {/* Feature Cards below hero */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-20">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
+            className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm"
+          >
+            <div className="w-12 h-12 bg-[#FFF0ED] text-brand-orange rounded-lg flex items-center justify-center mb-4">
+              <Briefcase className="w-6 h-6" />
             </div>
-          ))}
+            <h3 className="text-lg font-bold text-brand-black mb-2">Market Radar</h3>
+            <p className="text-brand-textSecondary text-sm">Analyze salary, experience, and role demands across 15,000+ real-world postings.</p>
+          </motion.div>
+
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}
+            className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm"
+          >
+            <div className="w-12 h-12 bg-[#FFF0ED] text-brand-orange rounded-lg flex items-center justify-center mb-4">
+              <TrendingUp className="w-6 h-6" />
+            </div>
+            <h3 className="text-lg font-bold text-brand-black mb-2">Career Progression</h3>
+            <p className="text-brand-textSecondary text-sm">Discover how Technical and Communication skills interact to drive promotions.</p>
+          </motion.div>
+
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}
+            className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm"
+          >
+            <div className="w-12 h-12 bg-[#FFF0ED] text-brand-orange rounded-lg flex items-center justify-center mb-4">
+              <ShieldCheck className="w-6 h-6" />
+            </div>
+            <h3 className="text-lg font-bold text-brand-black mb-2">Scientific Integrity</h3>
+            <p className="text-brand-textSecondary text-sm">Context-isolated models preventing Ecological Fallacies. 100% reproducible.</p>
+          </motion.div>
         </div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.8 }}
-        >
-          <Link href="/overview" className="inline-flex items-center space-x-2 bg-white text-black px-6 py-3 rounded-full font-medium hover:bg-gray-200 transition-colors">
-            <span>Initialize Engine</span>
-            <ArrowRight className="w-4 h-4" />
-          </Link>
-        </motion.div>
       </div>
-
     </div>
   );
 }
