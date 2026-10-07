@@ -1,5 +1,9 @@
 <div align="center">
-  <img src="reports/figures/knowledge_graph.png" alt="Knowledge Graph" width="600"/>
+  <h2>🌌 Interactive Skill Ontology & Knowledge Graph</h2>
+  <a href="https://htmlpreview.github.io/?https://github.com/17prabhanshu/ctrl-shift-n-winpeat/blob/main/docs/interactive_graph.html">
+    <img src="https://img.shields.io/badge/Open%20Interactive%20Graph-Obsidian%20Style-8A2BE2?style=for-the-badge&logo=graphql" />
+  </a>
+  <p><em>Physics-based, drag-and-drop force-directed graph built with PyVis. Click the badge above to explore!</em></p>
 
   # 🧠 Workforce Intelligence Engine (WIE)
   **SAS CU Hackathon 2026 — Team: ctrl shift n**

@@ -1,0 +1,164 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 800px;
+                 background-color: #0d1117;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#58a6ff", "font": {"color": "white"}, "id": "Other", "label": "Other", "shape": "dot", "size": 20, "title": "ROLE"}, {"color": "#d2a8ff", "font": {"color": "white"}, "id": "Salary_Other", "label": "\u20b912.1L", "shape": "dot", "size": 15, "title": "SALARY"}, {"color": "#ff7b72", "font": {"color": "white"}, "id": "Exp_Other", "label": "6.3 Yrs", "shape": "dot", "size": 15, "title": "EXPERIENCE"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "finance", "label": "Finance", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "analytics", "label": "Analytics", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "digital marketing", "label": "Digital Marketing", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "sql", "label": "Sql", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "seo", "label": "Seo", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "project management", "label": "Project Management", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "outsourcing", "label": "Outsourcing", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "sas", "label": "Sas", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "sales", "label": "Sales", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "python", "label": "Python", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "data analysis", "label": "Data Analysis", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "accounting", "label": "Accounting", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "marketing", "label": "Marketing", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "operations", "label": "Operations", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "r", "label": "R", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "data analytics", "label": "Data Analytics", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "java", "label": "Java", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "financial analysis", "label": "Financial Analysis", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "business process", "label": "Business Process", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "auditing", "label": "Auditing", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#58a6ff", "font": {"color": "white"}, "id": "Business Analyst", "label": "Business Analyst", "shape": "dot", "size": 20, "title": "ROLE"}, {"color": "#d2a8ff", "font": {"color": "white"}, "id": "Salary_Business Analyst", "label": "\u20b911.9L", "shape": "dot", "size": 15, "title": "SALARY"}, {"color": "#ff7b72", "font": {"color": "white"}, "id": "Exp_Business Analyst", "label": "5.8 Yrs", "shape": "dot", "size": 15, "title": "EXPERIENCE"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "business analysis", "label": "Business Analysis", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "business analyst", "label": "Business Analyst", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "data entry", "label": "Data Entry", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "part time", "label": "Part Time", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "freelancing", "label": "Freelancing", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "work from home", "label": "Work From Home", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "present job", "label": "Present Job", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "javascript", "label": "Javascript", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "excel", "label": "Excel", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "machine learning", "label": "Machine Learning", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#58a6ff", "font": {"color": "white"}, "id": "ML Engineer", "label": "Ml Engineer", "shape": "dot", "size": 20, "title": "ROLE"}, {"color": "#d2a8ff", "font": {"color": "white"}, "id": "Salary_ML Engineer", "label": "\u20b913.2L", "shape": "dot", "size": 15, "title": "SALARY"}, {"color": "#ff7b72", "font": {"color": "white"}, "id": "Exp_ML Engineer", "label": "6.3 Yrs", "shape": "dot", "size": 15, "title": "EXPERIENCE"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "c", "label": "C", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "data mining", "label": "Data Mining", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "tableau", "label": "Tableau", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "nlp", "label": "Nlp", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "banking", "label": "Banking", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#58a6ff", "font": {"color": "white"}, "id": "Software Engineer", "label": "Software Engineer", "shape": "dot", "size": 20, "title": "ROLE"}, {"color": "#d2a8ff", "font": {"color": "white"}, "id": "Salary_Software Engineer", "label": "\u20b910.9L", "shape": "dot", "size": 15, "title": "SALARY"}, {"color": "#ff7b72", "font": {"color": "white"}, "id": "Exp_Software Engineer", "label": "5.5 Yrs", "shape": "dot", "size": 15, "title": "EXPERIENCE"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "css", "label": "Css", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "jquery", "label": "Jquery", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "html", "label": "Html", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "software development", "label": "Software Development", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "angularjs", "label": "Angularjs", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "software engineering", "label": "Software Engineering", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "mysql", "label": "Mysql", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "core java", "label": "Core Java", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "html5", "label": "Html5", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "sql server", "label": "Sql Server", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "json", "label": "Json", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "rest", "label": "Rest", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "j2ee", "label": "J2Ee", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "ajax", "label": "Ajax", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "php", "label": "Php", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#58a6ff", "font": {"color": "white"}, "id": "Data Scientist", "label": "Data Scientist", "shape": "dot", "size": 20, "title": "ROLE"}, {"color": "#d2a8ff", "font": {"color": "white"}, "id": "Salary_Data Scientist", "label": "\u20b916.2L", "shape": "dot", "size": 15, "title": "SALARY"}, {"color": "#ff7b72", "font": {"color": "white"}, "id": "Exp_Data Scientist", "label": "6.4 Yrs", "shape": "dot", "size": 15, "title": "EXPERIENCE"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "data science", "label": "Data Science", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "deep learning", "label": "Deep Learning", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "data scientist", "label": "Data Scientist", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "hadoop", "label": "Hadoop", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "spark", "label": "Spark", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "predictive analytics", "label": "Predictive Analytics", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "scala", "label": "Scala", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "predictive modeling", "label": "Predictive Modeling", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "neural networks", "label": "Neural Networks", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#58a6ff", "font": {"color": "white"}, "id": "Data Engineer", "label": "Data Engineer", "shape": "dot", "size": 20, "title": "ROLE"}, {"color": "#d2a8ff", "font": {"color": "white"}, "id": "Salary_Data Engineer", "label": "\u20b915.2L", "shape": "dot", "size": 15, "title": "SALARY"}, {"color": "#ff7b72", "font": {"color": "white"}, "id": "Exp_Data Engineer", "label": "7.4 Yrs", "shape": "dot", "size": 15, "title": "EXPERIENCE"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "big data", "label": "Big Data", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "hive", "label": "Hive", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "etl", "label": "Etl", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "nosql", "label": "Nosql", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "hbase", "label": "Hbase", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "data modeling", "label": "Data Modeling", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "hdfs", "label": "Hdfs", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "pig", "label": "Pig", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "mapreduce", "label": "Mapreduce", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "big data analytics", "label": "Big Data Analytics", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#58a6ff", "font": {"color": "white"}, "id": "Data Analyst", "label": "Data Analyst", "shape": "dot", "size": 20, "title": "ROLE"}, {"color": "#d2a8ff", "font": {"color": "white"}, "id": "Salary_Data Analyst", "label": "\u20b910.2L", "shape": "dot", "size": 15, "title": "SALARY"}, {"color": "#ff7b72", "font": {"color": "white"}, "id": "Exp_Data Analyst", "label": "5.3 Yrs", "shape": "dot", "size": 15, "title": "EXPERIENCE"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "data analyst", "label": "Data Analyst", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "advanced excel", "label": "Advanced Excel", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "data visualization", "label": "Data Visualization", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "business intelligence", "label": "Business Intelligence", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "mis", "label": "Mis", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "macros", "label": "Macros", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "reporting", "label": "Reporting", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#3fb950", "font": {"color": "white"}, "id": "data management", "label": "Data Management", "shape": "dot", "size": 15, "title": "SKILL"}, {"color": "#8b949e", "font": {"color": "white"}, "id": "observed", "label": "Observed", "shape": "dot", "size": 15}]);
+                  edges = new vis.DataSet([{"arrows": "to", "color": "#30363d", "from": "observed", "to": "Salary_Other", "value": 1}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "Exp_Other", "value": 1}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "finance", "value": 638}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "analytics", "value": 633}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "digital marketing", "value": 527}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "sql", "value": 475}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "seo", "value": 454}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "project management", "value": 424}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "outsourcing", "value": 393}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "sas", "value": 376}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "sales", "value": 347}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "python", "value": 336}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "data analysis", "value": 324}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "accounting", "value": 321}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "marketing", "value": 302}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "operations", "value": 300}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "r", "value": 272}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "data analytics", "value": 268}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "java", "value": 263}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "financial analysis", "value": 251}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "business process", "value": 249}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "auditing", "value": 243}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "Salary_Business Analyst", "value": 1}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "Exp_Business Analyst", "value": 1}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "business analysis", "value": 417}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "business analyst", "value": 115}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "sql", "value": 104}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "analytics", "value": 103}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "finance", "value": 97}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "sas", "value": 88}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "r", "value": 78}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "data analysis", "value": 74}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "python", "value": 74}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "data entry", "value": 69}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "part time", "value": 68}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "freelancing", "value": 67}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "work from home", "value": 67}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "present job", "value": 66}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "java", "value": 66}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "project management", "value": 59}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "data analytics", "value": 55}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "javascript", "value": 53}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "excel", "value": 53}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "machine learning", "value": 48}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "Salary_ML Engineer", "value": 1}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "Exp_ML Engineer", "value": 1}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "machine learning", "value": 169}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "analytics", "value": 164}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "sas", "value": 153}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "r", "value": 127}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "python", "value": 126}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "business analysis", "value": 101}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "sql", "value": 99}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "data analytics", "value": 87}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "data analysis", "value": 77}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "c", "value": 72}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "excel", "value": 72}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "finance", "value": 62}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "project management", "value": 61}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "java", "value": 60}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "digital marketing", "value": 52}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "data mining", "value": 52}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "javascript", "value": 48}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "tableau", "value": 47}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "nlp", "value": 46}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "banking", "value": 41}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "Salary_Software Engineer", "value": 1}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "Exp_Software Engineer", "value": 1}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "javascript", "value": 250}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "java", "value": 208}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "c", "value": 172}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "css", "value": 109}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "sql", "value": 108}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "jquery", "value": 98}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "html", "value": 97}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "python", "value": 94}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "software development", "value": 83}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "angularjs", "value": 78}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "software engineering", "value": 73}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "mysql", "value": 70}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "core java", "value": 69}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "html5", "value": 65}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "sql server", "value": 64}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "json", "value": 63}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "rest", "value": 61}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "j2ee", "value": 58}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "ajax", "value": 56}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "php", "value": 55}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "Salary_Data Scientist", "value": 1}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "Exp_Data Scientist", "value": 1}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "machine learning", "value": 227}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "python", "value": 207}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "r", "value": 178}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "data science", "value": 165}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "deep learning", "value": 88}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "sql", "value": 76}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "data scientist", "value": 70}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "data mining", "value": 69}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "nlp", "value": 66}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "sas", "value": 57}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "analytics", "value": 55}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "java", "value": 52}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "data analysis", "value": 47}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "hadoop", "value": 46}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "spark", "value": 42}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "predictive analytics", "value": 41}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "scala", "value": 37}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "predictive modeling", "value": 37}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "c", "value": 34}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "neural networks", "value": 34}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "Salary_Data Engineer", "value": 1}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "Exp_Data Engineer", "value": 1}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "hadoop", "value": 157}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "spark", "value": 144}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "big data", "value": 138}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "hive", "value": 108}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "java", "value": 95}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "sql", "value": 91}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "python", "value": 79}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "etl", "value": 47}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "nosql", "value": 47}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "scala", "value": 44}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "hbase", "value": 40}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "machine learning", "value": 39}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "data modeling", "value": 38}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "hdfs", "value": 37}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "pig", "value": 36}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "r", "value": 34}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "data analysis", "value": 33}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "mapreduce", "value": 32}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "analytics", "value": 31}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "big data analytics", "value": 30}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "Salary_Data Analyst", "value": 1}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "Exp_Data Analyst", "value": 1}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "data analysis", "value": 130}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "sql", "value": 56}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "excel", "value": 48}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "data analytics", "value": 45}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "data analyst", "value": 28}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "r", "value": 26}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "data mining", "value": 23}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "python", "value": 23}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "analytics", "value": 22}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "advanced excel", "value": 20}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "data visualization", "value": 18}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "business intelligence", "value": 17}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "mis", "value": 17}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "tableau", "value": 16}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "macros", "value": 15}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "business analysis", "value": 15}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "reporting", "value": 15}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "sas", "value": 14}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "mysql", "value": 13}, {"arrows": "to", "color": "#30363d", "from": "observed", "to": "data management", "value": 11}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "forceAtlas2Based": {
+            "avoidOverlap": 0,
+            "centralGravity": 0.01,
+            "damping": 0.4,
+            "gravitationalConstant": -50,
+            "springConstant": 0.08,
+            "springLength": 100
+        },
+        "solver": "forceAtlas2Based",
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>
