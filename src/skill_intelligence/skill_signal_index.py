@@ -1,125 +1,203 @@
-import json
-import numpy as np
-import pandas as pd
-import os
-import statsmodels.api as sm
-from collections import defaultdict
+"""
+Skill Market Signal Index (SSI) - multi-component skill ranking.
 
-np.random.seed(42)
+SSI(s) = Σ_k w_k · r_k(s) where w_k ~ Dirichlet(1,1,1,1)
+
+Components:
+1. Demand: frequency percentile
+2. Specificity: role-specificity (variance across roles)
+3. Compensation: salary association (controlled for role/experience)
+4. Breadth: n_role_families percentile
+
+Reports rank intervals from 10,000 Dirichlet draws.
+"""
+import pandas as pd
+import numpy as np
+import json
+import statsmodels.api as sm
+from pathlib import Path
+from src.utils.config import (
+    PROCESSED_DIR, EVIDENCE_DIR, 
+    categorize_role, SKILL_TAXONOMY, NON_TECHNICAL_SKILLS
+)
 
 def calculate_ssi():
-    print("Starting Validated Skill Signal Index Analysis...")
+    """Calculate the Skill Market Signal Index."""
+    print("=" * 60)
+    print("SKILL MARKET SIGNAL INDEX")
+    print("=" * 60)
     
-    # Load actual data
-    project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-    df = pd.read_csv(os.path.join(project_root, 'data/processed/analytics_jobs_clean.csv'))
+    # Load data
+    analytics_path = PROCESSED_DIR / 'analytics_jobs_clean.csv'
+    analytics_df = pd.read_csv(analytics_path)
     
-    with open(os.path.join(project_root, 'reports/evidence/skill_graph_metrics.json'), 'r') as f:
-        graph_metrics = json.load(f)
-        
-    skills = list(graph_metrics.keys())
+    skills_path = EVIDENCE_DIR / 'skill_analysis.json'
+    with open(skills_path) as f:
+        skill_analysis = json.load(f)
     
-    # 1. Demand & Breadth (from graph)
-    demand = np.array([graph_metrics[s]['frequency'] for s in skills])
-    breadth = np.array([graph_metrics[s]['betweenness'] for s in skills])
+    # Get skills from skill_analysis (top skills)
+    skills = [s['skill'] for s in skill_analysis['top_skills'][:80]]
     
-    # 2. Specificity (Information Gain / Variance across roles)
-    # If a skill appears in only 1 role family, it's highly specific.
-    # If it appears evenly across all role families, it's generic.
+    print(f"\nAnalyzing {len(skills)} top skills...")
     
-    # Map roles
-    role_map = {}
-    for r in df['job_desig'].dropna().unique():
-        rl = str(r).lower()
-        if 'scientist' in rl: role_map[r] = 'Data Scientist'
-        elif 'engineer' in rl and 'machine learning' not in rl and 'ml' not in rl: role_map[r] = 'Data Engineer'
-        elif 'analyst' in rl and 'business' not in rl: role_map[r] = 'Data Analyst'
-        elif 'business analyst' in rl: role_map[r] = 'Business Analyst'
-        elif 'machine learning' in rl or 'ml' in rl: role_map[r] = 'ML Engineer'
-        else: role_map[r] = 'Other'
-        
-    df['role_family'] = df['job_desig'].map(role_map).fillna('Other')
+    # Categorize roles
+    analytics_df['role_family'] = analytics_df['job_desig'].apply(categorize_role)
     
     # Create skill presence matrix
-    skill_presence = {s: [] for s in skills}
-    for ks in df['key_skills'].fillna(''):
-        ks_lower = str(ks).lower()
-        for s in skills:
-            skill_presence[s].append(1 if s in ks_lower else 0)
-            
-    for s in skills:
-        df[f'skill_{s}'] = skill_presence[s]
-        
-    # Calculate specificity as normalized variance of probabilities across roles
+    print("Building skill presence matrix...")
+    skill_presence = {}
+    for skill in skills:
+        skill_lower = skill.lower()
+        presence = analytics_df['key_skills'].fillna('').str.lower().str.contains(
+            skill_lower, regex=False, na=False
+        ).astype(int)
+        skill_presence[skill] = presence
+        analytics_df[f'skill_{skill}'] = presence
+    
+    # 1. Demand (frequency percentile)
+    print("Computing demand component...")
+    demand_freq = np.array([skill_presence[s].sum() for s in skills])
+    demand_pct = np.argsort(np.argsort(demand_freq)) / len(skills)  # percentile rank
+    
+    # 2. Breadth (n_role_families percentile)
+    print("Computing breadth component...")
+    breadth = np.array([
+        skill_df = analytics_df[skill_presence[s] == 1]
+        n_roles = skill_df['role_family'].nunique() if len(skill_df) > 0 else 0
+        n_roles
+        for s in skills
+    ])
+    breadth_pct = np.argsort(np.argsort(breadth)) / len(skills)
+    
+    # 3. Specificity (variance across roles - high variance = specific)
+    print("Computing specificity component...")
     specificity = []
     for s in skills:
-        role_probs = df.groupby('role_family')[f'skill_{s}'].mean()
-        var = np.var(role_probs)
+        role_probs = analytics_df.groupby('role_family')[f'skill_{s}'].mean()
+        if len(role_probs) > 1:
+            var = role_probs.var()
+        else:
+            var = 0
         specificity.append(var)
     specificity = np.array(specificity)
+    specificity_pct = np.argsort(np.argsort(specificity)) / len(skills)
     
-    # 3. Compensation Association (controlling for experience)
-    # We only have salary min/max. Let's use mid.
-    df['salary_mid'] = (df['salary_min'] + df['salary_max']) / 2
-    df_sal = df.dropna(subset=['salary_mid', 'exp_mid', 'role_family']).copy()
+    # 4. Compensation association (OLS with role/experience controls)
+    print("Computing compensation association...")
+    analytics_df['salary_mid'] = (
+        (analytics_df['salary_min_inr'] + analytics_df['salary_max_inr']) / 2
+    )
+    df_sal = analytics_df.dropna(subset=['salary_mid', 'experience_mid', 'role_family']).copy()
     
-    # Dummy code role family
-    roles_dummies = pd.get_dummies(df_sal['role_family'], drop_first=True, dtype=float)
+    # Create role dummies
+    role_dummies = pd.get_dummies(df_sal['role_family'], drop_first=True, dtype=float)
     
     comp_assoc = []
     for s in skills:
-        # log_salary ~ skill + exp_mid + role
-        X = pd.DataFrame({'skill': df_sal[f'skill_{s}'], 'exp_mid': df_sal['exp_mid']})
-        X = pd.concat([X, roles_dummies], axis=1)
-        X = sm.add_constant(X)
-        y = np.log1p(df_sal['salary_mid'])
+        X_cols = ['skill_{}'.format(s), 'experience_mid'] + list(role_dummies.columns)
+        X = pd.concat([
+            df_sal[[f'skill_{s}', 'experience_mid']], 
+            role_dummies
+        ], axis=1).dropna()
+        y = np.log1p(df_sal.loc[X.index, 'salary_mid'])
         
-        try:
-            model = sm.OLS(y, X).fit()
-            coef = model.params['skill']
-            pval = model.pvalues['skill']
-            # Only count if statistically significant (p < 0.05), else 0
-            comp_assoc.append(coef if pval < 0.05 else 0)
-        except:
+        if len(X) < 50:  # Need minimum sample size
             comp_assoc.append(0)
+            continue
             
+        try:
+            X_const = sm.add_constant(X)
+            model = sm.OLS(y, X_const).fit()
+            coef = model.params.get(f'skill_{s}', 0)
+            pval = model.pvalues.get(f'skill_{s}', 1)
+            # Only count significant associations
+            comp_assoc.append(coef if pval < 0.05 else 0)
+        except Exception as e:
+            comp_assoc.append(0)
+    
     comp_assoc = np.array(comp_assoc)
+    comp_assoc_pct = np.argsort(np.argsort(np.abs(comp_assoc))) / len(skills)
     
-    # Normalize all components to [0,1]
-    def min_max(arr):
-        mn, mx = np.min(arr), np.max(arr)
-        if mx == mn: return arr
+    # Normalize all components to [0, 1]
+    def minmax(arr):
+        mn, mx = arr.min(), arr.max()
+        if mx == mn:
+            return np.zeros_like(arr)
         return (arr - mn) / (mx - mn)
-        
-    demand = min_max(demand)
-    breadth = min_max(breadth)
-    specificity = min_max(specificity)
-    comp_assoc = min_max(comp_assoc)
     
-    results = {}
-    for i, s in enumerate(skills):
-        results[s] = {
-            'demand': float(demand[i]),
-            'specificity': float(specificity[i]),
-            'comp_assoc': float(comp_assoc[i]),
-            'breadth': float(breadth[i]),
-        }
-        
-    # 10,000 Dirichlet draws for stability
+    components = {
+        'demand': minmax(demand_pct),
+        'breadth': minmax(breadth_pct),
+        'specificity': minmax(specificity_pct),
+        'compensation': minmax(comp_assoc_pct)
+    }
+    
+    # 10,000 Dirichlet draws for weight uncertainty
+    print("Running 10,000 Dirichlet weight draws...")
     n_draws = 10000
-    weights = np.random.dirichlet((1, 1, 1, 1), n_draws)
+    np.random.seed(42)
+    weights = np.random.dirichlet([1, 1, 1, 1], n_draws)
     
-    for i, s in enumerate(skills):
-        ssi_draws = weights[:,0]*demand[i] + weights[:,1]*specificity[i] + weights[:,2]*comp_assoc[i] + weights[:,3]*breadth[i]
-        results[s]['ssi_mean'] = float(np.mean(ssi_draws))
-        results[s]['ssi_std'] = float(np.std(ssi_draws))
-        results[s]['ssi_p05'] = float(np.percentile(ssi_draws, 5))
-        results[s]['ssi_p95'] = float(np.percentile(ssi_draws, 95))
+    ssi_results = {}
+    for i, skill in enumerate(skills):
+        ssi_draws = (
+            weights[:, 0] * components['demand'][i] +
+            weights[:, 1] * components['specificity'][i] +
+            weights[:, 2] * comp_assoc_pct[i] +
+            weights[:, 3] * components['breadth'][i]
+        )
         
-    with open(os.path.join(project_root, 'reports/evidence/skill_signal_index.json'), 'w') as f:
-        json.dump(results, f, indent=4)
-        
-    print("Skill Signal Index Validation Complete. No random metrics used.")
+        ssi_results[skill] = {
+            'ssi_mean': float(np.mean(ssi_draws)),
+            'ssi_std': float(np.std(ssi_draws)),
+            'ssi_p05': float(np.percentile(ssi_draws, 5)),
+            'ssi_p95': float(np.percentile(ssi_draws, 95)),
+            'rank_mean': float(np.mean(np.argsort(np.argsort(-ssi_draws)) + 1)),
+            'rank_p05': float(np.percentile(np.argsort(np.argsort(-ssi_draws)) + 1, 5)),
+            'rank_p95': float(np.percentile(np.argsort(np.argsort(-ssi_draws)) + 1, 95)),
+            'components': {
+                'demand': float(components['demand'][i]),
+                'specificity': float(components['specificity'][i]),
+                'compensation': float(comp_assoc_pct[i]),
+                'breadth': float(components['breadth'][i])
+            },
+            'dimension': next(
+                (d['dimension'] for d in skill_analysis['top_skills'] 
+                 if d['skill'] == skill), 'unknown'
+            )
+        }
+    
+    # Save results
+    EVIDENCE_DIR.mkdir(parents=True, exist_ok=True)
+    with open(EVIDENCE_DIR / 'skill_signal_index.json', 'w') as f:
+        json.dump(ssi_results, f, indent=2)
+    
+    print(f"\nSaved SSI results: {EVIDENCE_DIR / 'skill_signal_index.json'}")
+    
+    # Print top 20 skills
+    print("\n" + "=" * 60)
+    print("TOP 20 SKILLS BY SIGNAL INDEX")
+    print("=" * 60)
+    sorted_skills = sorted(ssi_results.items(), key=lambda x: x[1]['ssi_mean'], reverse=True)[:20]
+    for i, (skill, data) in enumerate(sorted_skills, 1):
+        dim = data['dimension']
+        print(f"{i:2d}. {skill:25s} | SSI: {data['ssi_mean']:.3f} ± {data['ssi_std']:.3f} | "
+              f"Rank: {data['rank_mean']:.0f} [{data['rank_p05']:.0f}-{data['rank_p95']:.0f}] | "
+              f"Dim: {dim}")
+    
+    # Top skills by dimension
+    print("\n" + "=" * 60)
+    print("TOP SKILLS BY DIMENSION")
+    print("=" * 60)
+    for dim in ['big_data', 'maths_statistics', 'coding', 'ai_ml', 'dashboard_storytelling']:
+        dim_skills = [(s, d) for s, d in ssi_results.items() if d['dimension'] == dim]
+        dim_skills.sort(key=lambda x: x[1]['ssi_mean'], reverse=True)
+        if dim_skills:
+            print(f"\n{dim.upper()}:")
+            for i, (skill, data) in enumerate(dim_skills[:5], 1):
+                print(f"  {i}. {skill:25s} SSI: {data['ssi_mean']:.3f}")
+    
+    return ssi_results
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     calculate_ssi()

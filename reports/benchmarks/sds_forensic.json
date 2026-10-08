@@ -1,0 +1,125 @@
+{
+  "n_samples": 161,
+  "n_features": 5,
+  "class_balance": 0.5279503105590062,
+  "feature_stats_by_class": {
+    "neuroticism": {
+      "high_mean": 36.129411764705885,
+      "high_std": 9.27206279418899,
+      "low_mean": 36.26315789473684,
+      "low_std": 13.212487447918486,
+      "cohens_d": -0.011718127172864537,
+      "diff": -0.13374613003095703
+    },
+    "extraversion": {
+      "high_mean": 48.858823529411765,
+      "high_std": 7.469227252018573,
+      "low_mean": 36.88157894736842,
+      "low_std": 13.225195252762214,
+      "cohens_d": 1.115199814169765,
+      "diff": 11.977244582043348
+    },
+    "openness_to_experience": {
+      "high_mean": 48.49411764705882,
+      "high_std": 5.683358181928148,
+      "low_mean": 33.31578947368421,
+      "low_std": 10.67983835872159,
+      "cohens_d": 1.7743057768376964,
+      "diff": 15.17832817337461
+    },
+    "agreeableness": {
+      "high_mean": 47.71764705882353,
+      "high_std": 4.9536224472743235,
+      "low_mean": 41.11842105263158,
+      "low_std": 14.876350005081363,
+      "cohens_d": 0.595220729196056,
+      "diff": 6.599226006191948
+    },
+    "conscientiousness": {
+      "high_mean": 53.68235294117647,
+      "high_std": 6.102715563984771,
+      "low_mean": 35.73684210526316,
+      "low_std": 12.585037063701355,
+      "cohens_d": 1.8145009846118911,
+      "diff": 17.94551083591331
+    }
+  },
+  "tree_depth_analysis": {
+    "depth_1": {
+      "roc_auc_mean": 0.8256372549019609,
+      "roc_auc_std": 0.0692512961777548,
+      "accuracy_mean": 0.8323863636363636
+    },
+    "depth_2": {
+      "roc_auc_mean": 0.9172794117647058,
+      "roc_auc_std": 0.04490220160051869,
+      "accuracy_mean": 0.912689393939394
+    },
+    "depth_3": {
+      "roc_auc_mean": 0.9423774509803922,
+      "roc_auc_std": 0.05051733993379827,
+      "accuracy_mean": 0.937689393939394
+    },
+    "depth_4": {
+      "roc_auc_mean": 0.9173039215686274,
+      "roc_auc_std": 0.04898910815870517,
+      "accuracy_mean": 0.9128787878787878
+    },
+    "depth_5": {
+      "roc_auc_mean": 0.9235294117647059,
+      "roc_auc_std": 0.05254023924303633,
+      "accuracy_mean": 0.918939393939394
+    }
+  },
+  "feature_importance": {
+    "conscientiousness": 0.34321923142282695,
+    "openness_to_experience": 0.33270360245199093,
+    "extraversion": 0.14619652246514275,
+    "agreeableness": 0.14180200460730422,
+    "neuroticism": 0.0360786390527352
+  },
+  "forensic_findings": [],
+  "threshold_rules": [
+    {
+      "feature": "neuroticism",
+      "best_threshold": 28.0,
+      "best_auc": 0.583513931888545,
+      "simple_rule_auc": 0.583513931888545
+    },
+    {
+      "feature": "extraversion",
+      "best_threshold": 42.0,
+      "best_auc": 0.7465944272445821,
+      "simple_rule_auc": 0.7465944272445821
+    },
+    {
+      "feature": "openness_to_experience",
+      "best_threshold": 42.0,
+      "best_auc": 0.8213622291021672,
+      "simple_rule_auc": 0.8213622291021672
+    },
+    {
+      "feature": "agreeableness",
+      "best_threshold": 41.0,
+      "best_auc": 0.7212848297213622,
+      "simple_rule_auc": 0.7212848297213622
+    },
+    {
+      "feature": "conscientiousness",
+      "best_threshold": 49.0,
+      "best_auc": 0.8314241486068111,
+      "simple_rule_auc": 0.8314241486068111
+    }
+  ],
+  "shuffled_gap": {
+    "real_auc": 0.9172794117647058,
+    "shuffled_auc_mean": 0.5014546568627452,
+    "shuffled_auc_std": 0.04435031395743798,
+    "gap": 0.4158247549019607
+  },
+  "conclusion": {
+    "severity": "CRITICAL",
+    "text": "HIGH SEPARABILITY: Depth-2 tree achieves >0.90 AUC. This strongly suggests the success label was generated from or heavily influenced by threshold rules on personality traits, rather than representing observed real-world success. The classification result (0.99+ AUC) reflects this deterministic relationship, NOT predictive power for real workforce outcomes.",
+    "recommendation": "Do not treat SDS classification as valid prediction of real-world success. The label appears to be a function of the input traits. Any \"prediction\" is essentially recovering the labeling rule."
+  }
+}

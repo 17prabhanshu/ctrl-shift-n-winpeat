@@ -1,0 +1,30 @@
+[
+  {
+    "claim_id": "H1-Role-Salary-001",
+    "statement": "Role families differ significantly in median salary",
+    "dataset": "DataScience Jobs",
+    "evidence_tag": "O",
+    "method": "Kruskal-Wallis H-test on log salary by role family",
+    "metric": "epsilon_squared",
+    "value": 0.35320678577518755,
+    "ci95_lower": null,
+    "ci95_upper": null,
+    "n": 1602,
+    "limitation": "Observational posting data; salary is advertised not actual; roles categorized by our taxonomy",
+    "status": "accepted"
+  },
+  {
+    "claim_id": "H3-Complementarity-001",
+    "statement": "Technical and communication skills show positive complementarity in market salary",
+    "dataset": "Analytics Jobs",
+    "evidence_tag": "M",
+    "method": "OLS regression with HC3 robust SE: log_salary ~ role + exp + T + C + T\u00d7C",
+    "metric": "Interaction coefficient (has_technical \u00d7 has_comm_skill)",
+    "value": 0.08382969421366927,
+    "ci95_lower": -0.013533081547521059,
+    "ci95_upper": 0.1811924699748596,
+    "n": 15841,
+    "limitation": "Observational; binary skill proxies; possible omitted variables (company quality, location premiums); CI includes zero",
+    "status": "accepted"
+  }
+]

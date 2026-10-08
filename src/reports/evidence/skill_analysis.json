@@ -1,0 +1,1153 @@
+{
+  "total_mappings": 79880,
+  "unique_canonical_skills": 10336,
+  "dimension_distribution": {
+    "unmapped": 59714,
+    "coding": 12116,
+    "big_data": 2230,
+    "maths_statistics": 2030,
+    "ai_ml": 1931,
+    "dashboard_storytelling": 1859
+  },
+  "confidence_distribution": {
+    "0.5": 70148,
+    "1.0": 8312,
+    "0.9": 1325,
+    "0.8": 95
+  },
+  "top_skills": [
+    {
+      "skill": "sql",
+      "frequency": 1978,
+      "dimension": "coding"
+    },
+    {
+      "skill": "java",
+      "frequency": 1154,
+      "dimension": "coding"
+    },
+    {
+      "skill": "python",
+      "frequency": 987,
+      "dimension": "coding"
+    },
+    {
+      "skill": "...",
+      "frequency": 946,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "analytics",
+      "frequency": 904,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "machine learning",
+      "frequency": 770,
+      "dimension": "ai_ml"
+    },
+    {
+      "skill": "finance",
+      "frequency": 756,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "excel",
+      "frequency": 693,
+      "dimension": "dashboard_storytelling"
+    },
+    {
+      "skill": "r",
+      "frequency": 655,
+      "dimension": "coding"
+    },
+    {
+      "skill": "sas",
+      "frequency": 636,
+      "dimension": "maths_statistics"
+    },
+    {
+      "skill": "business analysis",
+      "frequency": 633,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "data analysis",
+      "frequency": 618,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "javascript",
+      "frequency": 566,
+      "dimension": "coding"
+    },
+    {
+      "skill": "digital marketing",
+      "frequency": 566,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "project management",
+      "frequency": 505,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "seo",
+      "frequency": 495,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "nosql",
+      "frequency": 447,
+      "dimension": "big_data"
+    },
+    {
+      "skill": "data analytics",
+      "frequency": 412,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "sales",
+      "frequency": 404,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "hadoop",
+      "frequency": 401,
+      "dimension": "big_data"
+    },
+    {
+      "skill": "accounting",
+      "frequency": 376,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "outsourcing",
+      "frequency": 360,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "marketing",
+      "frequency": 326,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "spark",
+      "frequency": 322,
+      "dimension": "big_data"
+    },
+    {
+      "skill": "html",
+      "frequency": 305,
+      "dimension": "coding"
+    },
+    {
+      "skill": "business process",
+      "frequency": 280,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "data science",
+      "frequency": 271,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "big data",
+      "frequency": 263,
+      "dimension": "big_data"
+    },
+    {
+      "skill": "business development",
+      "frequency": 253,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "auditing",
+      "frequency": 247,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "c++",
+      "frequency": 245,
+      "dimension": "coding"
+    },
+    {
+      "skill": "financial analysis",
+      "frequency": 245,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "nlp",
+      "frequency": 244,
+      "dimension": "ai_ml"
+    },
+    {
+      "skill": "market research",
+      "frequency": 234,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "css",
+      "frequency": 230,
+      "dimension": "coding"
+    },
+    {
+      "skill": "data mining",
+      "frequency": 225,
+      "dimension": "ai_ml"
+    },
+    {
+      "skill": "google analytics",
+      "frequency": 224,
+      "dimension": "coding"
+    },
+    {
+      "skill": "budgeting",
+      "frequency": 220,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "operations",
+      "frequency": 220,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "sem",
+      "frequency": 216,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "hive",
+      "frequency": 210,
+      "dimension": "big_data"
+    },
+    {
+      "skill": "tableau",
+      "frequency": 210,
+      "dimension": "dashboard_storytelling"
+    },
+    {
+      "skill": "jquery",
+      "frequency": 203,
+      "dimension": "coding"
+    },
+    {
+      "skill": "analytical",
+      "frequency": 200,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "consulting",
+      "frequency": 189,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "scala",
+      "frequency": 188,
+      "dimension": "coding"
+    },
+    {
+      "skill": "product management",
+      "frequency": 179,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "business intelligence",
+      "frequency": 177,
+      "dimension": "dashboard_storytelling"
+    },
+    {
+      "skill": "c#",
+      "frequency": 176,
+      "dimension": "coding"
+    },
+    {
+      "skill": "hr",
+      "frequency": 169,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "banking",
+      "frequency": 168,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "linux",
+      "frequency": 164,
+      "dimension": "coding"
+    },
+    {
+      "skill": "deep learning",
+      "frequency": 163,
+      "dimension": "ai_ml"
+    },
+    {
+      "skill": "recruitment",
+      "frequency": 162,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "algorithms",
+      "frequency": 161,
+      "dimension": "coding"
+    },
+    {
+      "skill": "xml",
+      "frequency": 160,
+      "dimension": "coding"
+    },
+    {
+      "skill": "social media",
+      "frequency": 158,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "php",
+      "frequency": 152,
+      "dimension": "coding"
+    },
+    {
+      "skill": "forecasting",
+      "frequency": 150,
+      "dimension": "maths_statistics"
+    },
+    {
+      "skill": "oracle",
+      "frequency": 149,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "strategy",
+      "frequency": 148,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "predictive modeling",
+      "frequency": 146,
+      "dimension": "ai_ml"
+    },
+    {
+      "skill": "analytics...",
+      "frequency": 144,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "c",
+      "frequency": 144,
+      "dimension": "coding"
+    },
+    {
+      "skill": "data modeling",
+      "frequency": 142,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "mis",
+      "frequency": 142,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "etl",
+      "frequency": 140,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "business analyst",
+      "frequency": 140,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "operations...",
+      "frequency": 139,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "rest",
+      "frequency": 138,
+      "dimension": "coding"
+    },
+    {
+      "skill": "online marketing",
+      "frequency": 137,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "software development",
+      "frequency": 135,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": ".net",
+      "frequency": 134,
+      "dimension": "coding"
+    },
+    {
+      "skill": "google adwords",
+      "frequency": 128,
+      "dimension": "coding"
+    },
+    {
+      "skill": "data management",
+      "frequency": 128,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "communication skills",
+      "frequency": 127,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "data warehousing",
+      "frequency": 127,
+      "dimension": "big_data"
+    },
+    {
+      "skill": "json",
+      "frequency": 126,
+      "dimension": "coding"
+    },
+    {
+      "skill": "predictive analytics",
+      "frequency": 124,
+      "dimension": "ai_ml"
+    },
+    {
+      "skill": "web technologies",
+      "frequency": 123,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "financial planning",
+      "frequency": 123,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "html5",
+      "frequency": 121,
+      "dimension": "coding"
+    },
+    {
+      "skill": "financial modelling",
+      "frequency": 120,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "agile",
+      "frequency": 119,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "customer service",
+      "frequency": 119,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "risk management",
+      "frequency": 119,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "data analytics...",
+      "frequency": 114,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "data structures",
+      "frequency": 113,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "bpo",
+      "frequency": 112,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "sap",
+      "frequency": 112,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "ppc",
+      "frequency": 112,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "networking",
+      "frequency": 110,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "web services",
+      "frequency": 108,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "angularjs",
+      "frequency": 107,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "taxation",
+      "frequency": 106,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "quality analysis",
+      "frequency": 105,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "credit risk",
+      "frequency": 104,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "data analysis...",
+      "frequency": 103,
+      "dimension": "unmapped"
+    },
+    {
+      "skill": "aws",
+      "frequency": 103,
+      "dimension": "coding"
+    },
+    {
+      "skill": "azure",
+      "frequency": 102,
+      "dimension": "coding"
+    }
+  ],
+  "role_skill_associations": {
+    "Other": [
+      {
+        "skill": "sql",
+        "frequency": 1051
+      },
+      {
+        "skill": "...",
+        "frequency": 775
+      },
+      {
+        "skill": "finance",
+        "frequency": 724
+      },
+      {
+        "skill": "analytics",
+        "frequency": 712
+      },
+      {
+        "skill": "digital marketing",
+        "frequency": 558
+      },
+      {
+        "skill": "java",
+        "frequency": 513
+      },
+      {
+        "skill": "sas",
+        "frequency": 510
+      },
+      {
+        "skill": "excel",
+        "frequency": 499
+      },
+      {
+        "skill": "seo",
+        "frequency": 484
+      },
+      {
+        "skill": "project management",
+        "frequency": 444
+      },
+      {
+        "skill": "python",
+        "frequency": 431
+      },
+      {
+        "skill": "sales",
+        "frequency": 382
+      },
+      {
+        "skill": "r",
+        "frequency": 369
+      },
+      {
+        "skill": "accounting",
+        "frequency": 364
+      },
+      {
+        "skill": "data analysis",
+        "frequency": 346
+      },
+      {
+        "skill": "outsourcing",
+        "frequency": 343
+      },
+      {
+        "skill": "marketing",
+        "frequency": 305
+      },
+      {
+        "skill": "data analytics",
+        "frequency": 289
+      },
+      {
+        "skill": "machine learning",
+        "frequency": 277
+      },
+      {
+        "skill": "business process",
+        "frequency": 247
+      }
+    ],
+    "Software Engineer": [
+      {
+        "skill": "java",
+        "frequency": 407
+      },
+      {
+        "skill": "sql",
+        "frequency": 402
+      },
+      {
+        "skill": "javascript",
+        "frequency": 301
+      },
+      {
+        "skill": "nosql",
+        "frequency": 139
+      },
+      {
+        "skill": "python",
+        "frequency": 129
+      },
+      {
+        "skill": "css",
+        "frequency": 125
+      },
+      {
+        "skill": "html",
+        "frequency": 119
+      },
+      {
+        "skill": "jquery",
+        "frequency": 108
+      },
+      {
+        "skill": "angularjs",
+        "frequency": 80
+      },
+      {
+        "skill": "php",
+        "frequency": 77
+      },
+      {
+        "skill": "rest",
+        "frequency": 75
+      },
+      {
+        "skill": "html5",
+        "frequency": 69
+      },
+      {
+        "skill": "c++",
+        "frequency": 67
+      },
+      {
+        "skill": "c#",
+        "frequency": 65
+      },
+      {
+        "skill": "json",
+        "frequency": 63
+      },
+      {
+        "skill": "xml",
+        "frequency": 57
+      },
+      {
+        "skill": "...",
+        "frequency": 57
+      },
+      {
+        "skill": "ajax",
+        "frequency": 56
+      },
+      {
+        "skill": "software engineering",
+        "frequency": 55
+      },
+      {
+        "skill": "mvc",
+        "frequency": 54
+      }
+    ],
+    "Data Scientist": [
+      {
+        "skill": "machine learning",
+        "frequency": 233
+      },
+      {
+        "skill": "python",
+        "frequency": 208
+      },
+      {
+        "skill": "data science",
+        "frequency": 152
+      },
+      {
+        "skill": "r",
+        "frequency": 152
+      },
+      {
+        "skill": "sql",
+        "frequency": 105
+      },
+      {
+        "skill": "nlp",
+        "frequency": 97
+      },
+      {
+        "skill": "deep learning",
+        "frequency": 88
+      },
+      {
+        "skill": "data scientist",
+        "frequency": 67
+      },
+      {
+        "skill": "java",
+        "frequency": 53
+      },
+      {
+        "skill": "data mining",
+        "frequency": 52
+      },
+      {
+        "skill": "hadoop",
+        "frequency": 50
+      },
+      {
+        "skill": "analytics",
+        "frequency": 50
+      },
+      {
+        "skill": "sas",
+        "frequency": 44
+      },
+      {
+        "skill": "spark",
+        "frequency": 44
+      },
+      {
+        "skill": "scala",
+        "frequency": 37
+      },
+      {
+        "skill": "neural network",
+        "frequency": 37
+      },
+      {
+        "skill": "predictive analytics",
+        "frequency": 36
+      },
+      {
+        "skill": "data analysis",
+        "frequency": 35
+      },
+      {
+        "skill": "nosql",
+        "frequency": 32
+      },
+      {
+        "skill": "text mining",
+        "frequency": 27
+      }
+    ],
+    "Data Engineer": [
+      {
+        "skill": "hadoop",
+        "frequency": 201
+      },
+      {
+        "skill": "sql",
+        "frequency": 173
+      },
+      {
+        "skill": "spark",
+        "frequency": 146
+      },
+      {
+        "skill": "big data",
+        "frequency": 128
+      },
+      {
+        "skill": "java",
+        "frequency": 123
+      },
+      {
+        "skill": "hive",
+        "frequency": 106
+      },
+      {
+        "skill": "python",
+        "frequency": 82
+      },
+      {
+        "skill": "nosql",
+        "frequency": 80
+      },
+      {
+        "skill": "scala",
+        "frequency": 46
+      },
+      {
+        "skill": "etl",
+        "frequency": 46
+      },
+      {
+        "skill": "hbase",
+        "frequency": 38
+      },
+      {
+        "skill": "machine learning",
+        "frequency": 37
+      },
+      {
+        "skill": "pig",
+        "frequency": 36
+      },
+      {
+        "skill": "mapreduce",
+        "frequency": 31
+      },
+      {
+        "skill": "r",
+        "frequency": 31
+      },
+      {
+        "skill": "data modeling",
+        "frequency": 30
+      },
+      {
+        "skill": "analytics",
+        "frequency": 26
+      },
+      {
+        "skill": "flume",
+        "frequency": 26
+      },
+      {
+        "skill": "sqoop",
+        "frequency": 26
+      },
+      {
+        "skill": "data warehousing",
+        "frequency": 25
+      }
+    ],
+    "ML Engineer": [
+      {
+        "skill": "machine learning",
+        "frequency": 161
+      },
+      {
+        "skill": "python",
+        "frequency": 84
+      },
+      {
+        "skill": "nlp",
+        "frequency": 64
+      },
+      {
+        "skill": "r",
+        "frequency": 47
+      },
+      {
+        "skill": "java",
+        "frequency": 37
+      },
+      {
+        "skill": "deep learning",
+        "frequency": 31
+      },
+      {
+        "skill": "c++",
+        "frequency": 30
+      },
+      {
+        "skill": "data mining",
+        "frequency": 29
+      },
+      {
+        "skill": "sql",
+        "frequency": 29
+      },
+      {
+        "skill": "analytics",
+        "frequency": 28
+      },
+      {
+        "skill": "computer vision",
+        "frequency": 14
+      },
+      {
+        "skill": "algorithms",
+        "frequency": 11
+      },
+      {
+        "skill": "data analysis",
+        "frequency": 11
+      },
+      {
+        "skill": "text mining",
+        "frequency": 10
+      },
+      {
+        "skill": "algorithms...",
+        "frequency": 9
+      },
+      {
+        "skill": "business intelligence",
+        "frequency": 9
+      },
+      {
+        "skill": "...",
+        "frequency": 9
+      },
+      {
+        "skill": "sas",
+        "frequency": 9
+      },
+      {
+        "skill": "perl",
+        "frequency": 8
+      },
+      {
+        "skill": "neural network",
+        "frequency": 8
+      }
+    ],
+    "Business Analyst": [
+      {
+        "skill": "business analysis",
+        "frequency": 428
+      },
+      {
+        "skill": "sql",
+        "frequency": 112
+      },
+      {
+        "skill": "business analyst",
+        "frequency": 110
+      },
+      {
+        "skill": "excel",
+        "frequency": 64
+      },
+      {
+        "skill": "...",
+        "frequency": 54
+      },
+      {
+        "skill": "business analysis...",
+        "frequency": 49
+      },
+      {
+        "skill": "requirement gathering",
+        "frequency": 37
+      },
+      {
+        "skill": "uat",
+        "frequency": 36
+      },
+      {
+        "skill": "analytics",
+        "frequency": 35
+      },
+      {
+        "skill": "user stories",
+        "frequency": 35
+      },
+      {
+        "skill": "use cases",
+        "frequency": 35
+      },
+      {
+        "skill": "sas",
+        "frequency": 34
+      },
+      {
+        "skill": "data analytics",
+        "frequency": 34
+      },
+      {
+        "skill": "data analysis",
+        "frequency": 33
+      },
+      {
+        "skill": "project management",
+        "frequency": 32
+      },
+      {
+        "skill": "tableau",
+        "frequency": 29
+      },
+      {
+        "skill": "r",
+        "frequency": 26
+      },
+      {
+        "skill": "python",
+        "frequency": 25
+      },
+      {
+        "skill": "finance",
+        "frequency": 25
+      },
+      {
+        "skill": "brd",
+        "frequency": 24
+      }
+    ],
+    "Data Analyst": [
+      {
+        "skill": "data analysis",
+        "frequency": 137
+      },
+      {
+        "skill": "sql",
+        "frequency": 106
+      },
+      {
+        "skill": "excel",
+        "frequency": 87
+      },
+      {
+        "skill": "data analytics",
+        "frequency": 34
+      },
+      {
+        "skill": "data analyst",
+        "frequency": 29
+      },
+      {
+        "skill": "python",
+        "frequency": 28
+      },
+      {
+        "skill": "r",
+        "frequency": 24
+      },
+      {
+        "skill": "tableau",
+        "frequency": 24
+      },
+      {
+        "skill": "data mining",
+        "frequency": 18
+      },
+      {
+        "skill": "data analysis...",
+        "frequency": 16
+      },
+      {
+        "skill": "sas",
+        "frequency": 16
+      },
+      {
+        "skill": "data visualization",
+        "frequency": 15
+      },
+      {
+        "skill": "power bi",
+        "frequency": 15
+      },
+      {
+        "skill": "macros",
+        "frequency": 14
+      },
+      {
+        "skill": "analytics",
+        "frequency": 12
+      },
+      {
+        "skill": "business intelligence",
+        "frequency": 11
+      },
+      {
+        "skill": "machine learning",
+        "frequency": 11
+      },
+      {
+        "skill": "mis",
+        "frequency": 10
+      },
+      {
+        "skill": "business analysis",
+        "frequency": 10
+      },
+      {
+        "skill": "vba",
+        "frequency": 10
+      }
+    ]
+  },
+  "dimension_role_matrix": {
+    "big_data": {
+      "Data Scientist": 215,
+      "Data Engineer": 876,
+      "Other": 710,
+      "Business Analyst": 14,
+      "Software Engineer": 354,
+      "Data Analyst": 27,
+      "ML Engineer": 34
+    },
+    "maths_statistics": {
+      "ML Engineer": 26,
+      "Data Scientist": 157,
+      "Other": 1636,
+      "Software Engineer": 52,
+      "Business Analyst": 89,
+      "Data Engineer": 16,
+      "Data Analyst": 54
+    },
+    "coding": {
+      "Other": 6803,
+      "Software Engineer": 3055,
+      "Data Scientist": 713,
+      "Data Engineer": 622,
+      "ML Engineer": 317,
+      "Business Analyst": 337,
+      "Data Analyst": 269
+    },
+    "ai_ml": {
+      "Other": 773,
+      "Data Scientist": 607,
+      "ML Engineer": 316,
+      "Data Engineer": 60,
+      "Business Analyst": 51,
+      "Software Engineer": 74,
+      "Data Analyst": 50
+    },
+    "dashboard_storytelling": {
+      "Other": 1290,
+      "Business Analyst": 163,
+      "Data Engineer": 51,
+      "Data Scientist": 41,
+      "Data Analyst": 179,
+      "ML Engineer": 16,
+      "Software Engineer": 119
+    },
+    "unmapped": {
+      "Other": 49998,
+      "Software Engineer": 3910,
+      "Data Scientist": 885,
+      "Data Engineer": 1001,
+      "ML Engineer": 253,
+      "Business Analyst": 2889,
+      "Data Analyst": 778
+    }
+  },
+  "sql_dimension_note": "SQL mapped to coding dimension. Sensitivity analysis reassigns SQL to big_data dimension."
+}

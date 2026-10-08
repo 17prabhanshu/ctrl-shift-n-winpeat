@@ -1,0 +1,65 @@
+{
+  "n": 139,
+  "class_balance": 0.5251798561151079,
+  "models": {
+    "logistic_additive": {
+      "auc": null,
+      "coefficients": {
+        "big_data": 0.9961732361386808,
+        "maths_stats": 1.8210522333190953,
+        "coding": 0.6089666897041588,
+        "ai_ml": 1.2638960746917092,
+        "storytelling": 1.3547574262274718
+      },
+      "pvalues": {
+        "big_data": 0.0071964853695449795,
+        "maths_stats": 0.00024729634687956835,
+        "coding": 0.07630893217124804,
+        "ai_ml": 0.007251543668852788,
+        "storytelling": 0.0002506887955496405
+      },
+      "summary": "                        Logit Regression Results                        \nDep. Variable:  ,salary_hike_high_or_low,  No. Observations:  ,   139   \nModel:          ,Logit                  ,  Df Residuals:      ,   133   \nMethod:         ,MLE                    ,  Df Model:          ,     5   \nDate:           ,Thu, 08 Oct 2026       ,  Pseudo R-squ.:     ,0.4993   \nTime:           ,07:24:38               ,  Log-Likelihood:    , -48.153 \nconverged:      ,True                   ,  LL-Null:           , -96.171 \nCovariance Type:,nonrobust              ,  LLR p-value:       ,3.613e-19\n            ,   coef   , std err ,    z    ,P>|z| ,  [0.025 ,  0.975] \nconst       ,  -26.2243,    4.651,   -5.639, 0.000,  -35.340,  -17.109\nbig_data    ,    0.9962,    0.371,    2.688, 0.007,    0.270,    1.723\nmaths_stats ,    1.8211,    0.497,    3.665, 0.000,    0.847,    2.795\ncoding      ,    0.6090,    0.344,    1.773, 0.076,   -0.064,    1.282\nai_ml       ,    1.2639,    0.471,    2.685, 0.007,    0.341,    2.186\nstorytelling,    1.3548,    0.370,    3.662, 0.000,    0.630,    2.080"
+    },
+    "logistic_interaction": {
+      "coefficients": {
+        "big_data": 1.102054944121027,
+        "maths_stats": 10.029154782124609,
+        "coding": 0.6928030450935146,
+        "ai_ml": 1.5058733104526534,
+        "storytelling": 9.54862763439867,
+        "storytelling_x_maths": -1.718502894348815
+      },
+      "pvalues": {
+        "big_data": 0.005275104817946564,
+        "maths_stats": 0.1363151981389869,
+        "coding": 0.051554001384640405,
+        "ai_ml": 0.0043657950511055334,
+        "storytelling": 0.1542360743104601,
+        "storytelling_x_maths": 0.2092762457116042
+      },
+      "interaction_coef": -1.718502894348815,
+      "interaction_p": 0.2092762457116042
+    }
+  },
+  "interaction_test": {
+    "lrt_statistic": 2.8225356714973344,
+    "lrt_df": 1,
+    "lrt_p_value": 0.09294945987929026,
+    "significant": false,
+    "interpretation": "No significant improvement from interaction",
+    "bootstrap_ci": {
+      "n_bootstrap": 2000,
+      "mean": -2.2308328518058995,
+      "ci95_lower": -6.1188757155724645,
+      "ci95_upper": 0.20604120031775253,
+      "includes_zero": true
+    }
+  },
+  "power_analysis": {
+    "n_events": 73,
+    "n_params": 7,
+    "rule_of_thumb_events_per_param": 10.428571428571429,
+    "mde_estimate": "Large effects only detectable with n=139; interaction effects < 0.5 log-odds likely underpowered",
+    "note": "Proper power simulation requires 2000+ replicates of synthetic data generation"
+  }
+}

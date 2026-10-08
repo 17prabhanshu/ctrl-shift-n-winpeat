@@ -1,0 +1,303 @@
+[
+  {
+    "dataset": "ds_jobs",
+    "action": "column_rename",
+    "timestamp": "2026-10-08T06:41:59.012707",
+    "details": {
+      "original": [
+        "reference_no",
+        "company_name",
+        "job_title",
+        "min_experience",
+        "avg_salary",
+        "min_salary",
+        "max_salary",
+        "num_of_jobs"
+      ],
+      "normalized": [
+        "reference_no",
+        "company_name",
+        "job_title",
+        "min_experience",
+        "avg_salary",
+        "min_salary",
+        "max_salary",
+        "num_of_jobs"
+      ],
+      "mapping": {
+        "reference_no": "reference_no",
+        "company_name": "company_name",
+        "job_title": "job_title",
+        "min_experience": "min_experience",
+        "avg_salary": "avg_salary",
+        "min_salary": "min_salary",
+        "max_salary": "max_salary",
+        "num_of_jobs": "num_of_jobs"
+      }
+    }
+  },
+  {
+    "dataset": "ds_jobs",
+    "action": "salary_parse",
+    "timestamp": "2026-10-08T06:41:59.015636",
+    "details": {
+      "column": "avg_salary",
+      "format": "LPA with L suffix (e.g., 7.8L = 780,000 INR)",
+      "parsed_column": "avg_salary_inr",
+      "disclosed_rate": 1.0,
+      "rows_processed": 1602
+    }
+  },
+  {
+    "dataset": "ds_jobs",
+    "action": "experience_parse",
+    "timestamp": "2026-10-08T06:41:59.016087",
+    "details": {
+      "column": "min_experience",
+      "valid_rate": 1.0
+    }
+  },
+  {
+    "dataset": "ds_jobs",
+    "action": "company_audit",
+    "timestamp": "2026-10-08T06:41:59.023158",
+    "details": {
+      "unique_companies": 642,
+      "total_rows": 1602,
+      "repeated_reference_nos": 142
+    }
+  },
+  {
+    "dataset": "analytics_jobs",
+    "action": "column_rename",
+    "timestamp": "2026-10-08T06:41:59.023363",
+    "details": {
+      "original": [
+        "s_no",
+        "experience",
+        "job_description",
+        "job_desig",
+        "job_type",
+        "key_skills",
+        "location",
+        "salary"
+      ],
+      "normalized": [
+        "s_no",
+        "experience",
+        "job_description",
+        "job_desig",
+        "job_type",
+        "key_skills",
+        "location",
+        "salary"
+      ],
+      "mapping": {
+        "s_no": "s_no",
+        "experience": "experience",
+        "job_description": "job_description",
+        "job_desig": "job_desig",
+        "job_type": "job_type",
+        "key_skills": "key_skills",
+        "location": "location",
+        "salary": "salary"
+      }
+    }
+  },
+  {
+    "dataset": "analytics_jobs",
+    "action": "salary_parse",
+    "timestamp": "2026-10-08T06:41:59.048421",
+    "details": {
+      "column": "salary",
+      "format": "Range format \"XtoY\" or \"X-Y\" in LPA",
+      "disclosed_rate": 1.0,
+      "median_range_ratio": 0.5
+    }
+  },
+  {
+    "dataset": "analytics_jobs",
+    "action": "experience_parse",
+    "timestamp": "2026-10-08T06:41:59.081021",
+    "details": {
+      "column": "experience",
+      "valid_rate": 1.0
+    }
+  },
+  {
+    "dataset": "analytics_jobs",
+    "action": "skills_initial",
+    "timestamp": "2026-10-08T06:41:59.126676",
+    "details": {
+      "total_skill_mentions": 79880,
+      "avg_skills_per_posting": 5.042610946278644,
+      "postings_with_skills": 15840
+    }
+  },
+  {
+    "dataset": "jds_skills",
+    "action": "column_rename",
+    "timestamp": "2026-10-08T06:41:59.127413",
+    "details": {
+      "original": [
+        "id",
+        "big_data_skills",
+        "maths-stats_skills",
+        "coding_skills",
+        "ai_and_ml_skills",
+        "dashboard_and_storytelling_skills",
+        "salary_hike_high_or_low"
+      ],
+      "normalized": [
+        "id",
+        "big_data_skills",
+        "maths_stats_skills",
+        "coding_skills",
+        "ai_and_ml_skills",
+        "dashboard_and_storytelling_skills",
+        "salary_hike_high_or_low"
+      ],
+      "mapping": {
+        "id": "id",
+        "big_data_skills": "big_data_skills",
+        "maths-stats_skills": "maths_stats_skills",
+        "coding_skills": "coding_skills",
+        "ai_and_ml_skills": "ai_and_ml_skills",
+        "dashboard_and_storytelling_skills": "dashboard_and_storytelling_skills",
+        "salary_hike_high_or_low": "salary_hike_high_or_low"
+      }
+    }
+  },
+  {
+    "dataset": "jds_skills",
+    "action": "duplicate_check",
+    "timestamp": "2026-10-08T06:41:59.128828",
+    "details": {
+      "duplicate_ids": 2,
+      "action": "investigate"
+    }
+  },
+  {
+    "dataset": "jds_skills",
+    "action": "schema_audit",
+    "timestamp": "2026-10-08T06:41:59.130653",
+    "details": {
+      "n_records": 139,
+      "n_features": 5,
+      "score_range_valid": true
+    }
+  },
+  {
+    "dataset": "sds_personality",
+    "action": "column_rename",
+    "timestamp": "2026-10-08T06:41:59.130895",
+    "details": {
+      "original": [
+        "id",
+        "neuroticism",
+        " extraversion",
+        "openness_to_experience",
+        "agreeableness",
+        "conscientiousness",
+        "success_ classification_ high_low"
+      ],
+      "normalized": [
+        "id",
+        "neuroticism",
+        "extraversion",
+        "openness_to_experience",
+        "agreeableness",
+        "conscientiousness",
+        "success__classification__high_low"
+      ],
+      "mapping": {
+        "id": "id",
+        "neuroticism": "neuroticism",
+        " extraversion": "extraversion",
+        "openness_to_experience": "openness_to_experience",
+        "agreeableness": "agreeableness",
+        "conscientiousness": "conscientiousness",
+        "success_ classification_ high_low": "success__classification__high_low"
+      }
+    }
+  },
+  {
+    "dataset": "sds_personality",
+    "action": "normality_check",
+    "timestamp": "2026-10-08T06:41:59.131104",
+    "details": {
+      "trait": "neuroticism",
+      "mean": 36.193,
+      "std": 11.268,
+      "min": 17.0,
+      "max": 68.0
+    }
+  },
+  {
+    "dataset": "sds_personality",
+    "action": "normality_check",
+    "timestamp": "2026-10-08T06:41:59.131198",
+    "details": {
+      "trait": "extraversion",
+      "mean": 43.205,
+      "std": 12.135,
+      "min": 17.0,
+      "max": 67.0
+    }
+  },
+  {
+    "dataset": "sds_personality",
+    "action": "normality_check",
+    "timestamp": "2026-10-08T06:41:59.131276",
+    "details": {
+      "trait": "openness_to_experience",
+      "mean": 41.329,
+      "std": 11.322,
+      "min": 18.0,
+      "max": 65.0
+    }
+  },
+  {
+    "dataset": "sds_personality",
+    "action": "normality_check",
+    "timestamp": "2026-10-08T06:41:59.131349",
+    "details": {
+      "trait": "agreeableness",
+      "mean": 44.602,
+      "std": 11.293,
+      "min": 17.0,
+      "max": 68.0
+    }
+  },
+  {
+    "dataset": "sds_personality",
+    "action": "normality_check",
+    "timestamp": "2026-10-08T06:41:59.131426",
+    "details": {
+      "trait": "conscientiousness",
+      "mean": 45.211,
+      "std": 13.212,
+      "min": 18.0,
+      "max": 66.0
+    }
+  },
+  {
+    "dataset": "sds_personality",
+    "action": "duplicate_check",
+    "timestamp": "2026-10-08T06:41:59.131485",
+    "details": {
+      "duplicate_ids": 9
+    }
+  },
+  {
+    "dataset": "sds_personality",
+    "action": "schema_audit",
+    "timestamp": "2026-10-08T06:41:59.131494",
+    "details": {
+      "n_records": 161,
+      "n_traits": 5,
+      "target_column": null,
+      "class_balance": null
+    }
+  }
+]

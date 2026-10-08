@@ -1,0 +1,204 @@
+{
+  "role_demand": {
+    "Other": 12543,
+    "Software Engineer": 1208,
+    "Business Analyst": 772,
+    "Data Scientist": 470,
+    "Data Engineer": 408,
+    "Data Analyst": 258,
+    "ML Engineer": 182
+  },
+  "salary_by_role": {
+    "Business Analyst": {
+      "mean_inr": 1226554.4041450778,
+      "median_inr": 1250000.0,
+      "std_inr": 847059.9452592182,
+      "n": 772
+    },
+    "Data Analyst": {
+      "mean_inr": 862790.6976744186,
+      "median_inr": 800000.0,
+      "std_inr": 702241.5214622812,
+      "n": 258
+    },
+    "Data Engineer": {
+      "mean_inr": 1516789.2156862745,
+      "median_inr": 1250000.0,
+      "std_inr": 924087.2964077494,
+      "n": 408
+    },
+    "Data Scientist": {
+      "mean_inr": 1619042.5531914893,
+      "median_inr": 1250000.0,
+      "std_inr": 962646.7923384139,
+      "n": 470
+    },
+    "ML Engineer": {
+      "mean_inr": 1851098.9010989012,
+      "median_inr": 2000000.0,
+      "std_inr": 1045365.4102720548,
+      "n": 182
+    },
+    "Other": {
+      "mean_inr": 1213936.059953759,
+      "median_inr": 800000.0,
+      "std_inr": 986825.5505689055,
+      "n": 12543
+    },
+    "Software Engineer": {
+      "mean_inr": 1097102.6490066226,
+      "median_inr": 800000.0,
+      "std_inr": 740809.3937078118,
+      "n": 1208
+    }
+  },
+  "experience_by_role": {
+    "Business Analyst": {
+      "mean_years": 5.764896373056994,
+      "median_years": 5.5,
+      "std_years": 3.0501809798764095
+    },
+    "Data Analyst": {
+      "mean_years": 4.77906976744186,
+      "median_years": 4.0,
+      "std_years": 2.7818946156713262
+    },
+    "Data Engineer": {
+      "mean_years": 7.4411764705882355,
+      "median_years": 6.5,
+      "std_years": 3.4417184137496326
+    },
+    "Data Scientist": {
+      "mean_years": 6.413829787234042,
+      "median_years": 6.5,
+      "std_years": 2.9117291319987197
+    },
+    "ML Engineer": {
+      "mean_years": 6.532967032967033,
+      "median_years": 6.5,
+      "std_years": 2.8737737695346133
+    },
+    "Other": {
+      "mean_years": 6.257833054293231,
+      "median_years": 5.5,
+      "std_years": 3.920958692824394
+    },
+    "Software Engineer": {
+      "mean_years": 5.513658940397351,
+      "median_years": 5.5,
+      "std_years": 2.300719355011559
+    }
+  },
+  "top_locations": {
+    "Bengaluru": 4108,
+    "Mumbai": 2643,
+    "Gurgaon": 2129,
+    "Delhi NCR": 1363,
+    "Pune": 1253,
+    "Hyderabad": 1179,
+    "Chennai": 1083,
+    "Noida": 682,
+    "Delhi": 382,
+    "Kolkata": 274
+  },
+  "career_frontier": [
+    {
+      "role_family": "Business Analyst",
+      "demand": 772,
+      "avg_salary": 1226554.4041450778,
+      "avg_experience": 5.764896373056994
+    },
+    {
+      "role_family": "Data Analyst",
+      "demand": 258,
+      "avg_salary": 862790.6976744186,
+      "avg_experience": 4.77906976744186
+    },
+    {
+      "role_family": "Data Engineer",
+      "demand": 408,
+      "avg_salary": 1516789.2156862745,
+      "avg_experience": 7.4411764705882355
+    },
+    {
+      "role_family": "Data Scientist",
+      "demand": 470,
+      "avg_salary": 1619042.5531914893,
+      "avg_experience": 6.413829787234042
+    },
+    {
+      "role_family": "ML Engineer",
+      "demand": 182,
+      "avg_salary": 1851098.9010989012,
+      "avg_experience": 6.532967032967033
+    },
+    {
+      "role_family": "Other",
+      "demand": 12543,
+      "avg_salary": 1213936.059953759,
+      "avg_experience": 6.257833054293231
+    },
+    {
+      "role_family": "Software Engineer",
+      "demand": 1208,
+      "avg_salary": 1097102.6490066226,
+      "avg_experience": 5.513658940397351
+    }
+  ],
+  "role_salary_matrix": {
+    "0-2": {
+      "Business Analyst": 567105.2631578947,
+      "Data Analyst": 435294.1176470588,
+      "Data Engineer": 690000.0,
+      "Data Scientist": 969230.7692307692,
+      "ML Engineer": 770000.0,
+      "Other": 338609.4674556213,
+      "Software Engineer": 313725.49019607843
+    },
+    "3-5": {
+      "Business Analyst": 895328.7197231834,
+      "Data Analyst": 657758.6206896552,
+      "Data Engineer": 881981.981981982,
+      "Data Scientist": 1192993.6305732485,
+      "ML Engineer": 1307627.1186440678,
+      "Other": 723797.0825168735,
+      "Software Engineer": 842011.2781954887
+    },
+    "6-8": {
+      "Business Analyst": 1441200.0,
+      "Data Analyst": 1045000.0,
+      "Data Engineer": 1396688.7417218543,
+      "Data Scientist": 1704761.9047619049,
+      "ML Engineer": 2040540.5405405406,
+      "Other": 1338558.786346397,
+      "Software Engineer": 1312399.1935483871
+    },
+    "9-12": {
+      "Business Analyst": 1807264.9572649573,
+      "Data Analyst": 1882500.0,
+      "Data Engineer": 1842187.5,
+      "Data Scientist": 1980952.380952381,
+      "ML Engineer": 2230303.0303030303,
+      "Other": 1925071.360608944,
+      "Software Engineer": 1642592.5925925926
+    },
+    "12-20": {
+      "Business Analyst": 2189393.9393939395,
+      "Data Analyst": 3166666.6666666665,
+      "Data Engineer": 2863636.3636363638,
+      "Data Scientist": 2780769.230769231,
+      "ML Engineer": 2845454.5454545454,
+      "Other": 2554712.2602168475,
+      "Software Engineer": 1996875.0
+    },
+    "20+": {
+      "Business Analyst": NaN,
+      "Data Analyst": NaN,
+      "Data Engineer": 3750000.0,
+      "Data Scientist": NaN,
+      "ML Engineer": NaN,
+      "Other": 2766666.6666666665,
+      "Software Engineer": NaN
+    }
+  }
+}
